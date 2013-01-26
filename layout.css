@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+body, html{
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+  text-align: center;
+  background: yellow; 
+}
+
+#wrap {
+  width: 960px; /*  80%;*/
+  margin: auto;
+  text-align: left;
+}
+
+#header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100px;
+  background: green;
+}
+
+#footer {
+  clear: both;
+  width:100%;
+  height: 60px;
+  background: cyan;
+}
+
+#mainBody {
+  float: left;
+  width: 80%;
+  background: red;
+}
+
+#content {
+  float: right;
+  width: 80%;
+  min-height: 300px;
+  background: brown;
+}
+
+#navSide {
+  float: left;
+  width: 20%;
+  /* display: none; */
+}
+
+#add {
+  float: right;
+  width: 20%;
+  /* display: none; */
+  background: blue;
+}
+
+#wrapInner {
+  width: 100%;
+  margin: auto;
+}
+
+#navTop {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* height: 30px; */
+  text-align: center;
+}
+
+.inside {
+  padding: 5px;
+}
