@@ -2,6 +2,7 @@
 return array(
     'modules' => array(
         'Application',
+        'Album', //this line is added
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
