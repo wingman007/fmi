@@ -3,6 +3,6 @@
      <title>PHP Test</title>
   </head>
   <body>
-    <?php echo '<p>Hello World. I'm Marina Gatova email: marinagatova@gmail.com</p>'; ?>
+    <?php echo '<p>Hello World. Marina Gatova email: marinagatova@gmail.com</p>'; ?>
   </body>
 </html>
