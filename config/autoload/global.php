@@ -19,7 +19,7 @@ return array(
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-//        'dsn'            => 'mysql:dbname=zf2tutorial;host=localhost',
+//       'dsn'      => 'mysql:dbname=wingman;host=wingman-db.my.phpcloud.com',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
