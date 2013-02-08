@@ -91,5 +91,4 @@ class Album implements InputFilterAwareInterface
         return $this->inputFilter;
     }
 }
-  
-  
+

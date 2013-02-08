@@ -39,7 +39,6 @@
             }
             return array('form' => $form);
         }
-
     
         public function editAction()
         {
@@ -110,5 +109,3 @@
           return $this->albumTable;     
         }
   }
-    
-
