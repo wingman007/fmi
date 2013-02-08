@@ -1,3 +1,3 @@
 <?php
-    echo "Stoyan Atanasoff ! ssssssddddd123 ";
+    echo "Stoyan Atanasoff ! ssddddd123 ";
 ?>
