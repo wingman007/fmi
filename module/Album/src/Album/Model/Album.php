@@ -16,7 +16,7 @@ class Album implements InputFilterAwareInterface
     }
     
     // Add content to this method:
-    /*public function setInputFilter(InputFilterInterface $inputFilter)
+    public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \Exception("Not used");
     }
@@ -77,5 +77,5 @@ class Album implements InputFilterAwareInterface
         }
 
         return $this->inputFilter;
-    }*/
+    }
 }
