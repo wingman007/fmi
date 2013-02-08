@@ -31,7 +31,7 @@ class AlbumController extends AbstractActionController
     {
     }
   
- // module/Album/src/Album/Controller/AlbumController.php:
+// module/Album/src/Album/Controller/AlbumController.php:
     public function getAlbumTable()
     {
         if (!$this->albumTable) {
