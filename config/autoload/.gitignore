@@ -1,0 +1,3 @@
+#uncomment these for public use:
+local.php
+*.local.php
