@@ -3,3 +3,7 @@
 {"ts":1360310126585,"patch":[[{"diffs":[[0,"oller\n{\n    "],[1,"public function getAlbumTable()\n    {\n        if (!$this->albumTable) {\n            $sm = $this->getServiceLocator();\n            $this->albumTable = $sm->get('Album\\Model\\AlbumTable');\n        }\n        return $this->albumTable;\n    }"],[0,"\n    \n    pu"]],"start1":166,"start2":166,"length1":24,"length2":259}]],"length":605,"saved":false}
 {"ts":1360310137035,"patch":[[{"diffs":[[0,"oller\n{\n"],[1,"    protected $albumTable;\n    \n"],[0,"    publ"]],"start1":166,"start2":166,"length1":16,"length2":48}]],"length":637,"saved":false}
 {"ts":1360310183363,"patch":[[{"diffs":[[0,"xAction()\n    {\n"],[1,"        return new ViewModel(array(\n            'albums' => $this->getAlbumTable()->fetchAll(),\n        ));\n"],[0,"    }\n\n    publi"]],"start1":475,"start2":475,"length1":32,"length2":140}]],"length":745,"saved":false}
+{"ts":1360311317580,"patch":[[{"diffs":[[0,"  {\n        "],[1,"/*"],[0,"return new V"]],"start1":487,"start2":487,"length1":24,"length2":26}]],"length":747,"saved":false}
+{"ts":1360311320020,"patch":[[{"diffs":[[0,"     ));"],[1,"*/"],[0,"\n    }\n\n"]],"start1":592,"start2":592,"length1":16,"length2":18}]],"length":749,"saved":false}
+{"ts":1360311376638,"patch":[[{"diffs":[[0," ));"],[-1,"*/"],[0,"\n   "]],"start1":596,"start2":596,"length1":10,"length2":8}]],"length":747,"saved":false}
+{"ts":1360311378482,"patch":[[{"diffs":[[0,"    "],[-1,"/*"],[0,"retu"]],"start1":495,"start2":495,"length1":10,"length2":8}]],"length":745,"saved":false}
