@@ -1,3 +1,3 @@
 <?php
-    echo "Stoyan Atanasoff ! 123 s";
+    echo "Stoyan Atanasoff ! 123 ss";
 ?>
