@@ -11,11 +11,11 @@
  * file.
  */
 
-
+/*
 return array(
     // ...
 );
-
+*/
 
 return array(
     'db' => array(
