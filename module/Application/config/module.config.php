@@ -71,6 +71,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Stoyan' => 'Application\Controller\StoyanController' // <-- Added by me
+            'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController' // <-- Added by me
         ),
     ),
     'view_manager' => array(
