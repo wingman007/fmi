@@ -18,4 +18,12 @@ class StoyanController extends AbstractActionController
     {
         return new ViewModel();
     }
+  
+    public function addAction()
+    {
+        return array(
+          'id' => 1,
+          'title' => 'I have to add'
+       );
+    }
 }
