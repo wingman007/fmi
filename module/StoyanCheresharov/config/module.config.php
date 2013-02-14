@@ -2,7 +2,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'StoyanCheresharov\Controller\Album' => 'StoyanCheresharov\Controller\IndexController',
+            'StoyanCheresharov\Controller\Index' => 'StoyanCheresharov\Controller\IndexController',
         ),
     ),
   
