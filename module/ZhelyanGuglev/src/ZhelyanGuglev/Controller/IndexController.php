@@ -7,7 +7,7 @@
 * @license http://framework.zend.com/license/new-bsd New BSD License
 */
 
-namespace StoyanCheresharov\Controller;
+namespace ZhelyanGuglev\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
