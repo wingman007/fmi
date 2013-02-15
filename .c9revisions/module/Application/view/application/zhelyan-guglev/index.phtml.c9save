@@ -1,6 +1,0 @@
-{"ts":1360917410302,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":[],"silentsave":true,"ts":1360917412868,"patch":[[{"diffs":[[1,"<h1>"]],"start1":0,"start2":0,"length1":0,"length2":4}]],"length":4,"saved":false}
-{"ts":1360917413705,"patch":[[{"diffs":[[0,"<h1>"],[1,"</"]],"start1":0,"start2":0,"length1":4,"length2":6}]],"length":6,"saved":false}
-{"ts":1360917414864,"patch":[[{"diffs":[[0,"<h1></"],[1,"h1>"]],"start1":0,"start2":0,"length1":6,"length2":9}]],"length":9,"saved":false}
-{"ts":1360917419870,"patch":[[{"diffs":[[0,"<h1>"],[1,"Zhelyzn"],[0,"</h1>"]],"start1":0,"start2":0,"length1":9,"length2":16}]],"length":16,"saved":false}
-{"ts":1360917423178,"patch":[[{"diffs":[[0,"hely"],[-1,"zn"],[1,"an Guglev"],[0,"</h1"]],"start1":5,"start2":5,"length1":10,"length2":17}]],"length":23,"saved":false}
