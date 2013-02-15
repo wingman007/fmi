@@ -3,6 +3,7 @@ return array(
     'modules' => array(
         'Application',
         'Album',                  // <-- Add this line
+        'AlexanderAlexandrov',                  // <-- Add this line
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
