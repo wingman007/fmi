@@ -12,10 +12,6 @@
  */
 
 return array(
-    // ...
-);
-
-return array(
     'db' => array(
         'driver'         => 'Pdo',
         'dsn'            => 'mysql:dbname=nikoleta;host=nikoleta-db.my.phpcloud.com',
@@ -30,3 +26,4 @@ return array(
         ),
     ),
 );
+
