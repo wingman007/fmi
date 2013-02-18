@@ -21,4 +21,13 @@ class AlbumController extends AbstractActionController
     public function deleteAction()
     {
     }
+  // module/Album/src/Album/Controller/AlbumController.php:
+    public function getAlbumTable()
+    {
+        if (!$this->albumTable) {
+            $sm = $this->getServiceLocator();
+            $this->albumTable = $sm->get('Album\Model\AlbumTable');
+        }
+        return $this->albumTable;
+    }
 }
