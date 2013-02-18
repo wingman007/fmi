@@ -14,8 +14,7 @@
 return array(
     // ...
 );
-<?php
-return array(
+<return array(
     'db' => array(
         'driver'         => 'Pdo',
 
