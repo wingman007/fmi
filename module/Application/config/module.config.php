@@ -69,7 +69,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+             'Application\Controller\VanyaDimitrova' => 'Application\Controller\VanyaDimitrovaController'
         ),
     ),
     'view_manager' => array(
