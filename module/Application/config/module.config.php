@@ -71,7 +71,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Album\Controller\AlbumController' => 'Application\Controller\Album',
+            'Album\Controller\Album' => 'Application\Controller\AlbumController',
             'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController'
         ),
     ),
