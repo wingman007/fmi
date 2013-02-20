@@ -15,8 +15,9 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Album',
+//                        'controller' => 'Album\Controller\Album',
                         'controller' => 'Application\Controller\Index',
+//'controller' => 'ZhelyanGuglev\Controller\ZhelyanGuglev',
                         'action'     => 'index',
                     ),
                 ),
@@ -71,7 +72,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-//'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
+            'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
         ),
     ),
     'view_manager' => array(
