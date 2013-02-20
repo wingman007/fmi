@@ -2,8 +2,8 @@
 return array(
     'modules' => array(
         'Application',
-        'Album',
-//'ZhelyanGuglev',
+        'Album', //this one crashes
+        'ZhelyanGuglev',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
