@@ -12,7 +12,7 @@ return array(
             'album' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/album[/:action][/:id]',
+                  'route'    => '/album/album[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
