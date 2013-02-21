@@ -2,7 +2,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Album\Controller\Album' => 'Album\Controller\AlbumController',
+            'VanyaDimitrova\Controller\index' => 'VanyaDimitrova\Controller\IndexController',
         ),
     ),
   
@@ -12,13 +12,13 @@ return array(
             'album' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/album[/:action][/:id]',
+                    'route'    => '/vanya-dimitrova[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Album',
+                        'controller' => 'VanyaDimitrova\Controller\Album',
                         'action'     => 'index',
                     ),
                 ),
