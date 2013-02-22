@@ -1,0 +1,38 @@
+.slider{ width:946px;position:relative; z-index:1; background:#fff; padding:2px;}
+.flexslider {width: 100%; margin: 0;}
+.flexslider .slides > li {display: none;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+/* control Nav */
+.flex-control-nav{ position:absolute; bottom:-81px; left:434px;}
+	.flex-control-nav li{ display:block; float:left; margin-right:1px;}
+		.flex-control-nav li a{ display:block; background:url(../images/pagination.png) 0 0 no-repeat; width:24px; height:24px; text-indent:-5000px;}
+		.flex-control-nav li a:hover,.flex-control-nav li a.active{ background-position:0 -25px;}
+/* Caption */
+.flex-caption{ position:absolute; font:20px/24px Arial, Helvetica, sans-serif; color:#382c27; text-align:center; width:100%; bottom:-40px;}
+/* Background */
+.bg-slider{ background:url(../images/bg-slider.png) 50% 50% no-repeat; width:961px; height:551px;}
+.main-slider{ width:961px; margin:0 auto; padding-left:11px; height:641px ; overflow:hidden;}
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+	.main-slider{ width:768px; height:525px; padding-left:0;}
+	.slider {width:746px; padding:2px;}
+	.bg-slider{ width:755px;background:url(../images/bg-slider2.png) 0% -4px no-repeat; }	
+	.flex-control-nav{left:45%;}
+}
+@media only screen and (max-width: 767px) {
+	.main-slider{ width:300px; height:190px; padding-left:0;}
+	.slider {width:296px; padding:2px;}
+	.bg-slider{ width:300px;background:url(../images/bg-slider4.png) 0% 2px no-repeat; }
+	.flex-control-nav{left:38%; bottom:15px;}
+	.flex-caption{ display:none;}	
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.main-slider{ width:420px; height:260px; padding-left:0;}
+	.slider {width:416px; padding:2px;}
+	.bg-slider{ width:420px;background:url(../images/bg-slider3.png) 0% 2px no-repeat; }
+	.flex-control-nav{left:45%; bottom:15px;}
+}
