@@ -2,7 +2,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'VanyaDimitrova\Controller\index' => 'VanyaDimitrova\Controller\IndexController',
+            'VanyaDimitrova\Controller\Index' => 'VanyaDimitrova\Controller\IndexController',
         ),
     ),
   
@@ -18,7 +18,7 @@ return array(
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'VanyaDimitrova\Controller\Album',
+                        'controller' => 'VanyaDimitrova\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
