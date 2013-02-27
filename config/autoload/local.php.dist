@@ -12,9 +12,13 @@
  */
 
 return array(
+<<<<<<< HEAD
     'db' => array(
         'dsn'      => 'mysql:dbname=YOUR_DATABASE_NAME_HERE;host=YOUR_DATABASE_HOST_ADDRESS_HERE',        
         'username' => 'DATABASE USERNAME',
         'password' => 'DATABASE PASSWORD',
     ),
+=======
+    // ...
+>>>>>>> refs/remotes/zend/master
 );
