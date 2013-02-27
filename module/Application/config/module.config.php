@@ -72,7 +72,10 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
 // 			'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
-            'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
+//          'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
+//          'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
+//          'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController', // <-- Added by me
+//          'Application\Controller\FmiStudent' => 'Application\Controller\FmiStudentController', // <-- Added by me
         ),
     ),
     'view_manager' => array(
@@ -83,7 +86,9 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+//			'layout/layout'           => __DIR__ . '/../view/layout/student.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+//          'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
