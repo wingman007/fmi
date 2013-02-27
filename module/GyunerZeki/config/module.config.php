@@ -8,7 +8,7 @@ return array(
   
     'router' => array(
         'routes' => array(
-            'album' => array(
+            'gyuner_zeki' => array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'    => '/gyuner-zeki[/:action][/:id]',
@@ -27,7 +27,7 @@ return array(
   
     'view_manager' => array(
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'gyuner_zeki' => __DIR__ . '/../view',
         ),
     ),
 );

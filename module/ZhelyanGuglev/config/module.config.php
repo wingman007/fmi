@@ -9,7 +9,7 @@ return array(
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'album' => array(
+            'zhelyan_guglev' => array( // NOT 'album'! Give a different name for the route
                 'type' => 'segment',
                 'options' => array(
                     'route' => '/zhelyan-guglev[/:action][/:id]',
@@ -36,7 +36,7 @@ return array(
           // 'error/index' => __DIR__ . '/../view/error/index.phtml',
         ),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'zhelyan_guglev' => __DIR__ . '/../view',
         ),
     ),
 );

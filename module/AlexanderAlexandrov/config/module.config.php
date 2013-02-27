@@ -9,7 +9,7 @@ return array(
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'album' => array(
+            'alexander_alexandrov' => array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'    => '/alexander-alexandrov[/:action][/:id]',
@@ -28,7 +28,7 @@ return array(
   
     'view_manager' => array(
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'alexander_alexandrov' => __DIR__ . '/../view',
         ),
     ),
 );
