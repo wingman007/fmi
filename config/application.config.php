@@ -5,6 +5,7 @@ return array(
         'Album',                  // <-- Add this line
         'ZhelyanGuglev',
         'AlexanderAlexandrov',                  // <-- Add this line
+        'GyunerZeki',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
