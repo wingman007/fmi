@@ -3,8 +3,8 @@ namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Album\Model\Album;          // <-- Add this import
-use Album\Form\AlbumForm;       // <-- Add this import
+use Album\Model\Album; // <-- Add this import
+use Album\Form\AlbumForm; // <-- Add this import
 
 class AlbumController extends AbstractActionController
 {
@@ -52,7 +52,7 @@ class AlbumController extends AbstractActionController
         }
         $album = $this->getAlbumTable()->getAlbum($id);
 
-        $form  = new AlbumForm();
+        $form = new AlbumForm();
         $form->bind($album);
         $form->get('submit')->setAttribute('value', 'Edit');
 
@@ -97,7 +97,7 @@ class AlbumController extends AbstractActionController
         }
 
         return array(
-            'id'    => $id,
+            'id' => $id,
             'album' => $this->getAlbumTable()->getAlbum($id)
         );
     }

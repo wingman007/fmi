@@ -15,6 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
+//                      'controller' => 'Album\Controller\Album',
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
@@ -69,7 +70,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+// 			'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
         ),
     ),
     'view_manager' => array(
