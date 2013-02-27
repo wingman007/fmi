@@ -72,6 +72,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
 // 			'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
+            'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
         ),
     ),
     'view_manager' => array(
