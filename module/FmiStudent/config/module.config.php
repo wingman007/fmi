@@ -13,6 +13,7 @@ return array(
                 'type'    => 'segment',
                 'options' => array(
                     'route'    => '/fmi-student[/:action][/:id]',
+//                    'route'    => '/fmi-student[/:controller][/:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
