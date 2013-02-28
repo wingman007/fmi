@@ -27,8 +27,6 @@ return array(
         ),
     ),
 );
-  
- * Global Configuration Override
  * You can use this file for overridding configuration values from modules, etc.
  * You would place values in here that are agnostic to the environment and not
  * sensitive to security.
