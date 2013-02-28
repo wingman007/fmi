@@ -8,6 +8,7 @@ return array(
         'GyunerZeki',
         'StoyanCheresharov',                  // <-- Add this line
         'FmiStudent',                  // <-- Add this line
+        'StudentBg',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
