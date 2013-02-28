@@ -90,7 +90,6 @@ return array(
       'layout/student'           => __DIR__ . '/../view/layout/student.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
 //          'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
-=======
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
