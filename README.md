@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is a sample PHP project
 =======
+=======
+>>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
 ZendSkeletonApplication
 =======================
 
@@ -34,4 +37,8 @@ Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
 project and you should be ready to go!
+<<<<<<< HEAD
 >>>>>>> refs/heads/master
+=======
+
+>>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
