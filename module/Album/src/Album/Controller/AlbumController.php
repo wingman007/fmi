@@ -3,7 +3,6 @@ namespace Album\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-<<<<<<< HEAD
 use Album\Model\Album;          // <-- Add this import
 use Album\Form\AlbumForm;       // <-- Add this import
 
@@ -27,24 +26,6 @@ class AlbumController extends AbstractActionController
         ));
     }
 
-=======
-use Album\Model\Album; // <-- Add this import
-use Album\Form\AlbumForm; // <-- Add this import
-
-class AlbumController extends AbstractActionController
-{
-  
-    protected $albumTable;
-  
-    public function indexAction()
-    {
-      return new ViewModel(array(
-            'albums' => $this->getAlbumTable()->fetchAll(),
-      ));
-    }
-
-    // Add content to this method:
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
     public function addAction()
     {
         $form = new AlbumForm();
@@ -67,10 +48,7 @@ class AlbumController extends AbstractActionController
         return array('form' => $form);
     }
 
-<<<<<<< HEAD
-=======
-    // Add content to this method:
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+
     public function editAction()
     {
         $id = (int) $this->params()->fromRoute('id', 0);
@@ -81,11 +59,9 @@ class AlbumController extends AbstractActionController
         }
         $album = $this->getAlbumTable()->getAlbum($id);
 
-<<<<<<< HEAD
-        $form  = new AlbumForm();
-=======
+
         $form = new AlbumForm();
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+
         $form->bind($album);
         $form->get('submit')->setAttribute('value', 'Edit');
 
@@ -108,10 +84,7 @@ class AlbumController extends AbstractActionController
         );
     }
 
-<<<<<<< HEAD
-=======
-    // Add content to the following method:
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+
     public function deleteAction()
     {
         $id = (int) $this->params()->fromRoute('id', 0);
@@ -133,25 +106,10 @@ class AlbumController extends AbstractActionController
         }
 
         return array(
-<<<<<<< HEAD
+
             'id'    => $id,
             'album' => $this->getAlbumTable()->getAlbum($id)
         );
     }
-=======
-            'id' => $id,
-            'album' => $this->getAlbumTable()->getAlbum($id)
-        );
-    }
-  
-// module/Album/src/Album/Controller/AlbumController.php:
-    public function getAlbumTable()
-    {
-        if (!$this->albumTable) {
-            $sm = $this->getServiceLocator();
-            $this->albumTable = $sm->get('Album\Model\AlbumTable');
-        }
-        return $this->albumTable;
-    }
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+
 }
