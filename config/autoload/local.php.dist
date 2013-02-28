@@ -17,4 +17,7 @@ return array(
         'username' => 'DATABASE USERNAME',
         'password' => 'DATABASE PASSWORD',
     ),
+=======
+    // ...
+>>>>>>> refs/remotes/zend2/master
 );
