@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 =======
 Important
 =========
 Create file local.php for your local repository.
 Use the sample local.php.dist !
 
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
 About this directory:
 =====================
 
