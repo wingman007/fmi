@@ -9,8 +9,6 @@ return array(
         'StoyanCheresharov',                  // <-- Add this line
         'FmiStudent',                  // <-- Add this line
         'StudentBg',
-=======
->>>>>>> refs/remotes/zend2/master
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
