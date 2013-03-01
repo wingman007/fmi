@@ -2,13 +2,10 @@
 return array(
     'modules' => array(
         'Application',
-        'Album',                  // <-- Add this line
-        'ZhelyanGuglev',
-        'AlexanderAlexandrov',                  // <-- Add this line
-        'GyunerZeki',
-        'StoyanCheresharov',                  // <-- Add this line
-        'FmiStudent',                  // <-- Add this line
-        'StudentBg',
+        'Album',  
+      
+      
+              
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
