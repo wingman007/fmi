@@ -1,6 +1,7 @@
 <?php
 /**
 
+
 * Global Configuration Override
 *
 * You can use this file for overridding configuration values from modules, etc.
@@ -28,5 +29,6 @@ return array(
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
+
 
 );

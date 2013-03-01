@@ -30,5 +30,3 @@ Alternatively, you can install using native git submodules:
 Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
-
-
