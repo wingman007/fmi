@@ -15,13 +15,12 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-//                      'controller' => 'Album\Controller\Album',
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
+          //The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
@@ -71,11 +70,6 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-//       'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
-//          'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
-//          'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
-//          'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController', // <-- Added by me
-//          'Application\Controller\FmiStudent' => 'Application\Controller\FmiStudentController', // <-- Added by me
         ),
     ),
     'view_manager' => array(
@@ -86,9 +80,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-      'layout/student'           => __DIR__ . '/../view/layout/student.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-//          'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
