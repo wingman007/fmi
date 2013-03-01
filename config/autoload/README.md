@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 Important
 =========
 Create file local.php for your local repository.
 Use the sample local.php.dist !
 
->>>>>>> refs/remotes/gitWINGMAN/master
 About this directory:
 =====================
 
