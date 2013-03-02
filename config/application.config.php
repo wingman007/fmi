@@ -9,6 +9,7 @@ return array(
         'StoyanCheresharov',                  // <-- Add this line
         'FmiStudent',                  // <-- Add this line
         'StudentBg',
+        'MargaritaKrushkova',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
