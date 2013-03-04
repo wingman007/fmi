@@ -165,7 +165,8 @@ window.onload = function(e){
     { // DOM 0
         element.onmouseover = onMouseOver;
     }
-
-  
 };
 
+var stoyan = 'Cheresharov';
+
+alert(stoyan);
