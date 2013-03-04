@@ -1,1 +1,0 @@
-{"ts":1362400044228,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"alert('Hello');\n/*\n(function(){\n    window.onload = function(e){\n      // var divs = $(\"div\");\n      // alert(divs[0]);\n    };\n})();\n*/"]],"start1":0,"start2":0,"length1":0,"length2":135}]],"length":135}
