@@ -15,8 +15,12 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
+<<<<<<< HEAD
+                        'controller' => 'Album\Controller\Album', // <-- change here
+=======
 //                      'controller' => 'Album\Controller\Album',
                         'controller' => 'Application\Controller\Index',
+>>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
                         'action'     => 'index',
                     ),
                 ),
@@ -70,12 +74,16 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
+<<<<<<< HEAD
+            'Application\Controller\Index' => 'Application\Controller\IndexController'
+=======
             'Application\Controller\Index' => 'Application\Controller\IndexController',
 //       'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
 //          'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
 //          'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
 //          'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController', // <-- Added by me
 //          'Application\Controller\FmiStudent' => 'Application\Controller\FmiStudentController', // <-- Added by me
+>>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
         ),
     ),
     'view_manager' => array(
@@ -86,9 +94,13 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+<<<<<<< HEAD
+            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+=======
       'layout/student'           => __DIR__ . '/../view/layout/student.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
 //          'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
+>>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
