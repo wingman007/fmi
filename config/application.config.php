@@ -10,6 +10,7 @@ return array(
         'FmiStudent',                  // <-- Add this line
         'StudentBg',
         'VictorAtanassov',                  // <-- Add this line
+        'Elena',                  // <-- Add this line
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
