@@ -1,5 +1,5 @@
 <?php
-namespace AlexanderAlexandrov;
+namespace MartinManov;
   
 class Module
 {
