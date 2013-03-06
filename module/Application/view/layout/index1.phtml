@@ -1,189 +1,124 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Main.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>EcoStyle Studio</title>
-<!-- InstanceEndEditable -->
-<style type="text/css">
-<!--
-
-body,td,th {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
-}
-h1 {
-  font-size: 18px;
-  color: #066;
-}
-h2 {
-  font-size: 16px;
-  color: #096;
-}
-a:link {
-  color: #096;
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-  color: #066;
-}
-a:hover {
-  color: #FFF;
-  background-color: #096;
-}
-a:active {
-  text-decoration: none;
-  color: #FFF;
-  background-color: #F00;
-}
-.highlight {
-  font-style: italic;
-  font-weight: bold;
-  color: #603;
-}
-body {
-  margin: 0;
-  padding: 0;
-  color: #000;
-  background-attachment: fixed;
-  background-image: url(images/bkgd.jpg);
-  background-position: center top;
-}
-
-/* ~~ Element/tag selectors ~~ */
-ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
-  padding: 0;
-  margin: 0;
-}
-h1, h2, h3, h4, h5, h6, p {
-  margin-top: 0;   /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
-  padding-right: 15px;
-  padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
-}
-a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
-  border: none;
-}
-a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
-}
-
-/* ~~ this fixed width container surrounds the other divs ~~ */
-.container {
-  width: 1000px;
-  margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
-}
-
-/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
-.header {
-}
-
-/* ~~ This is the layout information. ~~ 
-
-1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
-
-*/
-
-.content {
-  padding: 10px 0;
-  background-image: url(images/bkgdContent.jpg);
-}
-
-/* ~~ The footer ~~ */
-.footer {
-  padding: 10px 0;
-  background-color: #666;
-}
-
-/* ~~ miscellaneous float/clear classes ~~ */
-.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
-  float: right;
-  margin-left: 8px;
-}
-.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
-  float: left;
-  margin-right: 8px;
-}
-.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
-  clear:both;
-  height:0;
-  font-size: 1px;
-  line-height: 0px;
-}
--->
-</style>
-<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
-<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
+<meta charset="UTF-8">
+<title>Explore California Trail Guide</title>
+<!--update based on html5-->
+<link href="file:///E|/Downloads/Lynda.com - Dreamweaver CS5 Getting Started with HTML5/Exercise Files/Ex_Files_DWCS5_HTML5/Ex_Files_DWCS5_HTML5/Exercise Files/Chapter 3/03_01/_css/main.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
-
 <body>
+<div id="wrapper">
+<header id="mainHeader">
 
-<div class="container">
-  <div class="header"><!-- InstanceBeginEditable name="header" -->
-    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="400" id="FlashID" title="EcoStyle Studio">
-      <param name="movie" value="images/headerHome.swf" />
-      <param name="quality" value="high" />
-      <param name="wmode" value="transparent" />
-      <param name="swfversion" value="6.0.65.0" />
-      <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
-      <param name="expressinstall" value="Scripts/expressInstall.swf" />
-      <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
-      <!--[if !IE]>-->
-      <object type="application/x-shockwave-flash" data="images/headerHome.swf" width="1000" height="400">
-        <!--<![endif]-->
-        <param name="quality" value="high" />
-        <param name="wmode" value="transparent" />
-        <param name="swfversion" value="6.0.65.0" />
-        <param name="expressinstall" value="Scripts/expressInstall.swf" />
-        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-        <div>
-          <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
-          <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
-        </div>
-        <!--[if !IE]>-->
-      </object>
-      <!--<![endif]-->
-    </object>
-  <!-- InstanceEndEditable --><!-- end .header --></div>
-  <ul id="MenuBar1" class="MenuBarHorizontal">
-    <li><a href="index.html">Home</a>    </li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a class="MenuBarItemSubmenu" href="#">Fashion Portfolio</a>
-      <ul>
-        <li><a href="men.html">Men's Fashion</a>        </li>
-        <li><a href="women.html">Women's Fashion</a></li>
-</ul>
+<img src="DINKA.jpg" width="1100" height="600" alt="Dinka" />
+    <nav id="mainNav">
+    <h1>Main page navigation</h1>
+   <ul id="MenuBar1" class="sf-menu sf-js-enebled">
+    <li><a class="home" href="#">Home</a>
+     
     </li>
-    <li><a href="contact.html">Contact Us</a></li>
+    <li><a class="about" href="#">About </a>
+    </li>
+    <li><a class="music" href="#">Music</a>
+    </li>
+     <li><a class="events"href="#">Events</a></li>
+    <li><a class="blog" href="#">Blog</a></li>
+     <li class="last3"><a  href="#">Contacts</a></li>
   </ul>
-  <div class="content"><!-- InstanceBeginEditable name="content" -->
-    <h1>&nbsp;</h1>
-    <h1>Designer Clothing for the Environmentally Conscious</h1>
-    <p>EcoStyle Studio is a men and women&rsquo;s wear boutique based in the Loyal Heights area of Seattle. We were a first in Washington to proudly offer <strong>environmentally friendly fashion</strong> since 2005. All the collections found at our boutique and online are beautiful, stylish, desirable and environmentally friendly. <img src="images/Silhouette.gif" alt="EcoStyle Studio says Recycle" width="183" height="321" align="right" /><br />
-    </p>
-    <h2>Environmentally Friendly </h2>
-    <p>Being environmentally friendly can mean different things to different people. As an environmental fashion boutique however, we have a responsibility to ensure that all of our products have been produced under conditions and from materials that meet recognized ethical and environmental standards, and facilitate improvements in quality of life throughout the supply chain.<br />
-      <br />
-      We are committed to improving sustainability in the fashion industry and have been awarded the <em><strong>Sustainable Fashion of the Year</strong></em><strong> by EcoVision in 2009</strong>. At EcoStyle Studio you will find organic cotton collections, clothing made from other sustainable fabrics such as bamboo and soya, shoes that have been made using reconstituted leather dyed using environmentally friendly dyes and also some wonderful vegan accessories. </p>
-    <p class="highlight">&ldquo;Every fashion season I take the opportunity to convey a bigger message than just hemlines and trends.&rdquo; Bradley Huff, Owner </p>
-    <h2>Sustainability by Design </h2>
-    <p>There is a wide range of ethically related standards and principles and each designer and each item of clothing will offer a different ethical footprint. When you are browsing in our boutique, each piece has one or more of these standards or certifications and each product is clearly labeled to indicate which ethical criteria they are linked to. <strong> </strong><br />
-      <br />
-      <br />
-      Want to know what we&rsquo;re up to?&nbsp; Follow us on <a href="http://twitter.com/ecostylestudio" target="_blank">Twitter</a>.<br />
-      Have a specific question?&nbsp; Feel free to email us at <a href="mailto:info@ecostylestudio.com">info@ecostylestudio.com</a></p>
-  <!-- InstanceEndEditable --><!-- end .content --></div>
-  <div class="footer">
-    <p>This site is made with 100% recycled pixels.</p>
-    <!-- end .footer --></div>
-  <!-- end .container --></div>
-<script type="text/javascript">
-swfobject.registerObject("FlashID");
-var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
-</script>
+  </nav>
+</header>
+  <section id="trailInfo">
+ <header>
+    
+      </header>
+      <article>
+      <h1>Northridge Loop</h1>
+    <table id="quickFacts" cellspacing="0">
+   
+      <tr>
+        <th>trail status:</th>
+        <td><span class="open">all trails open</span></td>
+      </tr>
+      <tr class="alt">
+        <th>trail type:</th>
+        <td>single track</td>
+      </tr>
+      <tr>
+        <th>elevation:</th>
+        <td>2000 ft</td>
+      </tr>
+      <tr class="alt">
+        <th>length:</th>
+        <td>14.5 miles</td>
+      </tr>
+      <tr>
+        <th>skill level:</th>
+        <td>beginner to intermediate</td>
+      </tr>
+    </table>
+    <div class="text2Col">
+<p>If you are looking for great scenery and a great workout without all the technical difficulty of other trails, Northridge Loop is for you. The ridge runs east to west, with Ojai Valley on one side and Rose Valley on the other. The trail features amazing views of both valleys plus the Los Padres National Forest. </p>
+    <p>There are a total of 6 trail heads spread out over the 14.5 mile loop, so there are plenty of places to get on or off the trail. Hiking is permitting along all trails, so make sure you ride with caution and don't override your stopping power.</p>
+    <h2>Skill level</h2>
+    <p>While the overall trail is fine for beginners, two of the trail spurs, Gridley and Pratt, are much narrower and technical, so be sure to check the signage before choosing a trail. </p>
+    <p>While there are no steep drops or bombs on this trail, there are several areas of the trail that extend over bare rock. The paths are marked, but there are canyon areas that you should be aware of. Before starting any downhill section make sure you know the path!</p>
+    <h2>Surface</h2>
+    <p>Most of the lower trails are firebreak roads or other, wide access roads. As you climb, trails become single track and a bit more technical. There are patches of bare rock and loose rock is common on most downhill sections. If you choose to ascend via the Killabase Road trail head, the first quarter mile is mixture of paved path and gravel.</p>
+    <img src="dinkaSmall.jpg" alt="dinka" width="519" height="613" />
+</div>
+    </article>
+  </section>
+  <aside id="trailNews">
+    <h1>Trail News</h1>
+    <article class="news">
+      <header>
+      <hgroup>
+        <h1>Rider Reviews</h1>
+        <h2>Los Robles Trail</h2>
+         <h3>by Justin Vyn</h3>
+         </hgroup>
+          <p class="pubdate">submitted on
+            <time datetime="2010-02-10" pubdate>02/23/10</time>
+          </p>     
+      </header>
+     <p>My buddies and I had heard about this trail in November from a friend who had finished the West portion earlier in the month. It sounded like a good trail, but we didn't have time to check it out until last week.</p>
+     <p>All I can say is wow! I really hate that I waited so long to try this trail, especially since it's right in my backyard (I live in Ventura).
+       My friends and I got to the first trail head around 9:30 am that morning. The first portion of the trail were firebreaks and service roads, and for a while it seemed that we were just going to be going on another scenic ride.</p>
+     <p>About two-thirds of the way up, we came to the first set of single-tracks breaking away from the firebreak. From then on the trail did not let up!</p>
+     <p>Heavy on switchbacks (both on the climb and on the descent), and with good climbs, the trail alone is worth the trip! However, towards the top, we encountered a pretty strong technical section. Bare rock, small washouts, and loose rocks made for some slow going in areas. </p>
+     <p>On the descent, the more technical nature of the trail keeps you from bombing out a run. A friend of mine that doesn't wish to be named (we'll call him Marty) is just starting out and we may have pushed him a bit too much! After the exhausting climb he didn't have much left for the downhill. He took two tumbles on the way down but thankfully wasn't hurt bad.</p>
+     <p>Hitting the firebreaks again on the way down isn't a bad thing either. You can pick your speed up a bit here, and there are a few shallow hills that allow you to get some really good air.</p>
+     <p>For this trip we just did the West trail. I'm really looking forward to going back in a few weeks to do the East trail as well!</p>
+     <div id="formPanel">
+    <p class="review">Write your own review!</p>
+      <form id="riderReview" method="post" action="#">
+      <label for="trailName">Trail name:</label>
+          <input type="text" name="name" id="name" tabindex="10"  placeholder="trail name" required>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" tabindex="20"  placeholder="first and last name" required>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" tabindex="30" placeholder="valid email address"  required>
+          <label for="url">Website:</label>
+          <input type="url" name="url" id="url" tabindex="40">
+          <label for="tripDate">Date of trip:</label>
+          <input type="date" name="tripDate" id="tripDate" tabindex="50">
+          <label for="riders">Number of riders:</label>
+          <input type="number" name="riders" id="riders" tabindex="60" min="1" value="1" >
+          <label for="review">Review:<br>
+          </label>
+          <textarea name="review" id="review" tabindex="70" cols="45" rows="10"></textarea>
+          <input type="submit" name="submit" id="submit" tabindex="80" value="Submit your review">
+      </form>
+    </div>
+    </article>
+  </aside>
+  <footer id="pageFooter">
+  <p>&copy;copyright 2011 Explore California.org</p>
+  <p><a href="#">legal</a> | <a href="#">privacy</a> </p>
+  </footer>
+</div>
 </body>
-<!-- InstanceEnd --></html>
-
+</html>
