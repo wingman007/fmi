@@ -17,4 +17,5 @@ return array(
         'username' => 'DATABASE USERNAME',
         'password' => 'DATABASE PASSWORD',
     ),
+    // ...
 );
