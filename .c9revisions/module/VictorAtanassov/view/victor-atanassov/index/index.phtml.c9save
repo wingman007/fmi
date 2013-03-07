@@ -1,0 +1,13 @@
+{"ts":1362076064948,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1362076067864,"patch":[[{"diffs":[[1,"<?p"]],"start1":0,"start2":0,"length1":0,"length2":3}]],"length":3,"saved":false}
+{"ts":1362076069557,"patch":[[{"diffs":[[-1,"<?p"]],"start1":0,"start2":0,"length1":3,"length2":0}]],"length":0,"saved":false}
+{"ts":1362076071656,"patch":[[{"diffs":[[1,"<?p"]],"start1":0,"start2":0,"length1":0,"length2":3}]],"length":3,"saved":false}
+{"ts":1362076073480,"patch":[[{"diffs":[[0,"<?p"],[1,"hp ?>"]],"start1":0,"start2":0,"length1":3,"length2":8}]],"length":8,"saved":false}
+{"ts":1362076075601,"patch":[[{"diffs":[[0,"<?php "],[1," "],[0,"?>"]],"start1":0,"start2":0,"length1":8,"length2":9}]],"length":9,"saved":false}
+{"ts":1362076078958,"patch":[[{"diffs":[[0,"<?php "],[1,"echo 'Hello'"],[0," ?>"]],"start1":0,"start2":0,"length1":9,"length2":21}]],"length":21,"saved":false}
+{"ts":1362076082248,"patch":[[{"diffs":[[0,"<"],[-1,"?php echo 'Hello' ?>"],[1,"h"]],"start1":0,"start2":0,"length1":21,"length2":2}]],"length":2,"saved":false}
+{"ts":1362076083092,"patch":[[{"diffs":[[0,"<h"],[1,"2"]],"start1":0,"start2":0,"length1":2,"length2":3}]],"length":3,"saved":false}
+{"ts":1362076084606,"patch":[[{"diffs":[[0,"<h2"],[1,"></h"]],"start1":0,"start2":0,"length1":3,"length2":7}]],"length":7,"saved":false}
+{"ts":1362076085928,"patch":[[{"diffs":[[0,"<h2></h"],[1,"2>"]],"start1":0,"start2":0,"length1":7,"length2":9}]],"length":9,"saved":false}
+{"ts":1362076092390,"patch":[[{"diffs":[[0,"<h2>"],[1,"Hello from Victor Atanassov's Module"],[0,"</h2>"]],"start1":0,"start2":0,"length1":9,"length2":45}]],"length":45,"saved":false}
+{"ts":1362076096563,"patch":[[{"diffs":[[0,"assov's "],[1,"ZF2 "],[0,"Module</"]],"start1":26,"start2":26,"length1":16,"length2":20}]],"length":49,"saved":false}
