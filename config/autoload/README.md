@@ -1,4 +1,3 @@
-=======
 Important
 =========
 Create file local.php for your local repository.
