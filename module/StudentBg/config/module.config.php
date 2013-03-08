@@ -28,7 +28,7 @@ return array(
   
     'view_manager' => array(
         'template_map' => array(
-          'layout/StoyanCheresharov'           => __DIR__ . '/../view/layout/StoyanCheresharov.phtml', // the entire app is using it
+          'layout/stoyan'           => __DIR__ . '/../view/layout/stoyan.phtml', // the entire app is using it
         ),
         'template_path_stack' => array(
             'student_bg' => __DIR__ . '/../view',
