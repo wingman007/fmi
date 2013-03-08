@@ -2,7 +2,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'StudentBg\Controller\Index' => 'RallNic\Controller\IndexController',
+            'RallNic\Controller\Index' => 'RallNic\Controller\IndexController',
         ),
     ),
   
