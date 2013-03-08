@@ -12,10 +12,11 @@ return array(
         'VictorAtanassov',                  // <-- Add this line
         'Elena',                  // <-- Add this line
         'MargaritaKrushkova',
-    'IvelinaVelcheva',
-    'MihaelaKerkenekova',
-    'MartinManov',
-	'MarinaGatova',
+        'IvelinaVelcheva',
+        'MihaelaKerkenekova',
+        'MartinManov',
+        'MarinaGatova',
+        'RallNic',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
