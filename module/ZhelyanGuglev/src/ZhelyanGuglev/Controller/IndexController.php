@@ -18,4 +18,11 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+  
+    public function zhelyanAction() {
+    $viewModel = new ViewModel();
+    // $viewModel->setTemplate('layout/custom');
+    $this->layout('layout/ZhelyanGuglev'); // change the layout. DOn't forget to add it in modeule.config.php
+    return $viewModel;
+  }
 }
