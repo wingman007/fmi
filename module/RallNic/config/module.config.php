@@ -12,7 +12,7 @@ return array(
             'RallNic' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/rallnic[/:action][/:id]',
+                    'route'    => '/rall-nic[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
