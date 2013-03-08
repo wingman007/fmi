@@ -4,6 +4,7 @@ Important
 Create file local.php for your local repository.
 Use the sample local.php.dist !
 
+=======
 About this directory:
 =====================
 
