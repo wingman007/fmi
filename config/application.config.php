@@ -17,6 +17,7 @@ return array(
     'MihaelaKerkenekova',
     'MartinManov',
   'MarinaGatova',
+      'PaolaShumanova',
 
     ),
     'module_listener_options' => array(
