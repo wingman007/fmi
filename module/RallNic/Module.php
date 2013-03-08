@@ -1,5 +1,5 @@
 <?php
-namespace StudentBg;
+namespace RallNic;
   
 class Module
 {

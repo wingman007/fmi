@@ -2,23 +2,23 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'StudentBg\Controller\Index' => 'StudentBg\Controller\IndexController',
+            'StudentBg\Controller\Index' => 'RallNic\Controller\IndexController',
         ),
     ),
   
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'student_bg' => array(
+            'RallNic' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/student-bg[/:action][/:id]',
+                    'route'    => '/RallNic[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'StudentBg\Controller\Index',
+                        'controller' => 'RallNic\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -28,7 +28,7 @@ return array(
   
     'view_manager' => array(
         'template_path_stack' => array(
-            'student_bg' => __DIR__ . '/../view',
+            'RallNic' => __DIR__ . '/../view',
         ),
     ),
 );
