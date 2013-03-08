@@ -28,6 +28,7 @@ return array(
   
     'view_manager' => array(
         'template_path_stack' => array(
+            'layout/martin'           => __DIR__ . '/../view/layout/mm_layout.phtml',
             'martin_manov' => __DIR__ . '/../view',
         ),
     ),
