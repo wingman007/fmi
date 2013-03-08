@@ -19,7 +19,7 @@ class IndexController extends AbstractActionController
         return new ViewModel();
     }
   
-    public function studentAction() {
+    public function changeAction() {
         $viewModel = new ViewModel();
         // $viewModel->setTemplate('layout/custom');
         $this->layout('layout/student'); // change the layout. DOn't forget to add it in modeule.config.php
