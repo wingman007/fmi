@@ -1,8 +1,20 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
 Important
 =========
 Create file local.php for your local repository.
 Use the sample local.php.dist !
 
+>>>>>>> refs/heads/master
+=======
+Important
+=========
+Create file local.php for your local repository.
+Use the sample local.php.dist !
+
+>>>>>>> refs/heads/master
 About this directory:
 =====================
 
