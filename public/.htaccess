@@ -3,11 +3,15 @@ RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 RewriteBase /fmi
 
 RewriteBase /nikoleta
 
+=======
+RewriteBase /fmi
+>>>>>>> refs/heads/master
 =======
 RewriteBase /fmi
 >>>>>>> refs/heads/master

@@ -11,6 +11,10 @@
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+     <?php echo '<p>Hello World</p>'; ?>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      <?php echo '<p>Hello World</p>'; ?>

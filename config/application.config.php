@@ -3,6 +3,7 @@ return array(
     'modules' => array(
         'Application',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'Album', //this line is added
         'ZhelyanGuglev',
@@ -18,6 +19,27 @@ return array(
     'MihaelaKerkenekova',
     'MartinManov',
 	'MarinaGatova',
+>>>>>>> refs/heads/master
+=======
+
+        'Album', //this line is added
+        'ZhelyanGuglev',
+        'AlexanderAlexandrov',                  // <-- Add this line
+        'GyunerZeki',
+        'StoyanCheresharov',                  // <-- Add this line
+        'FmiStudent',                  // <-- Add this line
+        'StudentBg',
+        'VictorAtanassov',                  // <-- Add this line
+        'Elena',                  // <-- Add this line
+        'AntonTonev',
+        'MargaritaKrushkova',
+        'StoyanAtanasoff',
+		'IvelinaVelcheva',
+		'MihaelaKerkenekova',
+		'MartinManov',
+		'MarinaGatova',
+		'PaolaShumanova',
+		'NikoletaPoibrenska',
 >>>>>>> refs/heads/master
     ),
     'module_listener_options' => array(

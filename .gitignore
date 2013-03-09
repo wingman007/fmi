@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -38,8 +39,14 @@ nbproject
 ._*
 .~lock.*
 >>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+=======
+nbproject
+._*
+.~lock.*
+>>>>>>> refs/heads/master
 .buildpath
 .DS_Store
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 nbproject
@@ -81,4 +88,10 @@ composer.lock
 >>>>>>> refs/heads/master
 =======
 >>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+>>>>>>> refs/heads/master
+=======
+.idea
+.project
+.settings
+composer.lock
 >>>>>>> refs/heads/master

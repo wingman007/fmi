@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/heads/master
 =======
 >>>>>>> refs/heads/master
 <?php
