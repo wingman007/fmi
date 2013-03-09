@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #################
 ## Eclipse
 #################
@@ -35,7 +34,7 @@ nbproject
 >>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
 .buildpath
 .DS_Store
-<<<<<<< HEAD
+
 =======
 nbproject
 ._*
@@ -48,7 +47,6 @@ nbproject
 .project
 .settings
 composer.lock
-<<<<<<< HEAD
->>>>>>> refs/heads/master
 =======
 >>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+
