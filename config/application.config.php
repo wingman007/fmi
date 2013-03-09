@@ -20,6 +20,7 @@ return array(
 		'MartinManov',
 		'MarinaGatova',
 		'PaolaShumanova',
+		'NikoletaPoibrenska',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
