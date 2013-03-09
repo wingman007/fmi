@@ -11,7 +11,7 @@ return array(
         'StudentBg',
         'VictorAtanassov',                  // <-- Add this line
         'Elena',                  // <-- Add this line
-        'MargaritaKrushkova',
+//        'MargaritaKrushkova',
     'IvelinaVelcheva',
     'MihaelaKerkenekova',
     'MartinManov',
