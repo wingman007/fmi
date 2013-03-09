@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/heads/master
 <?php
 /**
  * Zend Framework (http://framework.zend.com/)
