@@ -1,0 +1,1 @@
+{"ts":1362405919289,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"require([\"dojo/dom\", \"dojo/domReady!\"], function(dom){\r\n    dom.byId(\"myDiv\").innerHTML = \"Hello New World!\";\r\n});"]],"start1":0,"start2":0,"length1":0,"length2":114}]],"length":114}

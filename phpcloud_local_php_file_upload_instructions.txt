@@ -1,0 +1,30 @@
+How to upload local.php file for zend skeleton application on phpcloud.com step by step tutorial
+------------------------------------------------------------------------------------------------
+
+
+1) Download FileZilla from: http://filezilla-project.org/
+2) Open FileZilla -> Settings:
+  Connection
+    SFTP
+      Add new key...
+
+3) And add your private key for phpcloud.com.
+ (FileZilla is able to convert non PuTTy compatible keys too like those
+ generated with github ssh keygen application.)
+
+4) Press OK.
+
+5) In host text box type: your-container-name.my.phpcloud.com
+6) In user text box type: your-container-name
+7) In password password box type: your-phpcloud-password
+8) In port text box type: 22
+9) Press "Quick Connect"
+
+10) On the remote server open: applications/your-project-name/config/autoload directory.
+11) Drag and drop your local.php file there.
+
+12) Test the result - visit: http://your-container-name.my.phpcloud.com/your-project-name/album
+
+..........................................
+
+made by zhgzhg
