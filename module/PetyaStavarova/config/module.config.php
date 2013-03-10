@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+       'template_map' => array(
+    'layout/PetyaStavarova'           => __DIR__ . '/../view/layout/PetyaStavarova.phtml',
+         ),
         'template_path_stack' => array(
             'petya_stavarova' => __DIR__ . '/../view',
         ),
