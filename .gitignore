@@ -6,4 +6,8 @@ nbproject
 .idea
 .project
 .settings
+<<<<<<< HEAD
 composer.lock
+=======
+composer.lock
+>>>>>>> refs/remotes/zend2/master

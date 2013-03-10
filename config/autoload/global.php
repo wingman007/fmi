@@ -1,6 +1,5 @@
 <?php
 /**
-<<<<<<< HEAD
 * Global Configuration Override
 *
 * You can use this file for overridding configuration values from modules, etc.
@@ -33,4 +32,3 @@ return array(
         ),
     ),
 );
-
