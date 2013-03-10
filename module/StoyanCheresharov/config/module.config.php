@@ -29,7 +29,7 @@ return array(
     'view_manager' => array(
         'template_map' => array(
           // 'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml', // the entire app is using it
-          // 'layout/StoyanCheresharov'           => __DIR__ . '/../view/layout/StoyanCheresharov.phtml', // the entire app is using it
+          'layout/StoyanCheresharov'           => __DIR__ . '/../view/layout/StoyanCheresharov.phtml', // the entire app is using it
           //            'layout/layout'           => __DIR__ . '/../view/layout/student.phtml',
           //  'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
           //  'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
