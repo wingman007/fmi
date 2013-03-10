@@ -26,6 +26,9 @@ return array(
         ),
     ),
     'view_manager' => array(
+        'template_map' => array(
+            'layout/StoyanCheresharov'           => __DIR__ . '/../view/layout/StoyanCheresharov.phtml',
+        ),
         'template_path_stack' => array(
             'stoyan_cheresharov' => __DIR__ . '/../view',
         ),
