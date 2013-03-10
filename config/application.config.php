@@ -16,6 +16,7 @@ return array(
     'MihaelaKerkenekova',
     'MartinManov',
   'MarinaGatova',
+      'PetyaStavarova',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
