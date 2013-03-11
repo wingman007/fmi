@@ -1,0 +1,3 @@
+{"ts":1362400019769,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"h1 {\n    color: red;    \n}"]],"start1":0,"start2":0,"length1":0,"length2":26}]],"length":26}
+{"contributors":[],"silentsave":false,"ts":1362400261030,"patch":[[{"diffs":[[0,"d;    \n}"],[1,"\n\np.details {\n    color: blue;\n}"]],"start1":18,"start2":18,"length1":8,"length2":40}]],"length":58,"saved":false}
+{"ts":1362400273977,"patch":[[{"diffs":[[0,"\n}\n\n"],[-1,"p"],[0,".det"]],"start1":24,"start2":24,"length1":9,"length2":8}]],"length":57,"saved":false}

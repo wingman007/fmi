@@ -1,0 +1,38 @@
+{"ts":1359711707229,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<html>\n  <head>\n     <title>PHP Test</title>\n  </head>\n  <body>\n     <?php echo '<p>Hello from Victor Atanassov</p>'; ?>\n  </body>\n</html>"]],"start1":0,"start2":0,"length1":0,"length2":138}]],"length":138}
+{"contributors":[],"silentsave":true,"ts":1359713867370,"patch":[[{"diffs":[[0,"p>'; ?>\n"],[1,"     <?\n"],[0,"  </body"]],"start1":113,"start2":113,"length1":16,"length2":24}]],"length":146,"saved":false}
+{"ts":1359713870554,"patch":[[{"diffs":[[0,"\n     <?"],[1,"php array() "],[0,"\n  </bod"]],"start1":120,"start2":120,"length1":16,"length2":28}]],"length":158,"saved":false}
+{"ts":1359713871931,"patch":[[{"diffs":[[0,"array() "],[1,"?>"],[0,"\n  </bod"]],"start1":132,"start2":132,"length1":16,"length2":18}]],"length":160,"saved":false}
+{"ts":1359713874637,"patch":[[{"diffs":[[0,"; ?>"],[-1,"\n"],[0,"     "],[-1,"<?php array() ?>"],[0,"\n  <"]],"start1":116,"start2":116,"length1":30,"length2":13}]],"length":143,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1359724264448,"patch":[[{"diffs":[[0,"'; ?>   "],[1,"\n"],[0,"  "],[1,"   <?"],[0,"\n  </bod"]],"start1":115,"start2":115,"length1":18,"length2":24}]],"length":149,"saved":false}
+{"ts":1359724265129,"patch":[[{"diffs":[[0,"\n     <?"],[1,"php ?"],[0,"\n  </bod"]],"start1":123,"start2":123,"length1":16,"length2":21}]],"length":154,"saved":false}
+{"ts":1359724266150,"patch":[[{"diffs":[[0," <?php ?"],[1,">"],[0,"\n  </bod"]],"start1":128,"start2":128,"length1":16,"length2":17}]],"length":155,"saved":false}
+{"ts":1359724268037,"patch":[[{"diffs":[[0,"   <?php"],[1,"\n    "],[0," ?>\n  </"]],"start1":126,"start2":126,"length1":16,"length2":21}]],"length":160,"saved":false}
+{"ts":1359724270662,"patch":[[{"diffs":[[0,"  <?php\n"],[1,"        \n"],[0,"     ?>\n"]],"start1":127,"start2":127,"length1":16,"length2":25}]],"length":169,"saved":false}
+{"ts":1359724271210,"patch":[[{"diffs":[[0,"        "],[1,"a"],[0,"\n     ?>"]],"start1":135,"start2":135,"length1":16,"length2":17}]],"length":170,"saved":false}
+{"ts":1359724273275,"patch":[[{"diffs":[[0,"        "],[-1,"a"],[1,"$m"],[0,"\n     ?>"]],"start1":135,"start2":135,"length1":17,"length2":18}]],"length":171,"saved":false}
+{"ts":1359724274478,"patch":[[{"diffs":[[0,"      $m"],[1,"yArr"],[0,"\n     ?>"]],"start1":137,"start2":137,"length1":16,"length2":20}]],"length":175,"saved":false}
+{"ts":1359724277121,"patch":[[{"diffs":[[0,"  $myArr"],[1,"ay = "],[0,"\n     ?>"]],"start1":141,"start2":141,"length1":16,"length2":21}]],"length":180,"saved":false}
+{"ts":1359724280054,"patch":[[{"diffs":[[0,"Array = "],[1,"array()"],[0,"\n     ?>"]],"start1":146,"start2":146,"length1":16,"length2":23}]],"length":187,"saved":false}
+{"ts":1359724282938,"patch":[[{"diffs":[[0,"= array("],[1,"'key'"],[0,")\n     ?"]],"start1":152,"start2":152,"length1":16,"length2":21}]],"length":192,"saved":false}
+{"ts":1359724284988,"patch":[[{"diffs":[[0,"ay('key'"],[1," => "],[0,")\n     ?"]],"start1":157,"start2":157,"length1":16,"length2":20}]],"length":196,"saved":false}
+{"ts":1359724290644,"patch":[[{"diffs":[[0,"key' => "],[1,"1, 'valu'"],[0,")\n     ?"]],"start1":161,"start2":161,"length1":16,"length2":25}]],"length":205,"saved":false}
+{"ts":1359724291720,"patch":[[{"diffs":[[0,"1, 'valu"],[-1,"'"],[1,"e' = "],[0,")\n     ?"]],"start1":169,"start2":169,"length1":17,"length2":21}]],"length":209,"saved":false}
+{"ts":1359724292647,"patch":[[{"diffs":[[0,"alue' = "],[1,"42"],[0,")\n     ?"]],"start1":174,"start2":174,"length1":16,"length2":18}]],"length":211,"saved":false}
+{"ts":1359724299175,"patch":[[{"diffs":[[0,"e' = 42)"],[1,";"],[0,"\n     ?>"]],"start1":177,"start2":177,"length1":16,"length2":17}]],"length":212,"saved":false}
+{"ts":1359724302475,"patch":[[{"diffs":[[0," = 42);\n"],[1,"        debug\n"],[0,"     ?>\n"]],"start1":179,"start2":179,"length1":16,"length2":30}]],"length":226,"saved":false}
+{"ts":1359724303026,"patch":[[{"diffs":[[0,"   debug"],[1,"()"],[0,"\n     ?>"]],"start1":192,"start2":192,"length1":16,"length2":18}]],"length":228,"saved":false}
+{"ts":1359724305453,"patch":[[{"diffs":[[0,"  debug("],[1,"$my"],[0,")\n     ?"]],"start1":193,"start2":193,"length1":16,"length2":19}]],"length":231,"saved":false}
+{"ts":1359724307204,"patch":[[{"diffs":[[0,"ebug($my"],[-1,")"],[1,"Array);"],[0,"\n     ?>"]],"start1":196,"start2":196,"length1":17,"length2":23}]],"length":237,"saved":false}
+{"ts":1359724376515,"patch":[[{"diffs":[[0,"$myArray"],[-1," ="],[0," array('"]],"start1":143,"start2":143,"length1":18,"length2":16}]],"length":235,"saved":false}
+{"ts":1359724378498,"patch":[[{"diffs":[[0,"$myArray"],[-1," "],[0,"array('k"]],"start1":143,"start2":143,"length1":17,"length2":16}]],"length":234,"saved":false}
+{"ts":1359724380852,"patch":[[{"diffs":[[0," $myArra"],[-1,"y"],[0,"array('k"]],"start1":142,"start2":142,"length1":17,"length2":16}]],"length":233,"saved":false}
+{"ts":1359724448293,"patch":[[{"diffs":[[0,"   $"],[-1,"myArraarray('key' => 1, 'value' = 42)"],[1,"var = {4,1,42,10,-4}"],[0,";\n  "]],"start1":140,"start2":140,"length1":45,"length2":28}]],"length":216,"saved":false}
+{"ts":1359724637615,"patch":[[{"diffs":[[0,"var "],[-1,"= {4,1,42,10,-4}"],[1,"array('key' => 1, 'value' = 42)"],[0,";\n  "]],"start1":144,"start2":144,"length1":24,"length2":39}]],"length":231,"saved":false}
+{"ts":1359724640269,"patch":[[{"diffs":[[0,"   $"],[-1,"v"],[0,"ar"],[1,"r ="],[0," array("],[-1,"'key' => 1, 'value' = 42"],[1,"\"foo\" => \"bar\", 12 => true"],[0,");\n "]],"start1":140,"start2":140,"length1":42,"length2":46}]],"length":235,"saved":false}
+{"ts":1359724644189,"patch":[[{"diffs":[[0,"        "],[1,"//"],[0,"debug($m"]],"start1":185,"start2":185,"length1":16,"length2":18}]],"length":237,"saved":false}
+{"ts":1359724657370,"patch":[[{"diffs":[[0,"    "],[-1,"//"],[0,"debu"]],"start1":189,"start2":189,"length1":10,"length2":8}]],"length":235,"saved":false}
+{"ts":1359724660083,"patch":[[{"diffs":[[0,"ug($"],[-1,"myArray"],[1,"arr"],[0,");\n "]],"start1":196,"start2":196,"length1":15,"length2":11}]],"length":231,"saved":false}
+{"ts":1359724775719,"patch":[[{"diffs":[[0,"   \n"],[-1,"     <?php\n        $arr = array(\"foo\" => \"bar\", 12 => true);\n        debug($arr);\n     ?>\n"],[0,"  </"]],"start1":120,"start2":120,"length1":98,"length2":8}]],"length":141,"saved":false}
+{"ts":1359724781589,"patch":[[{"diffs":[[0,"; ?>   \n"],[1,"     <?php\n        $arr = array(\"foo\" => \"bar\", 12 => true);\n        debug($arr);\n     ?>\n"],[0,"  </body"]],"start1":116,"start2":116,"length1":16,"length2":106}]],"length":231,"saved":false}
+{"ts":1359724836221,"patch":[[{"diffs":[[0,"   \n"],[-1,"     <?php\n        $arr = array(\"foo\" => \"bar\", 12 => true);\n        debug($arr);\n     ?>"],[0,"\n  <"]],"start1":120,"start2":120,"length1":97,"length2":8}]],"length":142,"saved":false}
+{"ts":1359724837238,"patch":[[{"diffs":[[0,"; ?>   \n"],[-1,"\n"],[0,"  </body"]],"start1":116,"start2":116,"length1":17,"length2":16}]],"length":141,"saved":false}
