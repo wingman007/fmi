@@ -12,7 +12,7 @@ return array(
             'victor_atanassov' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/viktor-atanassov[/:action][/:id]',
+                    'route'    => '/victor-atanassov[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
