@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+          'layout/cardex'           => __DIR__ . '/../view/layout/cardex.phtml',
+        ),
         'template_path_stack' => array(
             'victor_atanassov' => __DIR__ . '/../view',
         ),
