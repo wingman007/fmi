@@ -13,7 +13,7 @@ return array(
         'VictorAtanassov',                  // <-- Add this line
         'Elena',                  // <-- Add this line
         'AntonTonev',
-        'MargaritaKrushkova',
+        // 'MargaritaKrushkova',
         'StoyanAtanasoff',
 		'IvelinaVelcheva',
 		'MihaelaKerkenekova',
@@ -22,7 +22,8 @@ return array(
 		'PaolaShumanova',
 		'NikoletaPoibrenska',
 		'PetyaStavarova',
-		'VanyaDimitrova',
+		// 'VanyaDimitrova',
+		'ElitsaNedyalkova',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
