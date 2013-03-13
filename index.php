@@ -4,6 +4,9 @@
   </head>
   <body>
 <<<<<<< HEAD
+     <?php echo '<p>Hello World</p>'; ?>
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
      <?php echo '<p>Hello World</p>'; ?>
 =======
@@ -44,5 +47,6 @@
     <?php // echo '<p>Hello World, Aleksander Aleksandrov</p> <br> email:aleksaander_aleksandrov@abv.bg'; ?>
     <?php // echo '<p>Hello World, Elena Chavdarova</p> <br> email:elenachavdarova91@gmail.com'; ?>
 >>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
+>>>>>>> refs/heads/master
   </body>
 </html>
