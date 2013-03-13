@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+      'template_map' => array(
+        'layout/VasilVasilev'           => __DIR__ . '/../view/layout/VasilVasilev.phtml',
+         ),
         'template_path_stack' => array(
             'Vasil_Vasilev' => __DIR__ . '/../view',
         ),
