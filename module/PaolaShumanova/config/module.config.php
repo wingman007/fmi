@@ -25,7 +25,14 @@ return array(
         ),
     ),
   
+
+
     'view_manager' => array(
+
+         'template_map' => array(
+           'layout/PaolaShumanova'           => __DIR__ . '/../view/layout/PaolaShumanova.phtml', 
+        ),
+
         'template_path_stack' => array(
             'paola-shumanova' => __DIR__ . '/../view',
         ),
