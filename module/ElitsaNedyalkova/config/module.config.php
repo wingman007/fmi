@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+      'template_map' => array(
+        'layout/ElitsaNedyalkova'           => __DIR__ . '/../view/layout/ElitsaNedyalkova.phtml',
+        ),
         'template_path_stack' => array(
             'elitsa_nedyalkova' => __DIR__ . '/../view',
         ),
