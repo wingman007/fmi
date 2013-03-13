@@ -10,4 +10,12 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+  
+	// http://domain.com/martin-manov/mm-layout
+    public function mmLayoutAction()
+    {
+        $viewModel = new ViewModel();
+        $this->layout('layout/mm_layout');
+        return new ViewModel();
+    }
 }

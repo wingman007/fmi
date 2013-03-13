@@ -25,8 +25,11 @@ return array(
             ),
         ),
     ),
-  
+
     'view_manager' => array(
+        'template_map' => array(
+          'layout/mm_layout'           => __DIR__ . '/../view/layout/mm_layout.phtml'),
+
         'template_path_stack' => array(
             'martin_manov' => __DIR__ . '/../view',
         ),
