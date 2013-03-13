@@ -9,3 +9,4 @@
 {"ts":1363214181030,"patch":[[{"diffs":[[0,"   <?php"],[1," echo $this->basePath();"],[0," ?>\n\n   "]],"start1":819,"start2":819,"length1":16,"length2":40}]],"length":3134,"saved":false}
 {"ts":1363214192495,"patch":[[{"diffs":[[0,"<?php ec"],[-1,"n"],[1,"h"],[0,"o $this-"]],"start1":786,"start2":786,"length1":17,"length2":17}]],"length":3134,"saved":false}
 {"ts":1363214249121,"patch":[[{"diffs":[[0,"\">\n\n"],[-1,"    <?php echo $this->baseUrl(); ?>\n"],[0,"    "]],"start1":778,"start2":778,"length1":44,"length2":8}]],"length":3098,"saved":false}
+{"ts":1363214309921,"patch":[[{"diffs":[[0,"\">\n\n"],[-1,"    <?php echo $this->basePath(); ?>\n\n"],[0,"    "]],"start1":778,"start2":778,"length1":46,"length2":8}]],"length":3060,"saved":false}
