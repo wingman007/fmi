@@ -29,7 +29,8 @@ return array(
     'view_manager' => array(
         'template_map' => array(
           // 'layout/layout' => __DIR__ . '/../view/layout/layout.phtml', // the entire app is using it
-          // 'layout/layout' => __DIR__ . '/../view/layout/student.phtml',
+          'layout/ZhelyanGuglev' => __DIR__ . '/../view/layout/ZhelyanGuglev.phtml',
+          'layout/zheponymous' =>  __DIR__ . '/../view/layout/eponymous/eponymous.phtml',
           // 'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
           // 'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
           // 'error/404' => __DIR__ . '/../view/error/404.phtml',
