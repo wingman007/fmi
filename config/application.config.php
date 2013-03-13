@@ -22,6 +22,7 @@ return array(
 		'PaolaShumanova',
 		'NikoletaPoibrenska',
 		'PetyaStavarova',
+		'VanyaDimitrova',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
