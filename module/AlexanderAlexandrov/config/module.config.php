@@ -25,10 +25,13 @@ return array(
             ),
         ),
     ),
-  
     'view_manager' => array(
+        'template_map' => array(
+    'layout/AlexanderAlexandrov'           => __DIR__ . '/../view/layout/AlexanderAlexandrov.phtml',
+       
+        ),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'alexander_alexandrov' => __DIR__ . '/../view',
         ),
     ),
 );
