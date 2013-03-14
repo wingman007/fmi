@@ -2,6 +2,7 @@
 return array(
     'modules' => array(
         'Application',
+
         'Album', //this line is added
         'ZhelyanGuglev',
         'AlexanderAlexandrov',                  // <-- Add this line
@@ -11,12 +12,27 @@ return array(
         'StudentBg',
         'VictorAtanassov',                  // <-- Add this line
         'Elena',                  // <-- Add this line
+        'AntonTonev',
         'MargaritaKrushkova',
+<<<<<<< HEAD
         'IvelinaVelcheva',
         'MihaelaKerkenekova',
         'MartinManov',
         'MarinaGatova',
         'RallNic',
+=======
+        'StoyanAtanasoff',
+		'IvelinaVelcheva',
+		'MihaelaKerkenekova',
+		'MartinManov',
+		'MarinaGatova',
+		'PaolaShumanova',
+		'NikoletaPoibrenska',
+		'PetyaStavarova',
+		// 'VanyaDimitrova',
+		'ElitsaNedyalkova',
+		'VasilVasilev',
+>>>>>>> refs/remotes/upstream/master
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

@@ -27,6 +27,11 @@ return array(
     ),
   
     'view_manager' => array(
+
+         'template_map' => array(
+           'layout/MihaelaKerkenekova'           => __DIR__ . '/../view/layout/MihaelaKerkenekova.phtml', 
+        ),
+	
         'template_path_stack' => array(
             'mihaela_kerkenekova' => __DIR__ . '/../view',
         ),

@@ -1,54 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-#################
-## Eclipse
-#################
-
-*.pydevproject
-.project
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-=======
-nbproject
-._*
-.~lock.*
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
-.buildpath
-.DS_Store
-<<<<<<< HEAD
-=======
 nbproject
 ._*
 .~lock.*
 .buildpath
 .DS_Store
-=======
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
 .idea
 .project
 .settings
 composer.lock
-<<<<<<< HEAD
->>>>>>> refs/heads/master
-=======
->>>>>>> e6069389b80e7d3f1e0b75bd0fd59d987ac36951
