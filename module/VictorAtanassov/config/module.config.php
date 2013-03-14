@@ -12,7 +12,7 @@ return array(
             'victor_atanassov' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/viktor-atanassov[/:action][/:id]',
+                    'route'    => '/victor-atanassov[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+          'layout/cardex'           => __DIR__ . '/../view/layout/cardex.phtml',
+        ),
         'template_path_stack' => array(
             'victor_atanassov' => __DIR__ . '/../view',
         ),
