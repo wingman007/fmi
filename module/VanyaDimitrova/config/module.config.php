@@ -19,7 +19,7 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'VanyaDimitrova\Controller\Index',
-                        'action'     => 'index',
+                        'action'     => 'index','change',
                     ),
                 ),
             ),
@@ -27,8 +27,11 @@ return array(
     ),
 
     'view_manager' => array(
+        'template_map' => array(
+          'layout/VanyaDimitrova' => __DIR__ . '/../view/layout/VanyaDimitrova.phtml',
+          ),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'vanya_dimitrova' => __DIR__ . '/../view',
         ),
     ),
 );
