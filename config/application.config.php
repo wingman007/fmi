@@ -26,6 +26,7 @@ return array(
 		'ElitsaNedyalkova',
 		'VasilVasilev',
 		'NikolaiBaldjiev',
+		'NeslihanSuleyman',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
