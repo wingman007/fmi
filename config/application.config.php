@@ -13,7 +13,7 @@ return array(
         'VictorAtanassov',                  // <-- Add this line
         'Elena',                  // <-- Add this line
         'AntonTonev',
-        // 'MargaritaKrushkova',
+        'MargaritaKrushkova',
         'StoyanAtanasoff',
 		'IvelinaVelcheva',
 		'MihaelaKerkenekova',
