@@ -24,6 +24,7 @@ return array(
 		'PetyaStavarova',
 		// 'VanyaDimitrova',
 		'ElitsaNedyalkova',
+		'VasilVasilev',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
