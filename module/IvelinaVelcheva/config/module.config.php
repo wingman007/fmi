@@ -27,8 +27,11 @@ return array(
     ),
   
     'view_manager' => array(
-        'template_path_stack' => array(
-            'ivelina_velcheva' => __DIR__ . '/../view',
-        ),
+          'template_map' => array(
+          'layout/IvelinaVelcheva'           => __DIR__ . '/../view/layout/IvelinaVelcheva.phtml',
+             ),
+            'template_path_stack' => array(
+                'ivelina_velcheva' => __DIR__ . '/../view',
+            ),
     ),
 );
