@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Cardex - Personal site template</title>
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->basePath();?>/VictorAtanassov/css/style.css" media="screen">
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="<?php echo $this->basePath();?>/VictorAtanassov/css/ie.css" media="screen">
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->basePath();?>/VictorAtanassov/css/lightbox.css" media="screen">
+		<script type="text/javascript" src="<?php echo $this->basePath();?>/VictorAtanassov/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo $this->basePath();?>/VictorAtanassov/js/jquery.lightbox-0.5.pack.js"></script>
+		<script type="text/javascript" src="<?php echo $this->basePath();?>/VictorAtanassov/js/cufon-yui.js"></script>
+		<script type="text/javascript" src="<?php echo $this->basePath();?>/VictorAtanassov/js/Desyrel_400.font.js"></script>
+		
+		<!-- Cufon text replacement -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				Cufon.replace('#about .right ul li');
+				Cufon.replace('h2', { textShadow: '0 2px rgba(0, 0, 0, 0.15)' });
+				Cufon.replace('#social .right a', {hover:true});
+				Cufon.replace('#work .left h3', {hover:true});
+				Cufon.replace('h3', { textShadow: '0 2px rgba(0, 0, 0, 0.15)' });
+				Cufon.replace('#contactinfo'), {hover:true};
+			});
+		</script>
+		
+		<!-- jQuery lightbox -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#work .right a').lightBox();
+			});
+		</script>
+		
+		<!-- Navigation and Content effects -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.page').hide();
+				$('#navigation li:first').addClass('active').show();
+				$('.page:first').show();
+				
+				$('#navigation li').click(function(){
+					$('#navigation li').removeClass('active');
+					$(this).addClass('active');
+					
+					$('.page').hide();
+					var activeTab = $(this).find('a').attr('href');
+					$(activeTab).fadeIn('slow');
+					return false;
+				});
+			});
+		</script>
+
+	</head>
+	<body>
+		<div id="pagewrap">
+			
+			<!-- Site header and navigation -->
+			<div id="header">
+				<ul id="navigation">
+					<li><a class="about" href="#about"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-about.png" alt="About"></a></li>
+					<li><a class="work" href="#work">work</a></li>
+					<li><a class="social" href="#social"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-social.png" alt="Social"></a></li>
+					<li><a class="contact" href="#contact"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-contact.png" alt="Contact"></a></li>
+				</ul>
+			</div>
+			
+			<!-- Site content -->
+
+			<div id="content">
+				<div id="about" class="page">
+					<div class="left">
+						<img src="<?php echo $this->basePath();?>/VictorAtanassov/images/author-photo.png" alt="photo">
+					</div>
+					<div class="right">
+						<?php echo $this->content; ?>
+					</div>
+				</div>
+
+				<div id="work" class="page">
+					<div class="left">
+						<img src="<?php echo $this->basePath();?>/VictorAtanassov/images/image-feature.jpg" alt="Featured project">
+						<h3><a href="#">Featured Project</a></h3>
+						<p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit...</p>
+					</div>
+					<div class="right">
+						<p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<h3>Print Design:</h3>
+						<ul id="work01">
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image01.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/logo01.jpg" alt="logo01"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image02.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/logo02.jpg" alt="logo02"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image03.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/logo03.jpg" alt="logo03"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image04.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/logo04.jpg" alt="logo04"></a></li>
+						</ul>
+						<h3>Web Design:</h3>
+						<ul id="work02">
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image05.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/web01.jpg" alt="web01"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image06.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/web02.jpg" alt="web02"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image07.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/web03.jpg" alt="web03"></a></li>
+							<li><a href="<?php echo $this->basePath();?>/VictorAtanassov/images/image08.jpg"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/web04.jpg" alt="web04"></a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<div id="social" class="page">
+					<div class="left">
+						<p class="tweet-text">Blanditiis praesentium deleniti atque corrupti quos dolores et quas molestias <a href="http://www.google.com/mail">http://www.google.com/mail</a>.</p>
+						<p class="tweet-meta"><a href="#">- 12 hours ago</a></p>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="facebook"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-facebook.png" alt="facebook"> facebook</a></li>
+							<li class="flickr"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-flickr.png" alt="flickr"> flickr</a></li>
+							<li class="delicious"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-delicious.png" alt="delicious"> delicious</a></li>
+							<li class="lastfm"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-lastfm.png" alt="last.fm"> last.fm</a></li>
+							<li class="stumbleupon"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-stumbleupon.png" alt="Stumbleupon"> stumbleupon</a></li>
+							<li class="digg"><a href="#"><img src="<?php echo $this->basePath();?>/VictorAtanassov/images/icon-digg.png" alt="digg"> digg</a></li>
+						</ul>
+					</div>
+				</div>
+	
+				<div id="contact" class="page">
+					<div class="left">
+					<h3>Drop me a note</h3>
+						<form method="post" action="#">
+							<ul>
+								<li class="msgname"><label for="Name">Name: </label><input type="text" name="Name" id="Name"></li>
+								<li><label for="Email">E-mail: </label><input type="text" name="Email" id="Email"></li>
+								<li><label for="Message">Message: </label><textarea name="Message" id="Message" rows=2 cols=2></textarea></li>
+								<li><input class="send" type="submit" name="submit" value="Send"></li>
+							</ul>
+						</form>
+					</div>
+					<div class="right">
+						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione. Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+						<p>Consequuntur magni dolores eos qui ratione mnis iste natus. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
+						<div id="contactinfo">
+							<p>Address line 1, line 2, City, XY, 12345</p>
+							<p>123-456-7890</p>
+							<p><a href="#">info@company.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="footer">
+				<p>&copy; Copyright notice here  </a></p>
+			</div>
+		</div>
+	</body>
+</html>

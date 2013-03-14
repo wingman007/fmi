@@ -5,7 +5,6 @@ return array(
             'Album\Controller\Album' => 'Album\Controller\AlbumController',
         ),
     ),
-  
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
@@ -20,12 +19,13 @@ return array(
                     'defaults' => array(
                         'controller' => 'Album\Controller\Album',
                         'action'     => 'index',
+
                     ),
                 ),
             ),
         ),
     ),
-  
+
     'view_manager' => array(
         'template_path_stack' => array(
             'album' => __DIR__ . '/../view',

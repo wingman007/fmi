@@ -1,0 +1,364 @@
+/*
+
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution License
+
+	Name       : Reverse Obscurity
+	Version    : 1.0
+	Released   : 20130222
+	
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #8f5038;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 10.5pt;
+	line-height: 1.75em;
+	font-family: Arial, sans-serif;
+	background: #e1e4e5 url('../images/bg.png');
+	color: #383939;
+}
+
+br.clear {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	text-transform: lowercase;
+	font-weight: normal;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1em;
+	font-family: "PT Sans Narrow", sans-serif;
+	color: #000;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+img.left {
+	float: left;
+	margin: 8px 20px 20px 0;
+}
+
+img.top {
+	margin: 8px 0 20px 0;
+}
+
+p {
+	margin-bottom: 1.75em;
+}
+
+ul {
+	margin-bottom: 1.75em;
+}
+
+.imageList {
+	list-style: none;
+}
+
+.imageList li {
+	clear: both;
+}
+
+#bg {
+	background: url('../images/highlight.png') top left repeat-x;
+}
+
+#banner {
+	position: relative;
+	padding: 28px;
+	height: 212px;
+	width: 1124px;
+	margin: 28px 0 0 0;
+	background: #ffffff;
+	border-bottom: solid 1px #c0c0c0;
+}
+
+#box1 {
+	width: 500px;
+	overflow: hidden;
+	margin: 0px 0 24px 0;
+}
+
+#box2 {
+	width: 236px;
+	overflow: hidden;
+	float: left;
+}
+
+#box3 {
+	width: 236px;
+	overflow: hidden;
+	margin: 0px 0 0 260px;
+}
+
+.feq{
+	position: absolute;
+	z-index: 2;
+	bottom: 10px;
+	right: -20px;
+}
+
+.knight{
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: -30px;
+}
+
+
+#content {
+	width: 500px;
+	margin: 0px 28px 0 312px;
+	padding: 28px;
+	background: #ffffff;
+	border-bottom: solid 1px #c0c0c0;
+}
+
+#copyright {
+	margin: 28px 0 64px 0;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	color: #787979;
+}
+
+#copyright a {
+	color: #787979;
+}
+
+#footer {
+	position: relative;
+	padding: 28px;
+	margin: 28px 0 0 0;
+	width: 1124px;
+	background: #636363;
+	color: #d3d3d3;
+	border-bottom: solid 1px #444444;
+	text-shadow: 0 1px 0 #404040;
+}
+
+#footer a {
+	color: #eee;
+}
+
+#footer h2, #footer h3, #footer h4 {
+	color: #ffffff;
+}
+
+#footer ul {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+#footer p {
+	margin-bottom: 0;
+}
+
+#footer ul li {
+	padding: 8px 0 8px 0;
+	border-top: dotted 1px #8c8c8c;
+}
+
+#footer ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#footerContent {
+	width: 812px;
+	float: left;
+}
+
+#footerSidebar {
+	width: 232px;
+	margin: 0px 0 0 892px;
+}
+
+#header {
+	position: relative;
+	padding: 28px;
+	height: 126px;
+	width: 1124px;
+}
+
+#logo {
+	text-align: center;
+	position: relative;
+	margin: -14px auto;
+	height: 98px;
+	line-height: 98px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #000;
+	text-shadow: 0px 3px 0px #ffffff;
+}
+
+#logo h1 {
+	font-size: 3.25em;
+	font-family: Lobster, cursive;
+}
+
+#main {
+	position: relative;
+	padding: 0px;
+	margin: 28px 0 0 0;
+	width: 1180px;
+	color: #474747;
+}
+
+#main strong {
+	color: #242424;
+}
+
+#main h2, #main h3, #main h4 {
+	color: #0d0d0d;
+}
+
+#main ul {
+	list-style: none;
+}
+
+#main ul li {
+	padding: 8px 0 8px 0;
+	border-top: dotted 1px #bdbdbd;
+}
+
+#main ul.imageList li {
+	padding: 16px 0 16px 0;
+}
+
+#main ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 1180px;
+	height: 56px;
+	line-height: 56px;
+	margin: 28px 0 0 0;
+	background: rgb(99, 99, 99);
+	font-size: 1.2em;
+	font-family: "PT Sans Narrow", sans-serif;
+	border-bottom: solid 1px #4f4f4f;
+	border-top: solid 1px #ffffff;
+	text-shadow: 0 1px 0px #4f4f4f;
+	text-transform: lowercase;
+}
+
+#nav a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#nav ul {
+	list-style: none;
+	margin: 0 auto;
+	width: 1062px;
+	text-align: center;
+}
+
+#nav ul li {
+	display: inline;
+	text-align: center;
+	padding: 0 1.75em 0 1.75em;
+}
+
+#outer {
+	position: relative;
+	width: 1180px;
+	padding-top: 30px;
+	margin: 0 auto 0 auto;
+}
+
+#search input.button {
+	margin-left: 1em;
+	border: 0px;
+	color: #ffffff;
+	background: #8f5038;
+	padding: 5px;
+}
+
+#search input.text {
+	border: dotted 1px #000;
+	padding: 4px;
+}
+
+#sidebar1 {
+	width: 232px;
+	float: left;
+	padding: 28px;
+	background: #ffffff;
+	color: #474747;
+	border-bottom: solid 1px #c0c0c0;
+}
+
+#sidebar1 h2, #sidebar1 h3, #sidebar1 h4 {
+	color: #000;
+}
+
+#sidebar1 ul {
+	list-style: none;
+}
+
+#sidebar1 ul li {
+	padding: 8px 0 8px 0;
+	border-top: dotted 1px #bdbdbd;
+}
+
+#sidebar1 ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#sidebar2 {
+	width: 232px;
+	float: right;
+	padding: 28px;
+	background: #ffffff;
+	color: #474747;
+	border-bottom: solid 1px #c0c0c0;
+}
+
+#sidebar2 h2, #sidebar2 h3, #sidebar2 h4 {
+	color: #000;
+}
+
+#sidebar2 ul {
+	list-style: none;
+}
+
+#sidebar2 ul li {
+	padding: 8px 0 8px 0;
+	border-top: dotted 1px #bdbdbd;
+}
+
+#sidebar2 ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
