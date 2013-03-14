@@ -8,7 +8,7 @@ html, body {
 body {
 	margin: 0px;
 	padding: 0px;
-	background: url(images/main-bg.jpg) repeat;
+	background: url(../images/main-bg.jpg) repeat;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
 	color: #B0B0B0;
