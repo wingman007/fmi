@@ -90,7 +90,7 @@ return array(
 // 'application/stoyan/index' => __DIR__ . '/../view/application/stoyan/index.phtml', // <-- Added by me
             'error/404' => __DIR__ . '/../view/error/404.phtml',
             'error/index' => __DIR__ . '/../view/error/index.phtml',
-
+),
 return array(
     'router' => array(
         'routes' => array(
