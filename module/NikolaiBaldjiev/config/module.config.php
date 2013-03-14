@@ -27,8 +27,11 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+            'layout/NikolaiBaldjiev'           => __DIR__ . '/../view/layout/NikolaiBaldjiev.phtml',
+        ),
         'template_path_stack' => array(
-            'nikolai_baldjiev' => __DIR__ . '/../view',
+            'stoyan_cheresharov' => __DIR__ . '/../view',
         ),
     ),
 );

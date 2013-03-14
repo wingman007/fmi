@@ -18,4 +18,12 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+  
+    public function changeAction()
+    {
+        $id = $this->getRequest()->getParam('id');
+        $this->layout('layout/NikolaiBaldjiev');
+        return new ViewModel();
+    }
+  
 }
