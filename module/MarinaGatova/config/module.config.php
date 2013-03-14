@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+          'layout/MarinaGatova'           => __DIR__ . '/../view/layout/MarinaGatova.phtml',
+        ),
         'template_path_stack' => array(
             'marina_gatova' => __DIR__ . '/../view',
         ),
