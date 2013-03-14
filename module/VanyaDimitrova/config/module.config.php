@@ -19,7 +19,7 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'VanyaDimitrova\Controller\Index',
-                        'action'     => 'index',
+                        'action'     => 'index','change',
                     ),
                 ),
             ),
