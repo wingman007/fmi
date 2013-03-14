@@ -27,6 +27,9 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+        'layout/AntonTonev'           => __DIR__ . '/../view/layout/AntonTonev.phtml',
+        ),
         'template_path_stack' => array(
             'anton_tonev' => __DIR__ . '/../view',
         ),
