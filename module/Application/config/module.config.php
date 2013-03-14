@@ -72,7 +72,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-          'Application\Controller\ElitsaNedyalkova' => 'Application\Controller\ElitsaNedyalkovaController'
+   //         'Application\Controller\ElitsaNedyalkova' => 'Application\Controller\ElitsaNedyalkovaController',
+           'Application\Controller\NeslihanSuleyman' => 'Application\Controller\NeslihanSuleymanController'
 //       'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
 //          'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
 //          'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
