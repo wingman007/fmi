@@ -16,6 +16,9 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        //return new ViewModel();
+        $viewModel = new ViewModel();
+		$this->layout('layout/cardex');
+        return $viewModel;
     }
 }
