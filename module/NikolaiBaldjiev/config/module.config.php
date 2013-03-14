@@ -31,7 +31,7 @@ return array(
             'layout/NikolaiBaldjiev'           => __DIR__ . '/../view/layout/NikolaiBaldjiev.phtml',
         ),
         'template_path_stack' => array(
-            'stoyan_cheresharov' => __DIR__ . '/../view',
+            'nikolai_baldjiev' => __DIR__ . '/../view',
         ),
     ),
 );
