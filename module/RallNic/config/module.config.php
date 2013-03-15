@@ -34,4 +34,4 @@ return array(
             'RallNic' => __DIR__ . '/../view',
         ),
     ),
-);
+)
