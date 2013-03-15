@@ -1,0 +1,282 @@
+/*
+
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution License
+
+	Name       : Null Atmosphere
+	Version    : 1.0
+	Released   : 20130222
+	
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #f98f4e;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 12pt;
+	line-height: 1.75em;
+	font-family: Arial, sans-serif;
+	background: #73AAE0 url('../images/bg.jpg') top left no-repeat;
+	background-size: 100%;
+	color: #e1eaf0;
+}
+
+br.clear {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	text-transform: lowercase;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1em;
+	font-family: Bitter, serif;
+	color: #ffffff;
+}
+
+img.left {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+img.top {
+	margin: 5px 0 20px 0;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+.imageList {
+	list-style: none;
+}
+
+.imageList li {
+	clear: both;
+}
+	
+.dateLinkedList {
+}
+	
+.dateLinkedList .date {
+	display: inline-block;
+	width: 50px;
+	font-size: 0.8em;
+	background: #73AAE0;
+	margin: 0 0.5em 0 0;
+	color: #ffffff;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#banner {
+	background: #ffffff;
+}
+
+#box1 {
+	margin: 0px 0 25px 0;
+	overflow: hidden;
+}
+
+#box2 {
+	margin: 0px 0 25px 0;
+	overflow: hidden;
+}
+
+#content {
+	width: 440px;
+	float: right;
+	padding: 0px;
+}
+
+#copyright {
+	text-align: center;
+	margin: 0 0 60px 0;
+	color: #B4D6E8;
+	font-size: 0.9em;
+	text-transform: lowercase;
+}
+
+#copyright a {
+	color: #B4D6E8;
+}
+	
+#footer {
+	position: relative;
+	padding: 40px 30px 0 30px;
+	width: 920px;
+	color: #D1E7F9;
+}
+
+#footer a {
+	color: #eff4f7;
+}
+
+#footer h2, #footer h3, #footer h4 {
+	color: #f5f8fa;
+}
+
+#footer ul {
+	list-style: none;
+}
+
+#footer ul li {
+	padding: 10px 0 10px 0;
+	border-top: dotted 1px #D1E7F9;
+}
+
+#footer ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#footerContent {
+	width: 440px;
+	float: right;
+}
+
+#footerSidebar1 {
+	width: 215px;
+	float: left;
+}
+
+#footerSidebar2 {
+	width: 215px;
+	margin: 0px 30px 0 240px;
+}
+
+#header {
+	position: relative;
+	padding: 30px;
+	height: 115px;
+	margin: 25px 0 0 0;
+}
+
+#logo {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	height: 115px;
+	line-height: 115px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#logo h1 {
+	font-size: 2.75em;
+	font-family: Bitter, serif;
+	text-shadow: 0px 2px 1px #4786b6;
+}
+
+#main {
+	position: relative;
+	padding: 40px 30px 0px 30px;
+	width: 920px;
+	background: #ffffff;
+	color: #666666;
+}
+
+#main strong {
+	color: #444444;
+}
+
+#main a {
+	color: #212121;
+}
+
+#main h2, #main h3, #main h4 {
+	color: #141414;
+}
+
+#main ul {
+	list-style: none;
+}
+
+#main ul li {
+	padding: 10px 0 10px 0;
+	border-top: dotted 1px #bababa;
+}
+
+#main ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#nav {
+	position: absolute;
+	right: 30px;
+	height: 51px;
+	line-height: 51px;
+	top: 62px;
+	font-family: Bitter, serif;
+	text-shadow: 0px 1px 1px #4786b6;
+}
+
+#nav a {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #eff4f7;
+}
+
+#nav li {
+	margin: 0px 1em 0 1em;
+}
+
+#nav ul {
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+}
+
+#outer {
+	position: relative;
+	width: 980px;
+	margin: 0px auto 0 auto;
+}
+
+#search input.button {
+	margin-left: 1em;
+	border: 0px;
+	color: #ffffff;
+	background: #f98f4e;
+	padding: 6px;
+}
+
+#search input.text {
+	border: dotted 1px #ffffff;
+	padding: 5px;
+}
+
+#sidebar1 {
+	width: 215px;
+	float: left;
+	padding: 0px;
+}
+
+#sidebar2 {
+	width: 215px;
+	margin: 0px 0 0 240px;
+	padding: 0px;
+}
