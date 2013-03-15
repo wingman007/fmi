@@ -27,7 +27,9 @@ return array(
 		'VasilVasilev',
 		'NikolaiBaldjiev',
 		'NeslihanSuleyman',
-		'MihailKopuscu', 
+		'MihailKopuscu',
+		'RallNic',
+		'KrasimirTsvetanov',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

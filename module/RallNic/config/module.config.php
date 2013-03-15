@@ -2,23 +2,23 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'ElitsaNedyalkova\Controller\Index' => 'ElitsaNedyalkova\Controller\IndexController',
+            'RallNic\Controller\Index' => 'RallNic\Controller\IndexController',
         ),
     ),
   
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'elitsa_nedyalkova' => array(
+            'RallNic' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/elitsa-nedyalkova[/:action][/:id]',
+                    'route'    => '/rall-nic[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'ElitsaNedyalkova\Controller\Index',
+                        'controller' => 'RallNic\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -27,11 +27,12 @@ return array(
     ),
   
     'view_manager' => array(
-      'template_map' => array(
-        'layout/ElitsaNedyalkova'           => __DIR__ . '/../view/layout/ElitsaNedyalkova.phtml',
+
+        'template_map' => array(
+        'layout/RallNic'           => __DIR__ . '/../view/layout/RallNic.phtml',
         ),
         'template_path_stack' => array(
-            'elitsa_nedyalkova' => __DIR__ . '/../view',
+            'RallNic' => __DIR__ . '/../view',
         ),
     ),
 );
