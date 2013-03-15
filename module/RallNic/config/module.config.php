@@ -30,8 +30,9 @@ return array(
 
         'template_map' => array(
         'layout/RallNic'           => __DIR__ . '/../view/layout/RallNic.phtml',
+        ),
         'template_path_stack' => array(
             'RallNic' => __DIR__ . '/../view',
         ),
     ),
-)
+);
