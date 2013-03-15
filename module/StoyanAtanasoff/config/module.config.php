@@ -28,6 +28,7 @@ return array(
   
     'view_manager' => array(
         'template_map' => array(
+            'layout/StoyanAtanasov' => __DIR__.'/../view/layout/StoyanAtanasoff.phtml',
         ),
         'template_path_stack' => array(
             'stoyan_atanasoff' => __DIR__ . '/../view',
