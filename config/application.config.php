@@ -14,25 +14,18 @@ return array(
         'Elena',                  // <-- Add this line
         'AntonTonev',
         'MargaritaKrushkova',
-<<<<<<< HEAD
         'IvelinaVelcheva',
         'MihaelaKerkenekova',
         'MartinManov',
         'MarinaGatova',
         'RallNic',
-=======
         'StoyanAtanasoff',
-		'IvelinaVelcheva',
-		'MihaelaKerkenekova',
-		'MartinManov',
-		'MarinaGatova',
-		'PaolaShumanova',
-		'NikoletaPoibrenska',
-		'PetyaStavarova',
-		// 'VanyaDimitrova',
-		'ElitsaNedyalkova',
-		'VasilVasilev',
->>>>>>> refs/remotes/upstream/master
+    'PaolaShumanova',
+    'NikoletaPoibrenska',
+    'PetyaStavarova',
+    // 'VanyaDimitrova',
+    'ElitsaNedyalkova',
+    'VasilVasilev',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
