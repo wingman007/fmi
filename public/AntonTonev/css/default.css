@@ -1,0 +1,353 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/main-bg.jpg) repeat;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	color: #B0B0B0;
+}
+
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+h2
+{
+	font-weight: 400;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 2.50em;
+}
+
+p, ol, ul {
+	margin-top: 0px;
+}
+
+p {
+	line-height: 180%;
+}
+
+strong {
+}
+
+a {
+	color: #1492C4;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+img.border {
+	border: 10px solid rgba(255,255,255,.10);
+}
+
+img.alignleft {
+	float: left;
+	margin-right: 30px;
+}
+
+img.alignright {
+	float: right;
+}
+
+img.aligncenter {
+	margin: 0px auto;
+}
+
+hr {
+	display: none;
+}
+
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  margin: 100px auto;
+}
+
+#wrapper {
+	overflow: hidden;
+}
+
+.container {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/** HEADER */
+
+#header-wrapper
+{
+	overflow: hidden;
+	height: 100px;
+	margin-bottom: 20px;
+	background: rgba(0,0,0,0.70);
+}
+
+#header {
+	overflow: hidden;
+}
+
+/** LOGO */
+
+#logo {
+	float: left;
+	width: 300px;
+	height: 100px;
+}
+
+#logo h1, #logo p {
+	margin: 0px;
+	line-height: normal;
+}
+
+#logo h1 a {
+	padding-left: 40px;
+	text-decoration: none;
+	font-size: 2.50em;
+	font-weight: 400;
+	font-family: 'Archivo Narrow', sans-serif;
+	color: #FFFFFF;
+}
+
+/** MENU */
+
+#menu {
+	float: right;
+	height: 100px;
+}
+
+#menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+	margin-right: 1px;
+}
+
+#menu a {
+	display: block;
+	height: 100px;
+	padding: 0px 30px;
+	line-height: 100px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+	text-decoration: none;
+	background: rgba(0,0,0,0.70);
+}
+
+#menu .active
+{
+	background: rgba(0,0,0,0.70);
+}
+
+/** PAGE */
+
+#page {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+/** CONTENT */
+
+#content {
+	float: left;
+	width: 600px;
+	padding: 40px;
+	background: rgba(0,0,0,0.70);
+}
+
+#content h2 a
+{
+	display: block;
+	padding: 0px 0px 20px 0px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#content #box1
+{
+	margin-bottom: 30px;
+}
+
+/** SIDEBAR */
+
+#sidebar {
+	float: right;
+	width: 220px;
+	padding: 40px;
+	background: rgba(0,0,0,0.70);
+}
+
+#sidebar h2
+{
+	padding: 0px 0px 20px 0px;
+	color: #FFFFFF;
+}
+
+/* Footer */
+
+#footer {
+	overflow: hidden;
+	margin: 20px auto 0px auto;
+	padding: 20px 0px;
+	background: rgba(0,0,0,0.70);
+}
+
+#footer p {
+	text-align: center;
+	font-size: 12px;
+}
+
+#footer a {
+}
+
+/** LIST STYLE 1 */
+
+ul.style1 {
+	margin: 0px;
+	padding: 10px 0px 0px 0px;
+	list-style: none;
+}
+
+ul.style1 li {
+	clear: both;
+	margin-bottom: 25px;
+	padding: 30px 0px 40px 0px;
+	border-top: 1px solid #000000;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+ul.style1 h3 {
+	padding-bottom: 5px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+ul.style1 p {
+	line-height: 150%;
+}
+
+ul.style1 .button-style {
+	float: left;
+	margin-top: 0px;
+}
+
+ul.style1 .first {
+	padding-top: 0px;
+	border-top: none;
+	box-shadow: none;
+}
+
+/** LIST STYLE 3 */
+
+ul.style3 {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.style3 li {
+	padding: 10px 0px 10px 0px;
+	border-top: 1px solid #000000;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+ul.style3 a {
+	text-decoration: none;
+	color: #949494;
+}
+
+ul.style3 a:hover {
+	text-decoration: underline;
+}
+
+ul.style3 .first {
+	padding-top: 0px;
+	border-top: none;
+	box-shadow: none;
+}
+
+ul.style3 .date {
+	width: 87px;
+	background-color: #1F768D;
+	margin-top: 20px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+ul.style3 .first .date
+{
+	margin-top: 0px;
+}
+
+.button-style
+{
+	display: inline-block;
+	background-color: #1F768D;
+	margin-top: 20px;
+	padding: 5px 30px;
+	height: 24px;
+	line-height: 24px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.entry
+{
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

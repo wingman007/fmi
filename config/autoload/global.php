@@ -1,5 +1,6 @@
 <?php
 /**
+<<<<<<< HEAD
 * Global Configuration Override
 *
 * You can use this file for overridding configuration values from modules, etc.
@@ -20,7 +21,7 @@ return array(
 return array(
     'db' => array(
         'driver' => 'Pdo',
-//    'dsn' => 'mysql:dbname=wingman;host=wingman-db.my.phpcloud.com',
+// 'dsn' => 'mysql:dbname=wingman;host=wingman-db.my.phpcloud.com',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
@@ -32,3 +33,4 @@ return array(
         ),
     ),
 );
+

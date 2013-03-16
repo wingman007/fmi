@@ -25,8 +25,11 @@ return array(
             ),
         ),
     ),
-  
     'view_manager' => array(
+        'template_map' => array(
+    'layout/AlexanderAlexandrov'           => __DIR__ . '/../view/layout/AlexanderAlexandrov.phtml',
+       
+        ),
         'template_path_stack' => array(
             'alexander_alexandrov' => __DIR__ . '/../view',
         ),

@@ -6,6 +6,7 @@ return array(
         ),
     ),
   
+    // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
             'gyuner_zeki' => array(
@@ -26,8 +27,12 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+          'layout/gyuner'           => __DIR__ . '/../view/layout/gyuner.phtml', // the entire app is using it
+          'layout/eponymous'           => __DIR__ . '/../view/layout/eponymous.phtml',
+        ),
         'template_path_stack' => array(
-            'gyuner_zeki' => __DIR__ . '/../view',
+            'gyuner-zeki' => __DIR__ . '/../view',
         ),
     ),
 );

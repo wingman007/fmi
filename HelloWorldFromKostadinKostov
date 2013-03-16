@@ -1,0 +1,9 @@
+<?php 
+
+function Hello($name)
+{
+  print "Hello world from " + name;
+}
+
+Hello('Kostadin Kostov')
+?>
