@@ -30,9 +30,9 @@ $this->headLink(array(
     'rel'  => 'favicon',
     'href' => '/img/favicon.ico',
 ), 'PREPEND')
-	->appendStylesheet('/css/fmi.css')
-	->prependStylesheet(
-        '/styles/moz.css',
+  ->appendStylesheet($this->basePath() . '/css/fmi.css')
+  ->prependStylesheet(
+        $this->basePath() . '/styles/moz.css',
         'screen',
         true,
         array('id' => 'my_stylesheet')
@@ -41,125 +41,125 @@ $this->headLink(array(
 <hr style="clear: both;"/>
 
 <div class="hero-unit">
-	<h1>FMI Project contributors!<span class="zf-green"> Thanks! :) </span></h1>
+  <h1>FMI Project contributors!<span class="zf-green"> Thanks! :) </span></h1>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Alexander Alexandrov</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('alexander_alexandrov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Alexander Alexandrov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('alexander_alexandrov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Anton Tonev</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('anton_tonev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Anton Tonev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('anton_tonev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Elena Chavdarova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('elena', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+  <h2>Elena Chavdarova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('elena', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Elitsa Nedyalkova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('elitsa_nedyalkova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Elitsa Nedyalkova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('elitsa_nedyalkova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Gyuner Zeki</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('gyuner_zeki', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Gyuner Zeki</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('gyuner_zeki', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Ivelina Velcheva</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('ivelina_velcheva', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Ivelina Velcheva</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('ivelina_velcheva', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>KrasimirTsvetanov</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('krasimir_tsvetanov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>KrasimirTsvetanov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('krasimir_tsvetanov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Margarita Krushkova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('margarita_krushkova', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+  <h2>Margarita Krushkova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('margarita_krushkova', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Marina Gatova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('marina_gatova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Marina Gatova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('marina_gatova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Martin Manov</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('martin_manov', array('controller'=> 'index', 'action' => 'mm-layout'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Martin Manov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('martin_manov', array('controller'=> 'index', 'action' => 'mm-layout'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Mihaela Kerkenekova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('mihaela_kerkenekova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Mihaela Kerkenekova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('mihaela_kerkenekova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Mihail Kopuscu</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('mihail_kopuscu', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+  <h2>Mihail Kopuscu</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('mihail_kopuscu', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Neslihan Suleyman</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('neslihan_suleyman', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+  <h2>Neslihan Suleyman</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('neslihan_suleyman', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Nikolai Baldjiev</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('nikolai_baldjiev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Nikolai Baldjiev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('nikolai_baldjiev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Nikoleta Poibrenska</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('nikoleta_poibrenska', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Nikoleta Poibrenska</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('nikoleta_poibrenska', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Paola Shumanova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('paola-shumanova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Paola Shumanova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('paola-shumanova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Petya Stavarova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('petya_stavarova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Petya Stavarova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('petya_stavarova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Ralica Nikolova</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('RallNic', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Ralica Nikolova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('RallNic', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Stoyan Atanasoff</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('stoyan_atanasoff', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Stoyan Atanasoff</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('stoyan_atanasoff', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Vanya Dimitrova !</h2>
-	<p><a class="btn btn-success" href="<?php // echo $this->url('vanya_dimitrova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Vanya Dimitrova !</h2>
+  <p><a class="btn btn-success" href="<?php // echo $this->url('vanya_dimitrova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Vasil Vasilev</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('Vasil_Vasilev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+  <h2>Vasil Vasilev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('Vasil_Vasilev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Victor Atanassov</h2>
-	<p><a class="btn btn-success" href="<?php echo $this->url('victor_atanassov', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+  <h2>Victor Atanassov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('victor_atanassov', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
 </div>
 
 <div class="hero-unit fmi">
-	<h2>Zhelyan Guglev</h2>
-	<p>
-	<a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'zhelyan'), true); ?>" target="_blank"><?php echo $this->translate('zhelyan Action') ?> &raquo;</a>
-	<a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'eponymous'), true); ?>" target="_blank"><?php echo $this->translate('eponymous Action') ?> &raquo;</a>
-	</p>
+  <h2>Zhelyan Guglev</h2>
+  <p>
+  <a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'zhelyan'), true); ?>" target="_blank"><?php echo $this->translate('zhelyan Action') ?> &raquo;</a>
+  <a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'eponymous'), true); ?>" target="_blank"><?php echo $this->translate('eponymous Action') ?> &raquo;</a>
+  </p>
 </div>
 
 <hr style="clear: both;"/>
