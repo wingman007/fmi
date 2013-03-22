@@ -25,4 +25,10 @@ class IndexController extends AbstractActionController
     $this->layout('layout/student'); // change the layout. DOn't forget to add it in modeule.config.php
     return $viewModel;
   }
+  
+  public function changeAction() {
+    $viewModel = new ViewModel();
+    $this->layout('layout/FmiStudent'); // change the layout. DOn't forget to add it in module.config.php
+    return $viewModel;
+  }
 }
