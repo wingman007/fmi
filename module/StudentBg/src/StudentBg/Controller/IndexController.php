@@ -22,9 +22,9 @@ class IndexController extends AbstractActionController
     public function changeAction() {
         $viewModel = new ViewModel();
         // $viewModel->setTemplate('layout/custom');
-		// $this->layout('layout/student'); // change the layout. DOn't forget to add it in modeule.config.php
+    // $this->layout('layout/student'); // change the layout. DOn't forget to add it in modeule.config.php
         // $this->layout('layout/stoyan');
-		$this->layout('layout/eponymous');
+    $this->layout('layout/eponymous');
         return $viewModel;
     }
 }

@@ -28,6 +28,9 @@ return array(
     ),
   
     'view_manager' => array(
+        'template_map' => array(
+            'layout/FmiStudent'           => __DIR__ . '/../view/layout/FmiStudent.phtml',
+        ),
         'template_path_stack' => array(
             'fmi_student' => __DIR__ . '/../view',
         ),
