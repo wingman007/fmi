@@ -1,0 +1,36 @@
+<h1>I am in change.phtml</h1>
+
+<?php $this->doctype('HTML5'); ?>
+<?php 
+$this->headMeta()->appendHttpEquiv('Content-Type',
+                                   'text/html; charset=UTF-8')
+                 ->appendHttpEquiv('Content-Language', 'en-US');
+$this->headMeta()->appendName('keywords', 'framework, PHP, productivity');
+$this->headMeta()->appendName('description', 'framework, PHP, productivity');
+?>
+<?php $this->headLink()->appendStylesheet('http://fonts.googleapis.com/css?family=Bitter');?>
+<?php $this->headLink()->appendStylesheet($this->basePath('FmiStudent/css/style.css'));?>
+<?php $this->headScript()->appendFile('/js/prototype.js'); ?>
+<?php 
+	$styles = ".h1 {color: red;}";
+	$this->headStyle()->appendStyle($styles); 
+?>
+<?php $this->headTitle('Faux Mocha'); ?>
+<?php $this->inlineScript()->appendFile('/js/prototype.js'); ?>
+<!--
+                        <h2>
+                            Welcome to Faux Mocha
+                        </h2>
+                        <img class="left" src="<?php echo $this->basePath(); ?>/FmiStudent/images/pic1.jpg" width="130" height="130" alt="" />
+            <p>
+              This is <strong>Faux Mocha</strong>, a three column CSS template by
+              <a href="http://www.freecsstemplates.org/">FCT</a> with photos from 
+              <a href="http://www.pdphoto.org/">PDPhoto</a>. It's released (for free) under the
+              <a href="http://www.freecsstemplates.org/license/">Creative Commons Attribution 3.0 license</a>,
+              so feel free to use it for any personal or commercial work, just keep our footer credit links intact.
+              Hit up our <a href="http://www.freecsstemplates.org/">website</a> for more awesomely
+              cool free templates, and follow us on <a href="http://twitter.com/freecsstemplate">Twitter</a>
+              (<a href="http://twitter.com/freecsstemplate">@freecsstemplate</a>) for updates, announcements, and other
+              mildly interesting ramblings.
+            </p>
+-->

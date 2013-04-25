@@ -28,7 +28,7 @@
 <?php // setting links in a view script:
 $this->headLink(array(
     'rel'  => 'favicon',
-    'href' => '/img/favicon.ico',
+    'href' => $this->basePath() . '/img/favicon.ico',
 ), 'PREPEND')
   ->appendStylesheet($this->basePath() . '/css/fmi.css')
   ->prependStylesheet(
