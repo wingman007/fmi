@@ -31,4 +31,31 @@ class IndexController extends AbstractActionController
     $this->layout('layout/FmiStudent'); // change the layout. DOn't forget to add it in module.config.php
     return $viewModel;
   }
+  
+  public function jsAjaxAction() {
+    $viewModel = new ViewModel();
+    $this->layout('layout/FmiStudent'); // change the layout. DOn't forget to add it in module.config.php
+    return $viewModel;
+  }
+  
+  // To disable layout
+  public function serviceAjaxAction()
+  {
+    // your code here ...
+    $ViewModel = new ViewModel();
+    $ViewModel->setTerminal(true);
+    return $ViewModel;
+  } 
+    
+  public function serviceJsonAction()
+  {
+    // your code here ...
+      $ViewModel = new ViewModel(array('data' => array(
+        'firstParam' => 'Value1', 
+        'secondParam' => 'Value2', 
+      )));
+    $ViewModel->setTerminal(true);
+    return $ViewModel;
+  }
+  
 }
