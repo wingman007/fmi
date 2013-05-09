@@ -1,4 +1,2 @@
-<FilesMatch "\.(inc|sql)$">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
