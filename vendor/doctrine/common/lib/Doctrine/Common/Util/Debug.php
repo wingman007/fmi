@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
  */
 
@@ -41,7 +41,6 @@ final class Debug
     /**
      * Prints a dump of the public, protected and private properties of $var.
      *
-     * @static
      * @link http://xdebug.org/
      * @param mixed $var
      * @param integer $maxDepth Maximum nesting level for object properties
@@ -67,6 +66,13 @@ final class Debug
         ini_set('html_errors', 'Off');
     }
 
+    /**
+     * Export
+     *
+     * @param mixed $var
+     * @param int $maxDepth
+     * @return mixed
+     */
     public static function export($var, $maxDepth)
     {
         $return = null;
@@ -98,6 +104,10 @@ final class Debug
                         $return->__PROXY_INITIALIZED__ = $var->__isInitialized();
                     }
 
+                    if ($var instanceof \ArrayObject || $var instanceof \ArrayIterator) {
+                        $return->__STORAGE__ = self::export($var->getArrayCopy(), $maxDepth - 1);
+                    }
+
                     foreach ($reflClass->getProperties() as $reflProperty) {
                         $name  = $reflProperty->getName();
 
@@ -116,8 +126,14 @@ final class Debug
         return $return;
     }
 
+    /**
+     * Convert to string
+     *
+     * @param object $obj
+     * @return string
+     */
     public static function toString($obj)
     {
-        return method_exists('__toString', $obj) ? (string) $obj : get_class($obj) . '@' . spl_object_hash($obj);
+        return method_exists($obj, '__toString') ? (string) $obj : get_class($obj) . '@' . spl_object_hash($obj);
     }
 }

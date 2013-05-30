@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
  */
 
@@ -149,7 +149,7 @@ class ClassLoader
     /**
      * Loads the given class or interface.
      *
-     * @param string $classname The name of the class to load.
+     * @param string $className The name of the class to load.
      * @return boolean TRUE if the class has been successfully loaded, FALSE otherwise.
      */
     public function loadClass($className)
@@ -181,7 +181,7 @@ class ClassLoader
         $file = str_replace($this->namespaceSeparator, DIRECTORY_SEPARATOR, $className) . $this->fileExtension;
 
         if ($this->includePath !== null) {
-            return file_exists($this->includePath . DIRECTORY_SEPARATOR . $file);
+            return is_file($this->includePath . DIRECTORY_SEPARATOR . $file);
         }
 
         return (false !== stream_resolve_include_path($file));
@@ -234,9 +234,13 @@ class ClassLoader
             } else if (is_string($loader) && $loader($className)) { // "MyClass::loadClass"
                 return true;
             }
+
+            if (class_exists($className, false) || interface_exists($className, false)) {
+                return true;
+            }
         }
 
-        return class_exists($className, false) || interface_exists($className, false);
+        return false;
     }
 
     /**
@@ -244,7 +248,7 @@ class ClassLoader
      * for (and is able to load) the class with the given name.
      *
      * @param string $className The name of the class.
-     * @return The <tt>ClassLoader</tt> for the class or NULL if no such <tt>ClassLoader</tt> exists.
+     * @return ClassLoader The <tt>ClassLoader</tt> for the class or NULL if no such <tt>ClassLoader</tt> exists.
      */
     public static function getClassLoader($className)
     {

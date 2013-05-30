@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
  */
 
@@ -36,28 +36,28 @@ interface ConnectionRegistry
      *
      * @return string The default connection name
      */
-    function getDefaultConnectionName();
+    public function getDefaultConnectionName();
 
     /**
      * Gets the named connection.
      *
      * @param string $name The connection name (null for the default one)
      *
-     * @return Connection
+     * @return object
      */
-    function getConnection($name = null);
+    public function getConnection($name = null);
 
     /**
      * Gets an array of all registered connections
      *
      * @return array An array of Connection instances
      */
-    function getConnections();
+    public function getConnections();
 
     /**
      * Gets all connection names.
      *
      * @return array An array of connection names
      */
-    function getConnectionNames();
+    public function getConnectionNames();
 }

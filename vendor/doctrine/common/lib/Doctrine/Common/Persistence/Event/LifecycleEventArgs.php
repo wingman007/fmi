@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
 */
 
@@ -41,28 +41,39 @@ class LifecycleEventArgs extends EventArgs
     /**
      * @var object
      */
-    private $entity;
+    private $object;
 
     /**
      * Constructor
      *
-     * @param object $entity
+     * @param object $object
      * @param ObjectManager $objectManager
      */
-    public function __construct($entity, ObjectManager $objectManager)
+    public function __construct($object, ObjectManager $objectManager)
     {
-        $this->entity = $entity;
+        $this->object = $object;
         $this->objectManager = $objectManager;
     }
 
     /**
-     * Retireve associated Entity.
+     * Retrieve associated entity.
+     * @deprecated
      *
      * @return object
      */
     public function getEntity()
     {
-        return $this->entity;
+        return $this->object;
+    }
+
+    /**
+     * Retrieve associated object.
+     *
+     * @return object
+     */
+    public function getObject()
+    {
+        return $this->object;
     }
 
     /**

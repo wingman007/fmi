@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
  */
 
@@ -38,7 +38,7 @@ use Doctrine\Common\Collections\Collection;
  *    This is either done on `postLoad` of an object or by accessing the global object manager.
  * 3. There are no hooks for setters/getters. Just implement the method yourself instead of relying on __call().
  * 4. Slower than handcoded implementations: An average of 7 method calls per access to a field and 11 for an association.
- * 5. Only the inverse side associations get autoset on the owning side aswell. Setting objects on the owning side
+ * 5. Only the inverse side associations get autoset on the owning side as well. Setting objects on the owning side
  *    will not set the inverse side associations.
  *
  * @example
@@ -90,6 +90,8 @@ abstract class PersistentObject implements ObjectManagerAware
      *
      * @param ObjectManager $objectManager
      * @param ClassMetadata $classMetadata
+     *
+     * @throws \RuntimeException
      */
     public function injectObjectManager(ObjectManager $objectManager, ClassMetadata $classMetadata)
     {
@@ -104,10 +106,11 @@ abstract class PersistentObject implements ObjectManagerAware
     /**
      * Sets a persistent fields value.
      *
-     * @throws InvalidArgumentException - When the wrong target object type is passed to an association
-     * @throws BadMethodCallException - When no persistent field exists by that name.
      * @param string $field
      * @param array $args
+     *
+     * @throws \BadMethodCallException - When no persistent field exists by that name.
+     * @throws \InvalidArgumentException - When the wrong target object type is passed to an association
      * @return void
      */
     private function set($field, $args)
@@ -131,8 +134,10 @@ abstract class PersistentObject implements ObjectManagerAware
     /**
      * Get persistent field value.
      *
-     * @throws BadMethodCallException - When no persistent field exists by that name.
+     *
      * @param string $field
+     *
+     * @throws \BadMethodCallException - When no persistent field exists by that name.
      * @return mixed
      */
     private function get($field)
@@ -155,7 +160,7 @@ abstract class PersistentObject implements ObjectManagerAware
      */
     private function completeOwningSide($field, $targetClass, $targetObject)
     {
-        // add this object on the owning side aswell, for obvious infinite recursion
+        // add this object on the owning side as well, for obvious infinite recursion
         // reasons this is only done when called on the inverse side.
         if ($this->cm->isAssociationInverseSide($field)) {
             $mappedByField = $this->cm->getAssociationMappedByTargetField($field);
@@ -169,8 +174,11 @@ abstract class PersistentObject implements ObjectManagerAware
     /**
      * Add an object to a collection
      *
-     * @param type $field
-     * @param assoc $args
+     * @param string $field
+     * @param array $args
+     *
+     * @throws \BadMethodCallException
+     * @throws \InvalidArgumentException
      */
     private function add($field, $args)
     {
@@ -194,6 +202,7 @@ abstract class PersistentObject implements ObjectManagerAware
     /**
      * Initialize Doctrine Metadata for this class.
      *
+     * @throws \RuntimeException
      * @return void
      */
     private function initializeDoctrine()
@@ -214,6 +223,8 @@ abstract class PersistentObject implements ObjectManagerAware
      *
      * @param string $method
      * @param array $args
+     *
+     * @throws \BadMethodCallException
      * @return mixed
      */
     public function __call($method, $args)

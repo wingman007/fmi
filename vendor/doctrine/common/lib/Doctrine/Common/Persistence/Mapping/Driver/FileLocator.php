@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
 */
 
@@ -22,7 +22,7 @@ namespace Doctrine\Common\Persistence\Mapping\Driver;
 /**
  * Locate the file that contains the metadata information for a given class name.
  *
- * This behavior is inpependent of the actual content of the file. It just detects
+ * This behavior is independent of the actual content of the file. It just detects
  * the file which is responsible for the given class name.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
@@ -36,7 +36,7 @@ interface FileLocator
      * @param string $className
      * @return string
      */
-    function findMappingFile($className);
+    public function findMappingFile($className);
 
     /**
      * Get all class names that are found with this file locator.
@@ -44,26 +44,28 @@ interface FileLocator
      * @param string $globalBasename Passed to allow excluding the basename
      * @return array
      */
-    function getAllClassNames($globalBasename);
+    public function getAllClassNames($globalBasename);
 
     /**
      * Check if a file can be found for this class name.
      *
+     * @param string $className
+     *
      * @return bool
      */
-    function fileExists($className);
+    public function fileExists($className);
 
     /**
      * Get all the paths that this file locator looks for mapping files.
      *
      * @return array
      */
-    function getPaths();
+    public function getPaths();
 
     /**
      * Get the file extension that mapping files are suffixed with.
      *
      * @return string
      */
-    function getFileExtension();
+    public function getFileExtension();
 }

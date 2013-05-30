@@ -2,6 +2,9 @@
 return array(
     'modules' => array(
         'Application',
+		'DoctrineModule',
+		'DoctrineORMModule',
+		'DoctrineMongoODMModule',
 
         'Album', //this line is added
         'ZhelyanGuglev',

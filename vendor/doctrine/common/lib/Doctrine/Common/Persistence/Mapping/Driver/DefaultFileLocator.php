@@ -13,7 +13,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the LGPL. For more information, see
+ * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
 */
 
@@ -24,7 +24,7 @@ use Doctrine\Common\Persistence\Mapping\MappingException;
 /**
  * Locate the file that contains the metadata information for a given class name.
  *
- * This behavior is inpependent of the actual content of the file. It just detects
+ * This behavior is independent of the actual content of the file. It just detects
  * the file which is responsible for the given class name.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
@@ -51,6 +51,7 @@ class DefaultFileLocator implements FileLocator
      * documents and operates in the specified operating mode.
      *
      * @param string|array $paths One or multiple paths where mapping documents can be found.
+     * @param string|null $fileExtension
      */
     public function __construct($paths, $fileExtension = null)
     {
@@ -81,7 +82,7 @@ class DefaultFileLocator implements FileLocator
     /**
      * Get the file extension used to look for mapping files under
      *
-     * @return void
+     * @return string
      */
     public function getFileExtension()
     {
@@ -108,7 +109,7 @@ class DefaultFileLocator implements FileLocator
 
         // Check whether file exists
         foreach ($this->paths as $path) {
-            if (file_exists($path . DIRECTORY_SEPARATOR . $fileName)) {
+            if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
                 return $path . DIRECTORY_SEPARATOR . $fileName;
             }
         }
@@ -159,7 +160,7 @@ class DefaultFileLocator implements FileLocator
 
         // Check whether file exists
         foreach ((array) $this->paths as $path) {
-            if (file_exists($path . DIRECTORY_SEPARATOR . $fileName)) {
+            if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
                 return true;
             }
         }
