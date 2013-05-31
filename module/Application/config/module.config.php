@@ -16,7 +16,7 @@ return array(
                 'options' => array(
                     'route' => '/',
                     'defaults' => array(
-// 'controller' => 'Album\Controller\Album',
+                     // 'controller' => 'Album\Controller\Album',
                         'controller' => 'Application\Controller\Index',
                         'action' => 'index',
                     ),
@@ -72,6 +72,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\DenisGeorgiev' => 'Application\Controller\DenisGeorgievController',
+// 'Application\Controller\ZhelyanGuglev' => 'Appl
 // 'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
 // 'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
 // 'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
