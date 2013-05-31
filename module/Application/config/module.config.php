@@ -72,6 +72,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\VasilBrakalov' => 'Application\Controller\VasilBrakalovController',
 // 'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
 // 'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
 // 'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
