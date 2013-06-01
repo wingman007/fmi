@@ -117,7 +117,7 @@ class User
      * @Annotation\Options({"label":"User Picture:"})
      */
     private $usrPicture;
-	
+
     /**
      * @var integer
      *
