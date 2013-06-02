@@ -47,6 +47,7 @@ return array(
 	),
     'view_manager' => array(
         'template_map' => array(
+              'layout/Boqnski'           => __DIR__ . '/../view/layout/Boqnski.phtml',
 //            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
 //            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
         ),

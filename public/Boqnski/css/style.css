@@ -1,0 +1,276 @@
+/*
+
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution License
+
+	Name       : Faux Mocha
+	Version    : 1.0
+	Released   : 20130222
+	
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #07768d;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 12pt;
+	line-height: 2em;
+	font-family: Georgia, serif;
+	background: #56423e url('../images/bg.jpg');
+	color: #d5d0cf;
+}
+
+br.clear {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	text-transform: lowercase;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1.25em;
+	font-family: Bitter, serif;
+	color: #fff;
+}
+
+img.left {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+img.top {
+	margin: 5px 0 20px 0;
+}
+
+p {
+	margin-bottom: 1.75em;
+}
+
+ul {
+	margin-bottom: 1.75em;
+}
+
+.imageList {
+	list-style: none;
+}
+
+.imageList li {
+	clear: both;
+}
+
+#banner {
+	background: #fff;
+}
+
+#box1 {
+	width: 480px;
+	overflow: hidden;
+	margin: 0px 0 30px 0;
+}
+
+#box2 {
+	width: 225px;
+	overflow: hidden;
+	float: left;
+}
+
+#box3 {
+	width: 225px;
+	overflow: hidden;
+	margin: 0px 0 0 255px;
+}
+
+#content {
+	width: 480px;
+	float: right;
+	padding: 35px;
+	background: #fff;
+}
+
+#copyright {
+	padding: 35px 0 65px 0;
+	text-align: center;
+	color: #896F6A;
+}
+
+#copyright a {
+	color: #997F7A;
+}
+
+#header {
+	position: relative;
+	padding: 35px;
+	height: 130px;
+}
+
+#logo {
+	position: absolute;
+	top: 35px;
+	left: 35px;
+	height: 130px;
+	line-height: 130px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#logo h1 {
+	font-size: 3em;
+	font-family: Bitter, serif;
+	text-shadow: 0px 2px 1px #36221e;
+}
+
+#main {
+	position: relative;
+	padding: 0px;
+	width: 1180px;
+	color: #262626;
+}
+
+#main a {
+	color: #141414;
+}
+
+#main h2, #main h3, #main h4 {
+	color: #1a1a1a;
+}
+
+#main ul {
+	list-style: none;
+}
+
+#main ul li {
+	padding: 10px 0 10px 0;
+	border-top: dotted 1px #d6d6d6;
+}
+
+#main ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#nav {
+	position: absolute;
+	right: 35px;
+	height: 57px;
+	line-height: 57px;
+	top: 71px;
+}
+
+#nav a {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #f1f0f0;
+	text-shadow: 0px 2px 1px #36221e;
+}
+
+#nav li {
+	margin: 0px 1em 0 1em;
+}
+
+#nav ul {
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+}
+
+#outer {
+	position: relative;
+	width: 1180px;
+	margin: 40px auto 0 auto;
+}
+
+#search input.button {
+	margin-left: 1em;
+	border: 0px;
+	color: #fff;
+	background: #07768d;
+	padding: 6px;
+}
+
+#search input.text {
+	border: dotted 1px #fff;
+	padding: 5px;
+}
+
+#sidebar1 {
+	width: 215px;
+	float: left;
+	padding: 35px;
+	background: #b09792 url('../images/bg3.jpg');
+	color: #ede9e8;
+	border: solid 1px #C1B0AC;
+	text-shadow: 0px 1px 1px #705752;
+}
+
+#sidebar1 a {
+	color: #f9f7f6;
+}
+
+#sidebar1 h2, #sidebar1 h3, #sidebar1 h4 {
+	color: #fff;
+	text-shadow: 0px 1px 1px #402722;
+}
+
+#sidebar1 ul {
+	list-style: none;
+}
+
+#sidebar1 ul li {
+	padding: 10px 0 10px 0;
+	border-top: dotted 1px #fde8e3;
+}
+
+#sidebar1 ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#sidebar2 {
+	width: 215px;
+	margin: 0px 35px 0 315px;
+	padding: 35px;
+	background: #886963 url('../images/bg2.jpg');
+	color: #f3efef;
+	border: solid 1px #967B76;
+	text-shadow: 0px 1px 1px #583933;
+}
+
+#sidebar2 a {
+	color: #f5f3f3;
+}
+
+#sidebar2 h2, #sidebar2 h3, #sidebar2 h4 {
+	color: #fff;
+	text-shadow: 0px 1px 1px #482923;
+}
+
+#sidebar2 ul {
+	list-style: none;
+}
+
+#sidebar2 ul li {
+	padding: 10px 0 10px 0;
+	border-top: dotted 1px #cbb1ac;
+}
+
+#sidebar2 ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
