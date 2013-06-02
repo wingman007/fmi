@@ -1,0 +1,2 @@
+// $(function(e) { $("#box3").load(BASE_URL + '/fmi-student/service-ajax'); }, 60000); // loads the content after onLoad event
+$(function() {  $("#box3").click(function() { $("#box3").load(BASE_URL + '/fmi-student/service-ajax'); }) });
