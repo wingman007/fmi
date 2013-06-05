@@ -18,35 +18,33 @@ return array(
 					'route'    => '/fmi',
 					'defaults' => array(
 						'__NAMESPACE__' => 'Fmi\Controller',
-						'controller'    => 'Index',
+						'controller'    => 'denisgeorgiev',
 						'action'        => 'index',
 					),
+					
 				),
 				'may_terminate' => true,
-				'child_routes' => array(
-					'default' => array(
-						'type'    => 'Segment',
-						'options' => array(
-							'route'    => '/[:controller[/:action[/:id]]]', // !!! SUPER important use grace-drops/default  grace-drops/<segment>in url helper
-							'constraints' => array(
-								'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-								'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-								'id' => '[0-9]*'
-							),
-							'defaults' => array(
-								// STOYAn was adding this. You can avoid using it
-								'__NAMESPACE__' => 'Fmi\Controller',
-								'controller'    => 'Index',
-								'action'        => 'index',
-							),
-						),
-					),
-				),
+                'child_routes' => array(
+                    'default' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action[/:id]]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
 			),
 		),
 	),
     'view_manager' => array(
         'template_map' => array(
+              'layout/DenisGeorgiev'           => __DIR__ . '/../view/layout/DenisGeorgiev.phtml',
+              'layout/eponymous'           => __DIR__ . '/../view/layout/eponymous.phtml',       
 //            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
 //            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
         ),
