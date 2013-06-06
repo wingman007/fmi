@@ -1,0 +1,31 @@
+#content {
+	position: relative;
+}
+
+#about ul {
+	list-style: url("../images/bullet_ie.png") inside;
+}
+
+#work ul li {
+	float: left;
+}
+
+#work .left .caption {
+	top: -104px;
+	}
+	#work .left .caption h3 a, #work .left .caption p {
+		top: 10px;
+		left: 15px;
+	}
+
+ul#navigation li a {
+	background: url("../images/navglow_ie.png") no-repeat 4px 10px;
+}
+
+#contact div.left h3, #contact div.left ul {
+	margin: 10px 0 -5px 17px;
+}
+
+#contactinfo p {
+	margin-bottom: 12px;
+}

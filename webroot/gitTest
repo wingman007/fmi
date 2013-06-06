@@ -1,0 +1,8 @@
+<html>
+  <head>
+     <title>PHP Test</title>
+  </head>
+  <body>
+     <?php echo '<p>Testing GITHub push with read-only rights.</p>'; ?>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+/*In order to make it work in IE we need to load also */
+/* <script type="text/javascript" src="/templates/new/js/dropdownie.js?navElement=navcontainer"></script> */
+#navcontainer { 
+/* background:url(../images/menu_bg.jpg); */
+} 
+
+#navcontainer ul { 
+    padding: 0;    
+    margin: 0;     
+    list-style: none;
+ overflow: visible;
+ z-index: 5;
+}
+
+#navcontainer a {     
+    display:block;
+/* color:#000000; */
+ text-align:center;
+ text-decoration: none;
+   font-size: 10pt; /*12px = 9pt*/
+ width: 90px;
+ height: 51px;
+ padding-top:20px;
+ font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+/* background: yellow; */
+}
+
+#navcontainer a:visited {     
+/* color:#000000; */
+}
+
+#navcontainer a:hover {     
+/* background:green url(../images/menu-bg-hvr.gif) no-repeat scroll 0 0; */
+/* background: transparent url("../images/nav_center_hover.png") repeat-x scroll 0 0; */
+ background: white url("../images/nav_center_hover.png") repeat-x scroll 0 0;
+ color:#954a04;
+}
+
+/* Active Menus */
+ul li.active a{
+/* color:#000; */
+}
+
+ul li.active a:visited {
+/* color:#000; */
+}
+
+ul li.active a:hover {
+/* color:#000; */
+}
+
+/*If we need different settings for the pop-up menus*/
+#navcontainer li ul a {     
+    display:block;
+/* color:#000000; */
+ text-align:center;
+ text-decoration: none;
+   font-size: 10pt; 
+ width: 120px; /* auto; */ 
+ height: 30px; /* auto; */
+ padding-top:15px;
+ font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+/* border-top: 1px solid #aaaaaa; */
+ border-bottom: 1px solid #aaaaaa;
+ background: #eeeeee; /* Here you change the background color of the popup menu*/
+}
+
+#navcontainer li ul a:visited {     
+/* color:#000000; */
+}
+
+#navcontainer li ul a:hover {     
+ background:#aaaaaa; /* url(../images/menu-bg-hvr.gif); */
+ color:#954a04;
+}
+/* End of popup menu*/
+
+/* this makes the menu to become horizontal */
+#navcontainer li { 
+    float: left;
+ width: 95px;
+}
+
+/* for the next level we move it to the right "indent"  Controls how far right are the next menus 
+Bigger number more right 
+the longest situation was  margin: -1em 0 0 8em; - it was working for ALL LEVELS PERFECT
+-2.2em 0 0 8em; the first number controls the vertila position bigger negative numbers higher will be the next level
+*/
+#navcontainer  li ul { /* the first number moves the second level up verticaly and  down, thest number moves left right  horizontaly*/
+     margin: -0.8em 0 0 0;
+ }
+#navcontainer li ul ul {
+     margin: -2.5em 0 0 8.5em;
+ } 
+#navcontainer li ul ul ul{
+     margin: -2.5em 0 0 8.5em;
+ } 
+ #navcontainer li ul ul ul ul{
+     margin: -2.5em 0 0 8.5em;
+ } 
+ #navcontainer li ul ul ul ul ul{
+ margin: -2.5em 0 0 8.5em;
+ } 
+
+/* We starting to hide them now this moves the lists very far left*/
+ #navcontainer li ul {
+     position: absolute;
+     width: 10em;
+     left: -999em; 
+}
+
+#navcontainer  li:hover ul ul, #navcontainer li:hover ul ul ul, #navcontainer li:hover  ul ul ul ul, #navcontainer li.sfhover ul ul, #navcontainer li.sfhover  ul ul ul, #navcontainer li.sfhover ul ul ul ul {     
+    left: -999em; 
+}
+
+/* this brings the list back Can be done only with one expression 
+ this and the javascript is for IE  The java script attaches class sfhover to li*/
+#navcontainer  li:hover ul, #navcontainer li li:hover ul, #navcontainer li li li:hover  ul, #navcontainer li li li li:hover ul, #navcontainer li.sfhover ul,  #navcontainer li li.sfhover ul, #navcontainer li li li.sfhover ul,  #navcontainer li li li li.sfhover ul {
+    left: auto;
+ z-index: 1000;   
+}

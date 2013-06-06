@@ -1,0 +1,44 @@
+<?php // a template for RIA - Rich Internet Application - only 1 page app ?>
+<?php // obe = object browser and editor, baf = The framework is named Browser Application (BAF), workspace object (WSO). ?>
+
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+ <?php echo $this->headTitle(); ?>
+ <?php echo $this->headMeta(); ?> 
+ <?php echo $this->headLink(); ?>
+    <?php echo $this->headStyle(); ?>
+ <?php echo $this->navigation()->links(); //In a view script or layout: ?> 
+<?php
+// Dojo doesn't exist anymore in ZF2
+// recomended
+/*
+ if ($this->dojo()->isEnabled()){
+    $this->dojo()->setLocalPath('/js/dojo/dojo.js')
+                 ->addStyleSheetModule('dijit.themes.tundra');
+    echo $this->dojo();
+   }
+*/
+?>
+
+ <?php // if ( $this->dojo()->isEnabled() ) echo $this->dojo(); ?>
+    <?php echo $this->headScript(); ?>
+
+</head>
+<!-- Dojo Set body class to "tundra" -->
+<body <?php if ( $this->dojo()->isEnabled() ) echo 'class="'.$this->body_dojo_class.'"'; ?>>
+
+<?php // echo $this->layout()->left; // to create containers with plugins Observers or in the controller ?> 
+<?php // in the controller $this->_helper->Layout()->left ?> 
+
+<?php // to render the navigation it is set in the registry in bootstrap Zend_Registry::set('Zend_Navigation', $container);?>
+<?php // echo $this->navigation()->menu(); ?>
+<?php // echo $this->navigation()->menu()->findOneBy('label', 'CRUD')->set('visible', true); ?>
+<?php // echo $this->navigation()->breadcrumbs(); ?>
+
+<?php echo $this->layout()->content; ?>
+
+<?php echo  $this->inlineScript(); ?>
+
+</body>
+</html>

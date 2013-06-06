@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FMI</title>
+    <link rel="stylesheet" href="<?php echo $this->basePath(); ?>/StoyanCheresharov/css/standard_structure.css" media="screen" type="text/css" title="standard_structure" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="wrapInner">
+        <div id="header"><!-- replace with HTML5 header tag -->
+          <div class="inside">
+            <h1>Header</h1>
+          </div>
+        </div>
+        <div id="mainBody"><!-- replace with HTML5 section tag -->
+          <div id="content">
+            <div class="inside">
+              <?php echo $this->content; ?>
+            </div>
+          </div>
+          <div id="navSide"><!-- replace with HTML5 nav tag -->
+            <div class="inside">
+              <h1>Navigation</h1>
+              <div id="navcontainer">
+                <ul class="navigation">
+                  <li>
+                    <a title="Menu Item 1" href="/index.php?/cms/index/index/artc_id/512">Menu Item 1</a>
+                    <ul>
+                      <li>
+                        <a href="/index.php?/vms-cms/index/index/artc_id/1026">Menu Item 1.1</a>
+                      </li>
+                      <li>
+                        <a title="Menu Item 1.2" href="/index.php?/something/my-account">Menu Item 1.2</a>
+                        <ul>
+                          <li>
+                            <a title="Menu Item 1.2.1" href="/index.php?/something/my-account">Menu Item 1.2.1</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a title="Menu Item 2" href="/index.php?/cms/index/index/artc_id/514">Menu Item 2</a>
+                  </li>
+                  <li>
+                    <a title="Menu Item 3" href="/index.php?/cms/index/index/artc_id/516">Menu Item 3</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="add"><!-- replace with HTML5 aside tag -->
+          <div class="inside">
+            <h1>Advertisements</h1>
+          </div>
+        </div>
+        <div id="footer"><!-- replace with HTML5 footer tag -->
+          <div class="inside">
+            <h1>Footer</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="<?php echo $this->basePath(); ?>/StoyanCheresharov/js/standard_structure.js"></script>
+  <?php echo $this->inlineScript() ?>
+  </body>
+</html>

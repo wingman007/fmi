@@ -1,0 +1,6 @@
+{"ts":1360917405636,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1360917408160,"patch":[[{"diffs":[[1,"<h1"]],"start1":0,"start2":0,"length1":0,"length2":3}]],"length":3,"saved":false}
+{"ts":1360917409667,"patch":[[{"diffs":[[0,"<h1"],[1,"></"]],"start1":0,"start2":0,"length1":3,"length2":6}]],"length":6,"saved":false}
+{"ts":1360917411045,"patch":[[{"diffs":[[0,"<h1></"],[1,"h1"]],"start1":0,"start2":0,"length1":6,"length2":8}]],"length":8,"saved":false}
+{"ts":1360917412224,"patch":[[{"diffs":[[0,"<h1></h1"],[1,">"]],"start1":0,"start2":0,"length1":8,"length2":9}]],"length":9,"saved":false}
+{"ts":1360917419651,"patch":[[{"diffs":[[0,"<h1>"],[1,"Alexander Alexandrov"],[0,"</h1>"]],"start1":0,"start2":0,"length1":9,"length2":29}]],"length":29,"saved":false}

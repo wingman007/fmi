@@ -1,0 +1,154 @@
+body {
+	background-image: linear-gradient(right , rgb(74,168,219) 0%, rgb(255,255,255) 80%, rgb(74,168,219) 100%, rgb(255,255,255) 20%);
+	background-image: -o-linear-gradient(right , rgb(74,168,219) 0%, rgb(255,255,255) 80%, rgb(74,168,219) 100%, rgb(255,255,255) 20%);
+	background-image: -moz-linear-gradient(right , rgb(74,168,219) 0%, rgb(255,255,255) 80%, rgb(74,168,219) 100%, rgb(255,255,255) 20%);
+	background-image: -webkit-linear-gradient(right , rgb(74,168,219) 0%, rgb(255,255,255) 80%, rgb(74,168,219) 100%, rgb(255,255,255) 20%);
+	background-image: -ms-linear-gradient(right , rgb(74,168,219) 0%, rgb(255,255,255) 80%, rgb(74,168,219) 100%, rgb(255,255,255) 20%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		right top,
+		left top,
+		color-stop(0, rgb(74,168,219)),
+		color-stop(0.8, rgb(255,255,255)),
+		color-stop(1, rgb(74,168,219)),
+		color-stop(0.2, rgb(255,255,255))
+	);
+	
+	color:#333;
+	margin:20px auto;
+	text-align:center;
+	line-height:1.4em;
+	width: 1015px;
+}
+
+@font-face {
+    font-family: 'elite_hacker_corrodedregular';
+    src: url('../fonts/elite_hacker_corroded-webfont.eot');
+    src: url('../fonts/elite_hacker_corroded-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/elite_hacker_corroded-webfont.woff') format('woff'),
+         url('../fonts/elite_hacker_corroded-webfont.ttf') format('truetype'),
+         url('../fonts/elite_hacker_corroded-webfont.svg#elite_hacker_corrodedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:16px;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	font-weight:normal;
+}
+
+a:link, a:visited {
+	font-family:georgia, times, sans-serif;
+	font-weight:bold;
+	color:#4aa9db;
+	font-size: 15px;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#333;
+}
+
+nav {
+	margin-top:50px;
+	text-align:center;
+	display:block;
+}
+
+nav ul {
+	padding:0px;
+	list-style-type:none;
+	display:inline;
+}
+
+nav li {
+	padding:0px;
+	margin:0px 10px;
+	list-style-type:none;
+	display:inline;
+}
+
+header, section, article, footer {
+	border-radius:8px;
+	background-color:rgb(225,225,225);
+	padding:10px 20px 20px;
+	margin:10px;
+}
+
+header {
+	display:block;
+	position:relative;
+	text-align:center;
+}
+
+header h1{
+	text-align:center;
+	font-weight:normal;
+	font-size:60px;
+	font-family:'elite_hacker_corrodedregular', Arial;
+}
+
+header h2{
+	text-align:center;
+}
+
+section#left {
+	float:left;
+	width:200px;
+	text-align:left;	
+}
+
+section a:hover{
+	background-color:white;
+}
+
+section h1{
+	background:transparent url(../images/sprites.png) no-repeat 0px -50px;
+	color:#fff;
+	font-weight:normal;
+	padding:5px 10px 10px 10px;
+	margin-left:-20px;
+	text-shadow:0 1px 0 #403232;
+}
+
+section ul {
+	padding:0px;
+	list-style-type:none;
+	margin:10px 0px;
+}
+
+section li {
+	padding:0px;
+	margin:0px;
+	list-style-type:none;	
+}
+
+section li  a:link, section li a:visited{
+	float:left;
+	width:96%;
+	padding:3px 1%;	
+}
+
+article {
+	float:left;
+	width:704px;
+	text-align:justify;
+	padding-right:10px;
+}
+
+article h1, article h2, article h3, article h4{
+	text-align:left;
+	font-weight:normal;
+}
+
+article h1{
+	background:transparent url(../images/sprites.png) no-repeat 0px 0px;
+	color:#fff;
+	padding:5px 10px 10px 10px;
+	margin-left:-20px;
+	text-shadow:0 1px 0 #403232;	
+}

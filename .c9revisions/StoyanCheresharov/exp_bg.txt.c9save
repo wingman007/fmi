@@ -1,0 +1,3 @@
+{"ts":1361528329647,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1361528343497,"patch":[[{"diffs":[[1,"This text comes from the server"]],"start1":0,"start2":0,"length1":0,"length2":31}]],"length":31,"saved":false}
+{"ts":1361528633170,"patch":[[{"diffs":[[1,"<h1>This is a title</h1><p>"],[0,"This tex"]],"start1":0,"start2":0,"length1":8,"length2":35},{"diffs":[[0,"e server"],[1,"</p>"]],"start1":50,"start2":50,"length1":8,"length2":12}]],"length":62,"saved":false}
