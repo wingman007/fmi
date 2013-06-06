@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 RewriteEngine On
 RewriteRule ^(.*)$ public/$1 [L]
+=======
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+>>>>>>> refs/heads/master

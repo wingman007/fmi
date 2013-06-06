@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
  font-family: "Trebuchet MS";
  src: url("../fonts/trebuc.ttf");
@@ -5,4 +6,13 @@
 
 body {
  font: normal normal normal 9pt/105%  "Trebuchet MS", Arial, Helvetica, sans-serif; /*"Trebuchet MS",*/
+=======
+@font-face {
+ font-family: "Trebuchet MS";
+ src: url("../fonts/trebuc.ttf");
+}
+
+body {
+ font: normal normal normal 9pt/105%  "Trebuchet MS", Arial, Helvetica, sans-serif; /*"Trebuchet MS",*/
+>>>>>>> refs/heads/master
 }

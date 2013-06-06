@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fmi test in delete me as a professor
 Listen 10118
 <VirtualHost *:10118>
@@ -10,4 +11,18 @@ Listen 10118
         AllowOverride all
 		Require all granted
   </Directory>
+=======
+# Fmi test in delete me as a professor
+Listen 10118
+<VirtualHost *:10118>
+    DocumentRoot "/PortableApps/PortableGit/projects/deleteme/fmi/public"
+    <Directory "/PortableApps/PortableGit/projects/deleteme/fmi/public">
+	    SetEnv ZF2_PATH /xampp/php/pear/ZF2
+		SetEnv APPLICATION_ENV development
+        Order allow,deny
+        Allow from all
+        AllowOverride all
+		Require all granted
+  </Directory>
+>>>>>>> refs/heads/master
 </VirtualHost>

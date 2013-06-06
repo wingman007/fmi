@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 echo '<h1>I am in manage-user.phtml Index Controller</h1>';
 
@@ -12,4 +13,20 @@ echo $this->form()->openTag($form);
 echo $this->formCollection($form);
 echo $this->form()->closeTag();
 
+=======
+<?php
+echo '<h1>I am in manage-user.phtml Index Controller</h1>';
+
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('grace-drops/default', array('controller' => 'Index', 'action' => 'manage-user'))); //'contact/process'));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+
+>>>>>>> refs/heads/master
 ?>

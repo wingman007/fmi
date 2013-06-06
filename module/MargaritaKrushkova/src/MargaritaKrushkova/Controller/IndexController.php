@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * Zend Framework (http://framework.zend.com/)
@@ -20,4 +21,28 @@ class IndexController extends AbstractActionController
         $this->layout('layout/margaritatempl');
         return $viewModel;
     }
+=======
+<?php
+/**
+ * Zend Framework (http://framework.zend.com/)
+ *
+ * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ */
+
+namespace MargaritaKrushkova\Controller;
+
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
+
+class IndexController extends AbstractActionController
+{
+    public function indexAction()
+    {
+        $viewModel = new ViewModel();
+        $this->layout('layout/margaritatempl');
+        return $viewModel;
+    }
+>>>>>>> refs/heads/master
 }

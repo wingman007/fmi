@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 local.php
 *.local.php
+=======
+local.php
+*.local.php
+>>>>>>> refs/heads/master

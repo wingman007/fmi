@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 language: php
 php:
   - "5.5"
   - "5.4"
+=======
+language: php
+php:
+  - "5.5"
+  - "5.4"
+>>>>>>> refs/heads/master
   - "5.3"

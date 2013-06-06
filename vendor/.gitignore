@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !.gitignore
 .composer
 composer
@@ -7,3 +8,14 @@ ZF2
 bin
 doctrine
 symfony
+=======
+!.gitignore
+.composer
+composer
+zendframework
+autoload.php
+ZF2
+bin
+doctrine
+symfony
+>>>>>>> refs/heads/master

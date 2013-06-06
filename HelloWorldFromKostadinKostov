@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 
 function Hello($name)
@@ -7,3 +8,14 @@ function Hello($name)
 
 Hello('Kostadin Kostov')
 ?>
+=======
+<?php 
+
+function Hello($name)
+{
+  print "Hello world from " + name;
+}
+
+Hello('Kostadin Kostov')
+?>
+>>>>>>> refs/heads/master

@@ -1,7 +1,11 @@
 <?php
 namespace Fmi;
 
+<<<<<<< HEAD
 class Article
+=======
+class Article
+>>>>>>> refs/heads/master
 {
   protected $title;
   
