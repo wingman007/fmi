@@ -12,32 +12,26 @@ class AlbumForm extends Form
         $this->setAttribute('method', 'post');
         $this->add(array(
             'name' => 'id',
-            'attributes' => array(
-                'type'  => 'hidden',
-            ),
-        ));
-        $this->add(array(
-            'name' => 'artist',
-            'attributes' => array(
-                'type'  => 'text',
-            ),
-            'options' => array(
-                'label' => 'Artist',
-            ),
+            'type' => 'Hidden',
         ));
         $this->add(array(
             'name' => 'title',
-            'attributes' => array(
-                'type'  => 'text',
-            ),
+            'type' => 'Text',
             'options' => array(
                 'label' => 'Title',
             ),
         ));
         $this->add(array(
+            'name' => 'artist',
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'Artist',
+            ),
+        ));
+        $this->add(array(
             'name' => 'submit',
+            'type' => 'Submit',
             'attributes' => array(
-                'type'  => 'submit',
                 'value' => 'Go',
                 'id' => 'submitbutton',
             ),
