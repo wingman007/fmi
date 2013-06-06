@@ -1,7 +1,11 @@
 <?php
 namespace Fmi;
 
+<<<<<<< HEAD
 class Role
+=======
+class Role
+>>>>>>> refs/heads/master
 {
   protected $name;
   

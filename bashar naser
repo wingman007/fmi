@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <?php echo "Hello World from Bashar Naser "?>
+=======
+<?php echo "Hello World from Bashar Naser "?>
+>>>>>>> refs/heads/master

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="hero-unit">
     <h1><?php echo sprintf($this->translate('Welcome to %sZend Framework 2%s'), '<span class="zf-green">', '</span>') ?></h1>
     <p><?php echo sprintf($this->translate('Congratulations! You have successfully installed the %sZF2 Skeleton Application%s. You are currently running Zend Framework version %s. This skeleton can serve as a simple starting point for you to begin building your application on ZF2.'), '<a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
@@ -163,3 +164,170 @@ $this->headLink(array(
 </div>
 
 <hr style="clear: both;"/>
+=======
+<div class="hero-unit">
+    <h1><?php echo sprintf($this->translate('Welcome to %sZend Framework 2%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><?php echo sprintf($this->translate('Congratulations! You have successfully installed the %sZF2 Skeleton Application%s. You are currently running Zend Framework version %s. This skeleton can serve as a simple starting point for you to begin building your application on ZF2.'), '<a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
+    <p><a class="btn btn-success btn-large" href="https://github.com/zendframework/zf2" target="_blank"><?php echo $this->translate('Fork Zend Framework 2 on GitHub') ?> &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    <div class="span4">
+        <h2><?php echo $this->translate('Follow Development') ?></h2>
+        <p><?php echo sprintf($this->translate('Zend Framework 2 is under active development. If you are interested in following the development of ZF2, there is a special ZF2 portal on the official Zend Framework website which provides links to the ZF2 %swiki%s, %sdev blog%s, %sissue tracker%s, and much more. This is a great resource for staying up to date with the latest developments!'), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="http://framework.zend.com/issues/browse/ZF2">', '</a>') ?></p>
+        <p><a class="btn btn-success" href="http://framework.zend.com/zf2" target="_blank"><?php echo $this->translate('ZF2 Development Portal') ?> &raquo;</a></p>
+    </div>
+
+    <div class="span4">
+        <h2><?php echo $this->translate('Discover Modules') ?></h2>
+        <p><?php echo sprintf($this->translate('The community is working on developing a community site to serve as a repository and gallery for ZF2 modules. The project is available %son GitHub%s. The site is currently live and currently contains a list of some of the modules already available for ZF2.'), '<a href="https://github.com/zendframework/modules.zendframework.com">', '</a>') ?></p>
+        <p><a class="btn btn-success" href="http://modules.zendframework.com/" target="_blank"><?php echo $this->translate('Explore ZF2 Modules') ?> &raquo;</a></p>
+   </div>
+
+   <div class="span4">
+       <h2><?php echo $this->translate('Help &amp; Support') ?></h2>
+       <p><?php echo sprintf($this->translate('If you need any help or support while developing with ZF2, you may reach us via IRC: %s#zftalk.2 on Freenode%s. We\'d love to hear any questions or feedback you may have regarding the beta releases. Alternatively, you may subscribe and post questions to the %smailing lists%s.'), '<a href="irc://irc.freenode.net/zftalk.2">', '</a>', '<a href="http://framework.zend.com/wiki/display/ZFDEV/Mailing+Lists">', '</a>') ?></p>
+       <p><a class="btn btn-success" href="http://webchat.freenode.net?channels=zftalk.2" target="_blank"><?php echo $this->translate('Ping us on IRC') ?> &raquo;</a></p>
+   </div>
+</div>
+
+<?php // setting links in a view script:
+$this->headLink(array(
+    'rel'  => 'favicon',
+    'href' => $this->basePath() . '/img/favicon.ico',
+), 'PREPEND')
+  ->appendStylesheet($this->basePath() . '/css/fmi.css')
+  ->prependStylesheet(
+        $this->basePath() . '/styles/moz.css',
+        'screen',
+        true,
+        array('id' => 'my_stylesheet')
+    );
+?>
+<hr style="clear: both;"/>
+
+<div class="hero-unit">
+  <h1>FMI Project contributors!<span class="zf-green"> Thanks! :) </span></h1>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Alexander Alexandrov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('alexander_alexandrov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Anton Tonev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('anton_tonev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Elena Chavdarova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('elena', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Elitsa Nedyalkova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('elitsa_nedyalkova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Gyuner Zeki</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('gyuner_zeki', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Ivelina Velcheva</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('ivelina_velcheva', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>KrasimirTsvetanov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('krasimir_tsvetanov', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Margarita Krushkova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('margarita_krushkova', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Marina Gatova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('marina_gatova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Martin Manov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('martin_manov', array('controller'=> 'index', 'action' => 'mm-layout'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Mihaela Kerkenekova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('mihaela_kerkenekova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Mihail Kopuscu</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('mihail_kopuscu', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Neslihan Suleyman</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('neslihan_suleyman', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Nikolai Baldjiev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('nikolai_baldjiev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Nikoleta Poibrenska</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('nikoleta_poibrenska', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Paola Shumanova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('paola-shumanova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Petya Stavarova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('petya_stavarova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Ralica Nikolova</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('RallNic', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Stoyan Atanasoff</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('stoyan_atanasoff', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Vanya Dimitrova !</h2>
+  <p><a class="btn btn-success" href="<?php // echo $this->url('vanya_dimitrova', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Vasil Vasilev</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('Vasil_Vasilev', array('controller'=> 'index', 'action' => 'change'), true); ?>" target="_blank"><?php echo $this->translate('Change Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Victor Atanassov</h2>
+  <p><a class="btn btn-success" href="<?php echo $this->url('victor_atanassov', array('controller'=> 'index', 'action' => 'index'), true); ?>" target="_blank"><?php echo $this->translate('Index Action') ?> &raquo;</a></p>
+</div>
+
+<div class="hero-unit fmi">
+  <h2>Zhelyan Guglev</h2>
+  <p>
+  <a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'zhelyan'), true); ?>" target="_blank"><?php echo $this->translate('zhelyan Action') ?> &raquo;</a>
+  <a class="btn btn-success" href="<?php echo $this->url('zhelyan_guglev', array('controller'=> 'index', 'action' => 'eponymous'), true); ?>" target="_blank"><?php echo $this->translate('eponymous Action') ?> &raquo;</a>
+  </p>
+</div>
+
+<hr style="clear: both;"/>
+>>>>>>> refs/heads/master

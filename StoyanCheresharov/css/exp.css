@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
     color: red;    
 }
@@ -9,4 +10,17 @@ h1 {
 .head {
     font-size: 3em;
     color: green;
+=======
+h1 {
+    color: red;    
+}
+
+.content {
+    font-size: 2em;
+}
+
+.head {
+    font-size: 3em;
+    color: green;
+>>>>>>> refs/heads/master
 }

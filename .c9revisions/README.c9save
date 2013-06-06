@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"ts":1362078780195,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"This is a sample PHP project\n"]],"start1":0,"start2":0,"length1":0,"length2":29}]],"length":29}
+=======
+{"ts":1362078780195,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"This is a sample PHP project\n"]],"start1":0,"start2":0,"length1":0,"length2":29}]],"length":29}
+>>>>>>> refs/heads/master

@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 h1 {
     color: red;    
 }
 
 .details {
     color: blue;
+=======
+h1 {
+    color: red;    
+}
+
+.details {
+    color: blue;
+>>>>>>> refs/heads/master
 }
