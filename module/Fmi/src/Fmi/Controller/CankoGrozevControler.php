@@ -192,6 +192,8 @@ class CankoGrozevController extends AbstractActionController
             return $this->redirect()->toRoute('fmi');
         }
 
+        $this->layout('layout/AntonTonev');
+        
         return array(
             'id'    => $id,
             'user' => $user, // $this->getAlbumTable()->getAlbum($id)
