@@ -11,7 +11,8 @@ return array(
             'Fmi\Controller\DenisGeorgiev' => 'Fmi\Controller\DenisGeorgievController',	
             'Fmi\Controller\CvetomirStoqnov' => 'Fmi\Controller\CvetomirStoqnovController',			
             'Fmi\Controller\CankoGrozev' => 'Fmi\Controller\CankoGrozevController',
-            'Fmi\Controller\StoyanRevov' => 'Fmi\Controller\StoyanRevovController',		
+            'Fmi\Controller\StoyanRevov' => 'Fmi\Controller\StoyanRevovController',	
+            'Fmi\Controller\VladislavAntov' => 'Fmi\Controller\VladislavAntovController',		
         ),
     ),
 	// !!! SUPER important use fmi/default  grace-drops/<segment>in url helper
