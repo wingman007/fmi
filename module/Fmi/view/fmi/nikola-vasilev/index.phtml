@@ -1,0 +1,44 @@
+<div id="location">nikola-vasilev / index.phtml</div><br/>
+<?php
+    $title = 'My users';
+    $this->headTitle($title);
+?>
+<div id="content">
+  <div id="content2">
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('fmi/default', array('controller' => 'nikola-vasilev', 'action'=>'add'));?>">Add new user</a>
+</p>
+
+<table>
+  <thead>
+              <tr>
+                <th>Name</th>
+                <th>Password</th>
+                <th colspan="2" width="10%">Actions</th>
+              </tr>
+  </thead>
+  <tbody>
+<?php foreach ($users as $user) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($user->getUsrName());?></td>
+    <td><?php echo $this->escapeHtml($user->getUsrPassword());?></td>
+    <td><a href="<?php echo $this->url('fmi/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'nikola-vasilev', 'action'=>'edit', 'id' => $user->getUsrId()));?>" class="edit">Edit</a>
+    </td>
+    <td><a href="<?php echo $this->url('fmi/default', // SUPER IMPORTANT use grace-drops/<segment>
+            array('controller' => 'nikola-vasilev', 'action'=>'delete', 'id' => $user->getUsrId()));?>" class="delete">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+  </tbody>
+</table>
+
+<br/>
+<p>
+  <a href="<?php echo $this->url('fmi/default', array('controller' => 'Index', 'action'=>'index'));?>">Back to FMI</a>
+</p>
+<br/>
+  </div>
+</div>
+<br/>

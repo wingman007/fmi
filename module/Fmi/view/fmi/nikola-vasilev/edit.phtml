@@ -1,0 +1,29 @@
+<div id="location">nikola-vasilev / edit.phtml</div><br/>
+<?php
+    $title = 'Edit user';
+    $this->headTitle($title);
+?>
+<div id="content">
+  <div id="content2">
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('fmi/default', array('controller' => 'nikola-vasilev', 'action' => 'edit', 'id' => $this->id))); //'contact/process'));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+$form->setAttribute('class', 'formCenter');
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+?>
+<br/>
+<p>
+  <a href="<?php echo $this->url('fmi/default', array('controller' => 'nikola-vasilev', 'action'=>'index'));?>">Back to  My users</a>
+</p>
+<br/>
+  </div>
+</div>
+<br/>
