@@ -5,7 +5,9 @@ namespace Fmi; // SUPER important for Doctrine othervise can not find the Entiti
 return array(
 	'controllers' => array(
         'invokables' => array(
-            'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',			
+            'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',		
+            'Fmi\Controller\IliaShterev' => 'Fmi\Controller\IliaShterevController',	
+
         ),
     ),
 	// !!! SUPER important use fmi/default  grace-drops/<segment>in url helper
@@ -47,7 +49,9 @@ return array(
     'view_manager' => array(
         'template_map' => array(
 //            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
-//            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
+//            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',	
+               'layout/MarinaGatova'           => __DIR__ . '/../view/layout/MarinaGatova.phtml',
+          
         ),
         'template_path_stack' => array(
             'grace-drops' => __DIR__ . '/../view'

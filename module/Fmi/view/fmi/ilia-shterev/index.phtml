@@ -1,0 +1,40 @@
+<?php
+echo '<h1>I am in index.phtml GraceDrops Controller</h1>';
+/*
+foreach($users AS $user) {
+    echo $user->getDescription()." - ".$user->getCreated()->format('d.m.Y')."\n";
+    echo "    Reported by: ".$user->getReporter()->name."\n";
+    echo "    Assigned to: ".$user->getEngineer()->name."\n";
+    foreach($user->getProducts() AS $product) {
+        echo "    Platform: ".$product->name."\n";
+    }
+    echo "\n";
+}
+*/
+$title = 'My users';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('fmi/default', array('controller' => 'iliashterev', 'action'=>'add'));?>">Add new user</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($users as $user) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($user->getUsrName());?></td>
+    <td><?php echo $this->escapeHtml($user->getUsrPassword());?></td>
+    <td>
+        <a href="<?php echo $this->url('fmi/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'iliashterev', 'action'=>'edit', 'id' => $user->getUsrId()));?>">Edit</a>
+        <a href="<?php echo $this->url('fmi/default', // SUPER IMPORTANT use grace-drops/<segment>
+            array('controller' => 'iliashterev', 'action'=>'delete', 'id' => $user->getUsrId()));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

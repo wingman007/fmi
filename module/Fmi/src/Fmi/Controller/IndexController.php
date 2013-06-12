@@ -1,4 +1,7 @@
 <?php
+
+
+
 /**
  * Zend Framework (http://framework.zend.com/)
  *
@@ -85,6 +88,7 @@ class IndexController extends AbstractActionController
                 return $this->redirect()->toRoute('fmi');
             }
         }
+       	$this->layout('layout/MarinaGatova');
         return array('form' => $form);		
     }
 
