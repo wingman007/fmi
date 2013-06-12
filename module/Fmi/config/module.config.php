@@ -12,7 +12,8 @@ return array(
             'Fmi\Controller\CvetomirStoqnov' => 'Fmi\Controller\CvetomirStoqnovController',			
             'Fmi\Controller\CankoGrozev' => 'Fmi\Controller\CankoGrozevController',
             'Fmi\Controller\StoyanRevov' => 'Fmi\Controller\StoyanRevovController',	
-            'Fmi\Controller\VladislavAntov' => 'Fmi\Controller\VladislavAntovController',		
+            'Fmi\Controller\VladislavAntov' => 'Fmi\Controller\VladislavAntovController',	
+            'Fmi\Controller\NikolaVasilev' => 'Fmi\Controller\NikolaVasilevController',		
         ),
     ),
 	// !!! SUPER important use fmi/default  grace-drops/<segment>in url helper
@@ -54,7 +55,8 @@ return array(
     'view_manager' => array(
         'template_map' => array(
 //            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
-//            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
+//            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',
+              'layout/NikolaVasilev'           => __DIR__ . '/../view/layout/NikolaVasilev.phtml',			
         ),
         'template_path_stack' => array(
             'grace-drops' => __DIR__ . '/../view'

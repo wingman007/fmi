@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Simplest CMS</title>
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/97935889/nikola-vasilev.css" type="text/css" media="screen" charset="utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1 id="head">Simplest CMS</h1>
+        <ul id="navigation">
+            <li><a href="<?php echo $this->url('fmi/default', array('controller' => 'nikola-vasilev', 'action'=>'index'));?>">My Users</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Others</a></li>
+          <li><a href="https://plus.google.com/u/0/104539026693660628516/" target="_blank">Contact Admin</a></li>
+        </ul>
+      
+        <?php echo $this->content;?>
+    </div>
+    <footer>
+        <p> 
+            &#169; <a href="https://plus.google.com/u/0/104539026693660628516/" target="_blank">Niko Vasilev</a> 2013
+        </p>
+    </footer>
+  </body>
+</html>    
