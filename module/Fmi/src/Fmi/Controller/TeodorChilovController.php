@@ -82,9 +82,10 @@ class TeodorChilovController extends AbstractActionController
 				$entityManager->flush();
 				
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('fmi');
+                return $this->redirect()->toRoute('fmi/default', array('controller' => 'teodor-chilov', 'action' => 'index'));
             }
         }
+         $this->layout('layout/AlexanderAlexandrov');
         return array('form' => $form);		
     }
 
@@ -144,7 +145,8 @@ class TeodorChilovController extends AbstractActionController
 				$entityManager->flush();				
 				
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('fmi');
+                return $this->redirect()->toRoute('fmi/default', array('controller' => 'teodor-chilov', 'action' => 'index'));
+
             }
         }
 
@@ -189,7 +191,8 @@ class TeodorChilovController extends AbstractActionController
             }
 
             // Redirect to list of albums
-            return $this->redirect()->toRoute('fmi');
+            return  $this->redirect()->toRoute('fmi/default', array('controller' => 'teodor-chilov', 'action' => 'index'));
+
         }
 
         return array(
