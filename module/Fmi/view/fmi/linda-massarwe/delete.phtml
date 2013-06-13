@@ -1,0 +1,28 @@
+<?php
+echo '<h1>I am in delete.phtml GraceDrops Controller</h1>';
+
+// module/Album/view/album/album/delete.phtml:
+
+$title = 'Delete user';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Are you sure that you want to delete
+    '<?php echo $this->escapeHtml($user->getUsrName()); ?>' by
+    '<?php echo $this->escapeHtml($user->getUsrPassword()); ?>'?
+</p>
+<?php
+$url = $this->url('fmi/default', array(
+	'controller' => 'linda-massarwe',
+    'action' => 'delete',
+    'id'     => $this->id,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $user->getUsrId(); ?>" />
+    <input type="submit" name="del" value="Yes" />
+    <input type="submit" name="del" value="No" />
+</div>
+</form>

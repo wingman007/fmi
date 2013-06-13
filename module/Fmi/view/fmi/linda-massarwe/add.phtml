@@ -1,0 +1,12 @@
+<?php
+echo '<h1>I am in add.phtml GraceDrops Controller</h1>';
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('fmi/default', array('controller' => 'linda-massarwe', 'action' => 'add'))); //'contact/process'));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
