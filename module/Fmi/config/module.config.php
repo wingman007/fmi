@@ -6,6 +6,7 @@ return array(
 	'controllers' => array(
         'invokables' => array(
             'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',	
+            'Fmi\Controller\KadriSelimov' => 'Fmi\Controller\KadriSelimovController',
             'Fmi\Controller\IvanQnachkov' => 'Fmi\Controller\IvanQnachkovController',	
             'Fmi\Controller\BoyanProdanov' => 'Fmi\Controller\BoyanProdanovController',			
             'Fmi\Controller\DenisGeorgiev' => 'Fmi\Controller\DenisGeorgievController',	
