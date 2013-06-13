@@ -81,6 +81,7 @@ return array(
 			'Application\Controller\KirilMilchev' => 'Application\Controller\KirilMilchevController',
 			'Application\Controller\NikolayVulkov' => 'Application\Controller\NikolayVulkovController',
 			'Application\Controller\PetkoShterev' => 'Application\Controller\PetkoShterevController',
+			'Application\Controller\PhilipYovchev' => 'Application\Controller\PhilipYovchevController',
 		),
     ),
     'view_manager' => array(
