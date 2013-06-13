@@ -5,8 +5,8 @@ namespace Fmi; // SUPER important for Doctrine othervise can not find the Entiti
 return array(
 	'controllers' => array(
         'invokables' => array(
-            'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',		
-            'Fmi\ControllerLindaMassarwe' => 'Fmi\Controller\LindaMassarweController',	 
+            'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',
+            'Fmi\Controller\LindaMassarwe' => 'Fmi\Controller\LindaMassarweController',		
         ),
     ),
 	// !!! SUPER important use fmi/default  grace-drops/<segment>in url helper
@@ -47,13 +47,13 @@ return array(
 	),
     'view_manager' => array(
         'template_map' => array(
-//            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
-//            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
+            'layout/rage'           => __DIR__ . '/../view/layout/rage.phtml', // layout/layout
+            'layout/waterdrop'           => __DIR__ . '/../view/layout/waterdrop.phtml',			
         ),
         'template_path_stack' => array(
             'grace-drops' => __DIR__ . '/../view'
         ),
-		
+
 		'display_exceptions' => true,
     ),
     'doctrine' => array(
@@ -66,7 +66,7 @@ return array(
 					__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity',
                 ),
             ),
-			
+
             // default metadata driver, aggregates all other drivers into a single one.
             // Override `orm_default` only if you know what you're doing
             'orm_default' => array(

@@ -1,0 +1,10 @@
+<?php
+$services_json = json_decode(getenv("VCAP_SERVICES"),true);
+$mysql_config = $services_json["mysql-5.1"][0]["credentials"];
+return array(
+    'db' => array(
+    'dsn' => 'mysql:dbname='.$mysql_config["name"].';host='.$mysql_config["hostname"].';port='.$mysql_config["port"],
+        'username'       => $mysql_config["username"],
+        'password'       => $mysql_config["password"],   
+    )
+);
