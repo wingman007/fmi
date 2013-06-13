@@ -14,7 +14,7 @@ return array(
             'Fmi\Controller\StoyanRevov' => 'Fmi\Controller\StoyanRevovController',	
             'Fmi\Controller\VladislavAntov' => 'Fmi\Controller\VladislavAntovController',	
             'Fmi\Controller\IliaShterev' => 'Fmi\Controller\IliaShterevController',
-            'Fmi\Controller\IliaShterev' => 'Fmi\Controller\IliaShterevController',	
+            'Fmi\Controller\NikolaVasilev' => 'Fmi\Controller\NikolaVasilevController',	
             'Fmi\Controller\ZdravkoZdravchev' => 'Fmi\Controller\ZdravkoZdravchevController',
             'Fmi\Controller\EleonoraDimova' => 'Fmi\Controller\EleonoraDimovaController',
             'Fmi\Controller\VasilBrakalov' => 'Fmi\Controller\VasilBrakalovController',

@@ -68,7 +68,7 @@ return array(
                 'pattern' => '%s.mo',
             ),
         ),
-    ),
+    ), 
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
@@ -77,7 +77,10 @@ return array(
 // 'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
 // 'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController', // <-- Added by me
 // 'Application\Controller\FmiStudent' => 'Application\Controller\FmiStudentController', // <-- Added by me
-        ),
+			'Application\Controller\AleksandraStefanova' => 'Application\Controller\AleksandraStefanovaController', // <-- Added by me
+			'Application\Controller\KirilMilchev' => 'Application\Controller\KirilMilchevController',
+			'Application\Controller\NikolayVulkov' => 'Application\Controller\NikolayVulkovController',
+		),
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
