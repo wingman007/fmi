@@ -85,7 +85,7 @@ class IvanQnachkovController extends AbstractActionController
                 return $this->redirect()->toRoute('fmi/default', array('controller' => 'ivan-qnachkov', 'action'=> 'index' ));
             }
         }
-        // $this->layout('layout/cardex');
+        $this->layout('layout/cardex');
         return array('form' => $form);		
     }
 
@@ -194,7 +194,7 @@ class IvanQnachkovController extends AbstractActionController
             return  $this->redirect()->toRoute('fmi/default', array('controller' => 'ivan-qnachkov', 'action'=> 'index' ));
         }
 
-        $this->layout('layout/zheponymous');
+            $this->layout('layout/zheponymous');
         return array(
             'id'    => $id,
             'user' => $user, // $this->getAlbumTable()->getAlbum($id)
