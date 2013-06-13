@@ -33,11 +33,11 @@ class BorislavKirilovController extends AbstractActionController
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');		
 		// $dql = "SELECT b, e, r FROM Bug b JOIN b.engineer e JOIN b.reporter r ORDER BY b.created DESC";
 		$dql = "SELECT u FROM Fmi\Entity\User u";
-		
+
 		$query = $entityManager->createQuery($dql);
 		$query->setMaxResults(30);
 		$users = $query->getResult();
-		
+
 		return new ViewModel(array('users' => $users));
     }
 
@@ -47,7 +47,7 @@ class BorislavKirilovController extends AbstractActionController
         // $form = new AlbumForm();
         // $form->get('submit')->setValue('Add');
 		// 1.2) with annotations
-		
+
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		$user = new User;
 		$builder = new DoctrineAnnotationBuilder($entityManager);
@@ -61,10 +61,10 @@ class BorislavKirilovController extends AbstractActionController
 			'type'  => 'submit'
 		));
 		$form->add($send);
-		
+
 		// 2) bind the entity
 		$form->bind($user);	
-		
+
 		// do the logic
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -77,10 +77,10 @@ class BorislavKirilovController extends AbstractActionController
                 // $this->getAlbumTable()->saveAlbum($album);
 
                 // NOW I will need the em
-				
+
 				$entityManager->persist($user);
 				$entityManager->flush();
-				
+
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('fmi');
             }
@@ -128,7 +128,7 @@ class BorislavKirilovController extends AbstractActionController
 			'type'  => 'submit'
 		));
 		$form->add($send);
-		
+
 		// 3) bind
 		$form->bind($user);
 
@@ -142,7 +142,7 @@ class BorislavKirilovController extends AbstractActionController
 
 				$entityManager->persist($user);
 				$entityManager->flush();				
-				
+
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('fmi');
             }
@@ -160,7 +160,7 @@ class BorislavKirilovController extends AbstractActionController
         if (!$id) {
             return $this->redirect()->toRoute('fmi');
         }
-		
+
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
         try {
             // $album = $this->getAlbumTable()->getAlbum($id);
@@ -175,7 +175,7 @@ class BorislavKirilovController extends AbstractActionController
                 'action' => 'index'
             ));
         }		
-		
+
         $request = $this->getRequest();
         if ($request->isPost()) {
             $del = $request->getPost('del', 'No');
@@ -205,7 +205,7 @@ class BorislavKirilovController extends AbstractActionController
 		// for example, in a controller:
 		// Access the Doctrine command line as following
 		//./vendor/bin/doctrine-module
-		
+
 		// H:\PortableApps\PortableGit\projects\grd>vendor\bin\doctrine-module.bat
 		// !!! without cli_config bootsyrap etc.
 		// H:\PortableApps\PortableGit\projects\grd>vendor\bin\doctrine-module.bat orm:schema-tool:create
@@ -217,7 +217,7 @@ class BorislavKirilovController extends AbstractActionController
 		// or
 		// $ vendor\bin\doctrine-module.bat orm:schema-tool:update --force
 
-		
+
 		/*
 		doctrine.connection.orm_default: a Doctrine\DBAL\Connection instance
 		doctrine.configuration.orm_default: a Doctrine\ORM\Configuration instance
@@ -230,7 +230,7 @@ class BorislavKirilovController extends AbstractActionController
 		$em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		// an alias
 		// $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-		
+
 		// ODM
 		// Read https://github.com/doctrine/DoctrineMongoODMModule
 		// Usage
@@ -239,10 +239,10 @@ class BorislavKirilovController extends AbstractActionController
 		// ./vendor/bin/doctrine-module
 
 		$dm = $this->getServiceLocator()->get('doctrine.documentmanager.odm_default');
-		
+
         return new ViewModel();
     }
-	
+
 	 // http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/tutorials/getting-started.html
 	 // http://framework.zend.com/manual/2.1/en/modules/zend.form.quick-start.html
 	 public function manageUserAction()
@@ -268,11 +268,11 @@ class BorislavKirilovController extends AbstractActionController
 		// For new user
 		$user = new User;
 		// $entityManager->persist($user);
-		
+
 		// $detachedEntity = unserialize($serializedEntity);
 //		$detachedEntity =  new User;
 //		$user = $entityManager->merge($detachedEntity);
-		
+
 		// here comes the magic
 		$builder = new DoctrineAnnotationBuilder($entityManager);
 		$form = $builder->createForm( $user );
@@ -289,19 +289,19 @@ class BorislavKirilovController extends AbstractActionController
 			'type'  => 'submit'
 		));
 		$form->add($send);
-		
+
 		$viewModel =  new ViewModel();
 		$viewModel->setVariable('form',$form);
 		return	$viewModel;	
 	 }
-	 
+
 	 public function changeRageAction()
 	 {
 		$viewModel = new ViewModel();
 		$this->layout('layout/rage'); // change the layout. DOn't forget to add it in module.config.php
 		return $viewModel;		
 	 }
-	 
+
 	 public function changeWaterdropAction()
 	 {
 		$viewModel = new ViewModel();
