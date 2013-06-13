@@ -12,7 +12,7 @@ return array(
     'router' => array(
         'routes' => array(
             'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'Application\C 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/',
                     'defaults' => array(
@@ -70,8 +70,9 @@ return array(
         ),
     ),
     'controllers' => array(
-        'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController',
+        'invokables' => array(         
+          Application\Controller\Index' => 'Application\Controller\IndexController',
+          'Application\Controller\KadriSelimov' => 'Application\Controller\KadriSelimovController',
 // 'Application\Controller\ZhelyanGuglev' => 'Application\Controller\ZhelyanGuglevController',
 // 'Application\Controller\AlexanderAlexandrov' => 'Application\Controller\AlexanderAlexandrovController'
 // 'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
