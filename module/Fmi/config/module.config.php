@@ -6,7 +6,7 @@ return array(
 	'controllers' => array(
         'invokables' => array(
             'Fmi\Controller\Index' => 'Fmi\Controller\IndexController',
-            'Fmi\Controller\VentsislavBoiadzhievController' => 'Fmi\Controller\VentsislavBoiadzhievController',		
+            'Fmi\Controller\VentsislavBoiadzhievConntrollertroller' => 'Fmi\Controller\VentsislavBoiadzhievController',		
         ),
     ),
 	// !!! SUPER important use fmi/default  grace-drops/<segment>in url helper
