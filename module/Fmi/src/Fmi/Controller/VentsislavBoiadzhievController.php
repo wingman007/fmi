@@ -38,6 +38,7 @@ class VentsislavBoiadzhievController extends AbstractActionController
 		$query->setMaxResults(30);
 		$users = $query->getResult();
 		
+    $this->layout('layout/AlexanderAlexandrov');
 		return new ViewModel(array('users' => $users));
     }
 
