@@ -77,7 +77,8 @@ return array(
 // 'Application\Controller\Stoyan' => 'Application\Controller\StoyanController', // <-- Added by me
 // 'Application\Controller\StoyanCheresharov' => 'Application\Controller\StoyanCheresharovController', // <-- Added by me
 // 'Application\Controller\FmiStudent' => 'Application\Controller\FmiStudentController', // <-- Added by me
-			'Application\Controller\AleksandraStefanova' => 'Application\Controller\AleksandraStefanovaController', // <-- Added by me
+			'Application\Controller\MiroslavGarigov' => 'Application\Controller\MiroslavGarigovController',
+      'Application\Controller\AleksandraStefanova' => 'Application\Controller\AleksandraStefanovaController', // <-- Added by me
 			'Application\Controller\KirilMilchev' => 'Application\Controller\KirilMilchevController',
 			'Application\Controller\NikolayVulkov' => 'Application\Controller\NikolayVulkovController',
 			'Application\Controller\PetkoShterev' => 'Application\Controller\PetkoShterevController',

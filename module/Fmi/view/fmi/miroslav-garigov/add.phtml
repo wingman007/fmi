@@ -1,9 +1,9 @@
 <?php
-echo '<h1 style="color:red;">I am in edit.phtml GraceDrops Controller</h1>';
+echo '<h1 style="background:red; padding: 15px; text-align: center; color: white;">I am in add.phtml GraceDrops Controller</h1>';
 $form = $this->form;
 $form->prepare();
 // Assuming the "contact/process" route exists...
-$form->setAttribute('action', $this->url('fmi/default', array('controller' => 'linda-massarwe', 'action' => 'edit', 'id' => $this->id))); //'contact/process'));
+$form->setAttribute('action', $this->url('fmi/default', array('controller' => 'miroslav-garigov', 'action' => 'add'))); //'contact/process'));
 // Set the method attribute for the form
 $form->setAttribute('method', 'post');
 
