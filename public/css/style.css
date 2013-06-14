@@ -35,3 +35,11 @@ div.container a.brand {
     margin-left: 0;
     padding: 8px 20px 12px 40px;
 }
+}
+body{
+  background: #f2f2f2;
+  background-repeat: repeat;
+}
+input:hover{
+  border: 1px solid blue;
+}
