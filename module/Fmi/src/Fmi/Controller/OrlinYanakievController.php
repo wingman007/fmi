@@ -85,7 +85,7 @@ class OrlinYanakievController extends AbstractActionController
                 return $this->redirect()->toRoute('fmi/default', array('controller' => 'orlin-yanakiev', 'action'=> 'index' ));
             }
         }
-        $this->layout('layout/eponymous');
+        $this->layout('layout/AlexandarAlexandrov');
         return new ViewModel(array('form' => $form));
       //  return array('form' => $form);		
     }
@@ -110,7 +110,6 @@ class OrlinYanakievController extends AbstractActionController
         }
         catch (\Exception $ex) {
             return $this->redirect()->toRoute('fmi', array(
-				'controller' => 'denisgeorgiev',
                 'action' => 'index'
             ));
         }
