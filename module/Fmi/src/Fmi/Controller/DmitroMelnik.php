@@ -82,9 +82,10 @@ class DmitroMelnikController extends AbstractActionController
 				$entityManager->flush();
 				
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('fmi');
+                return $this->redirect()->toRoute('fmi/default', array('controller' => 'DmitroMelnik', 'action' => 'index'));
             }
         }
+        $this->layout('layout/AlexanderAlexandrov');  
         return array('form' => $form);		
     }
 
@@ -144,7 +145,7 @@ class DmitroMelnikController extends AbstractActionController
 				$entityManager->flush();				
 				
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('fmi');
+                $this->redirect()->toRoute('fmi/default', array('controller' => 'DmitroMelnik', 'action' => 'index'));
             }
         }
 
@@ -189,7 +190,7 @@ class DmitroMelnikController extends AbstractActionController
             }
 
             // Redirect to list of albums
-            return $this->redirect()->toRoute('fmi');
+            $this->redirect()->toRoute('fmi/default', array('controller' => 'DmitroMelnik', 'action' => 'index'));
         }
 
         return array(
