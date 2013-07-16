@@ -1,0 +1,13 @@
+<h1>Login </h1>
+<?php echo $this->escapeHtml($this->messages); ?>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('auth/default', array('controller' => 'index', 'action' => 'login')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('usr_name'));
+echo $this->formRow($form->get('usr_password'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+?>

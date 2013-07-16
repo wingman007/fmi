@@ -4,7 +4,7 @@ return array(
         'Application',
 		'DoctrineModule',
 		'DoctrineORMModule',
-		'DoctrineMongoODMModule',
+//		'DoctrineMongoODMModule',
 
         'Album', //this line is added
         'ZhelyanGuglev',
@@ -33,7 +33,8 @@ return array(
 		'MihailKopuscu',
 		'RallNic',
 		'KrasimirTsvetanov',
-    'Fmi',
+		'Fmi',
+		'Auth',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
