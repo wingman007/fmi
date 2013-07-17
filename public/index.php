@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Los_Angeles'); 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.
