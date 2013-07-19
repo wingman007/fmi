@@ -1,7 +1,7 @@
 <?php
 
 namespace CsnUser\Entity;
-// For Zend\Db\ResultSet\HydratingResultSet
+// For Zend\Db\ResultSet\HydratingResultSet. Use it for the Adapter or Table data Gateway
 class UserEntity
 {
     private $usr_id;

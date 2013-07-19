@@ -1,7 +1,8 @@
 <?php
 
 namespace CsnUser\Model;
-
+// I don't have the filters here now I can implement the Interface
+// Use with Zend\Db\ResultSet\ResultSet. You send it as argument to the Adapter ot TableDataGateway
 class User
 {
     public $usr_id;
