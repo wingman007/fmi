@@ -1,0 +1,19 @@
+<h1>Index = Retrieve</h1>
+<table>
+<tr>
+	<th>usr_id</th>
+	<th>usr_name</th>
+	<th>usr_email</th>
+</tr>
+<?php
+	foreach ($resultSet as $user) {
+?>
+		<tr>
+			<td><?php echo $user['usr_id']; ?></td>
+			<td><?php echo $user['usr_name']; ?></td>
+			<td><?php echo $user['usr_email']; ?></td>
+		</tr>
+<?php
+	}
+?>
+</table>

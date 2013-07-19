@@ -1,0 +1,22 @@
+<h1>Index = Retrieve</h1>
+<a href="<?php echo $this->url('auth/default', array('controller' => 'admin', 'action' => 'create')); ?>">Create</a>
+<table>
+<tr>
+	<th>usr_id</th>
+	<th>usr_name</th>
+	<th>usr_email</th>
+</tr>
+<?php
+	foreach ($rowset as $row) {
+?>
+		<tr>
+			<td><?php  echo $row['usr_id']; ?></td>
+			<td><?php  echo $row['usr_name']; ?></td>
+			<td><?php  echo $row['usr_email']; ?></td>
+			<td><a href="<?php echo $this->url('auth/default', array('controller' => 'admin', 'action' => 'update', 'id' => $row['usr_id'])); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('auth/default', array('controller' => 'admin', 'action' => 'delete', 'id' => $row['usr_id']));?>" onclick="return confirm('Do you rely want to delete the record;')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>
