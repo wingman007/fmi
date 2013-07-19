@@ -2,7 +2,7 @@
 
 namespace CsnUser;
 
-class module
+class Module
 {
     public function getConfig()
     {

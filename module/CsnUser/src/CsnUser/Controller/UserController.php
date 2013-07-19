@@ -1,59 +1,90 @@
 <?php
+
 namespace CsnUser\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+use Zend\Db\TableGateway\TableGateway;
+
+use CsnUser\Form\UserForm;
+use CsnUser\Form\UserFilter;
+
 class UserController extends AbstractActionController
 {
-	// R - Retrieve
-    public function indexAction()
-    {
-		// 1) Using MySQL API
-		$link = mysql_connect('localhost', 'root', 'password');
-		if (!$link) {
-			die('Could not connect: ' . mysql_error());
-		}
-		echo 'Connected successfully';
-		
-		
-		$sql    = 'SELECT usr_id FROM fmi.users WHERE usr_id = 1';
-		$result = mysql_query($sql, $link);
-
-		if (!$result) {
-			echo "DB Error, could not query the database\n";
-			echo 'MySQL Error: ' . mysql_error();
-			exit;
-		}
-
-		while ($row = mysql_fetch_assoc($result)) {
-			echo $row['usr_id'];
-		}
-
-		mysql_free_result($result);
-		
-		mysql_close($link);
-		
-        return new ViewModel();
-    }
+	private $usersTable;
 	
-	// C - Create
-    public function createAction()
-    {
-		$link = mysql_connect('localhost', 'root', 'password');
+	// R -retrieve 	CRUD
+	public function indexAction()
+	{
+		return new ViewModel(array('rowset' => $this->getUsersTable()->select()));
+	}
+	
+	// C -Create
+	public function createAction()
+	{
+		$form = new UserForm();
+		$request = $this->getRequest();
+        if ($request->isPost()) {
+			$form->setInputFilter(new UserFilter());
+			$form->setData($request->getPost());
+			 if ($form->isValid()) {
+				$data = $form->getData();
+				unset($data['submit']);
+				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';				
+				$this->getUsersTable()->insert($data);
+				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user', 'action' => 'index'));										
+			}
+		}		
 		
-        return new ViewModel();
-    }
+		return new ViewModel(array('form' => $form));
+	}
 	
-	// U - Update
-    public function updateAction()
-    {
-        return new ViewModel();
-    }
+	// U -Update
+	public function updateAction()
+	{
+		$id = $this->params()->fromRoute('id');
+		if (!$id) return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user', 'action' => 'index'));
+		$form = new UserForm();
+		$request = $this->getRequest();
+        if ($request->isPost()) {
+			$form->setInputFilter(new UserFilter());
+			$form->setData($request->getPost());
+			 if ($form->isValid()) {
+				$data = $form->getData();
+				unset($data['submit']);
+				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';
+				$this->getUsersTable()->update($data, array('usr_id' => $id));
+				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user', 'action' => 'index'));													
+			}			 
+		}
+		else {
+			$form->setData($this->getUsersTable()->select(array('usr_id' => $id))->current());			
+		}
+		return new ViewModel(array('form' => $form, 'id' => $id));		
+	}
 	
-	// D - Delete
-    public function deleteAction()
-    {
-        return new ViewModel();
-    }
+	// D -Delete
+	public function deleteAction()
+	{
+		$id = $this->params()->fromRoute('id');
+		if ($id) {
+			$this->getUsersTable()->delete(array('usr_id' => $id));
+		}
+		
+		return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user', 'action' => 'index'));										
+	}
+	
+	public function getUsersTable()
+	{
+		if (!$this->usersTable) {
+			$this->usersTable = new TableGateway(
+				'users', 
+				$this->getServiceLocator()->get('Zend\Db\Adapter\Adapter')
+//				new \Zend\Db\TableGateway\Feature\RowGatewayFeature('usr_id') // Zend\Db\RowGateway\RowGateway Object
+//				ResultSetPrototype
+			);
+		}
+		return $this->usersTable;
+	}
 }
