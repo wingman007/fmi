@@ -19,6 +19,7 @@ class UserEntity
     private $usr_registration_token;	
     private $usr_email_confirmed;	
 
+	// extraction ->
 	public function getUsrId() {return $this->usr_id;}
 	public function getUsrName() {return $this->usr_name;}
 	public function getUsrPassword() {return $this->usr_password;}
@@ -34,6 +35,7 @@ class UserEntity
 	public function getUsrRegistrationToken() {return $this->usr_registration_token;}
 	public function getUsrEmailConfirmed() {return $this->usr_email_confirmed;}
 	
+	// hydration <-
 	public function setUsrId($usr_id) {$this->usr_id = $usr_id;}
 	public function setUsrName($usr_name) {$this->usr_name = $usr_name;}
 	public function setUsrPassword($usr_password) {$this->usr_password = $usr_password;}

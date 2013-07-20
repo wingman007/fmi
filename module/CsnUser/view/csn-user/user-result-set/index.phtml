@@ -1,0 +1,23 @@
+<h1>Index = Retrieve</h1>
+<a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-result-set', 'action' => 'create')); ?>">Create</a>
+<table>
+<tr>
+	<th>usr_id</th>
+	<th>usr_name</th>
+	<th>usr_email</th>
+</tr>
+<?php
+// Fatal error: Cannot use object of type CsnUser\Model\User as array if we try to use $row['usr_id']
+	foreach ($rowset as $row) {
+?>
+		<tr>
+			<td><?php  echo $row->usr_id; ?></td>
+			<td><?php  echo $row->usr_name; ?></td>
+			<td><?php  echo $row->usr_email; ?></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-result-set', 'action' => 'update', 'id' => $row->usr_id)); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-result-set', 'action' => 'delete', 'id' => $row->usr_id));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>

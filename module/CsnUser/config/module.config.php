@@ -2,8 +2,17 @@
 return array(
 	'controllers' => array(
         'invokables' => array(
-            'CsnUser\Controller\User' => 'CsnUser\Controller\UserController',	
-        ),
+            'CsnUser\Controller\User' => 'CsnUser\Controller\UserController',
+			
+            'CsnUser\Controller\UserRowGatewayFeature' => 'CsnUser\Controller\UserRowGatewayFeatureController',	
+            'CsnUser\Controller\UserRowGatewayFeatureBind' => 'CsnUser\Controller\UserRowGatewayFeatureBindController',	
+			
+            'CsnUser\Controller\UserResultSet' => 'CsnUser\Controller\UserResultSetController',
+            'CsnUser\Controller\UserResultSetBind' => 'CsnUser\Controller\UserResultSetBindController',		
+			
+            'CsnUser\Controller\UserHydratingResultSet' => 'CsnUser\Controller\UserHydratingResultSetController',	
+            'CsnUser\Controller\UserHydratingResultSetBind' => 'CsnUser\Controller\UserHydratingResultSetBindController',	
+		),
 	),
     'router' => array(
         'routes' => array(
