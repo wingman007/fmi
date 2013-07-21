@@ -34,14 +34,10 @@ class UserRowGatewayFeatureBindController extends AbstractActionController
 	public function createAction()
 	{
 		$form = new UserForm();
-		// The default hydrator for the form is ArraySerializable
-		// $form->setHydrator(new ReflectionHydrator()); // Not working "values() expects an array of values"
-		$form->setHydrator(new ObjectProperty()); // WORKING "Statement could not be executed" Column not found: 1054 Unknown column 'submit' in 'field list'
-		// $form->setHydrator(new ClassMethods()); // Not working "values() expects an array of values"
-		
-//- 	The error: Zend\Stdlib\Hydrator\ArraySerializable::extract expects the provided object to implement getArrayCopy()
-		$user = new RowGateway('usr_id', 'users', $this->getServiceLocator()->get('Zend\Db\Adapter\Adapter')); // missing arguments
-		$form->bind($user); // It is not working like that if the hydrator is not properly set
+		$form->setHydrator(new ObjectProperty()); 
+
+		$user = new RowGateway('usr_id', 'users', $this->getServiceLocator()->get('Zend\Db\Adapter\Adapter'));
+		$form->bind($user);
 		
 		$request = $this->getRequest();
         if ($request->isPost()) {
@@ -50,22 +46,15 @@ class UserRowGatewayFeatureBindController extends AbstractActionController
 			$form->remove('submit');
 			 if ($form->isValid()) {
 				$user->save(); // The user is already hydrated by the form
-				
-				// the not bind way
-//-				$data = $form->getData();
-//-				unset($data['submit']);
-//-				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';				
-//-				$this->getUsersTable()->insert($data);
-
 				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-row-gateway-feature-bind', 'action' => 'index'));										
 			}
-			$form->add(array( // bring back the button
-            'name' => 'submit',
-            'attributes' => array(
-                'type'  => 'submit',
-                'value' => 'Go',
-                'id' => 'submitbutton',
-            ),
+			$form->add(array( // bring back the button in case of validation errors
+				'name' => 'submit',
+				'attributes' => array(
+					'type'  => 'submit',
+					'value' => 'Go',
+					'id' => 'submitbutton',
+				),
 			));
 		}		
 		
@@ -80,7 +69,6 @@ class UserRowGatewayFeatureBindController extends AbstractActionController
 		$form = new UserForm();
 		$form->setHydrator(new ObjectProperty());
 		
-//- 	The error: Zend\Stdlib\Hydrator\ArraySerializable::extract expects the provided object to implement getArrayCopy()		
 		$user = $this->getUsersTable()->select(array('usr_id' => $id))->current();
 		$form->bind($user);
 		
@@ -88,20 +76,21 @@ class UserRowGatewayFeatureBindController extends AbstractActionController
         if ($request->isPost()) {
 			$form->setInputFilter(new UserFilter());
 			$form->setData($request->getPost());
-			 if ($form->isValid()) {
+			$form->remove('submit');
+			if ($form->isValid()) {
 				$user->save();
-				
-//-				$data = $form->getData();
-//-				unset($data['submit']);
-//-				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';
-//-				$this->getUsersTable()->update($data, array('usr_id' => $id));
-
 				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-row-gateway-feature-bind', 'action' => 'index'));													
-			}			 
+			}
+			$form->add(array( // bring back the button in case of validation errors
+				'name' => 'submit',
+				'attributes' => array(
+					'type'  => 'submit',
+					'value' => 'Go',
+					'id' => 'submitbutton',
+				),
+			));			
 		}
-
 		else {
-			// notice toArray() at the end we have RowGateway Object here 
 			$form->setData($this->getUsersTable()->select(array('usr_id' => $id))->current()->toArray());			
 		}
 
