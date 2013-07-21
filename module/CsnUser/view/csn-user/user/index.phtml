@@ -10,7 +10,7 @@
 	foreach ($rowset as $row) {
 ?>
 		<tr>
-			<td><?php  echo $row['usr_id']; ?></td>
+			<td><?php  echo $row->usr_id; // The row is an ArrayObject $row->usr_id and $row['usr_id'] with both work?></td>
 			<td><?php  echo $row['usr_name']; ?></td>
 			<td><?php  echo $row['usr_email']; ?></td>
 			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user', 'action' => 'update', 'id' => $row['usr_id'])); ?>">Edit</a></td>
