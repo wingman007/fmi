@@ -20,7 +20,7 @@ class UsersTable
 	// I could follow the same interface as TableGateway I can even implement it
 	// I like the approach here because as paramaters for the functiosn I have to 
 	// send values like for ordinary functions
-    public function select()
+    public function fetchAll()
     {
         $resultSet = $this->tableGateway->select();
         return $resultSet;
@@ -30,30 +30,14 @@ class UsersTable
     {
         $usr_id  = (int) $usr_id;
         $rowset = $this->tableGateway->select(array('usr_id' => $usr_id));
-        $user = $rowset->current();
-        if (!$user) {
-            throw new \Exception("Could not find user $usr_id");
+        $row = $rowset->current();
+        if (!$row) {
+            throw new \Exception("Could not find row $id");
         }
-        return $user;
-    }	
+        return $row;
+    }
 
-	public function insert(User $user)
-	{
-		$this->tableGateway->insert($this->prepareData($user));
-	}
-	
-	public function update (User $user)
-	{
-		if (!$this->getUser($user->usr_id)) {
-			throw new \Exception('Form id does not exist');
-		}
-		$this->tableGateway->update(
-			$this->prepareData($user), 
-			array('usr_id' => $user->usr_id)
-		);		
-	}
-	
-    public function prepareData(User $user)
+    public function saveUser(User $user)
     {
 		// for Zend\Db\TableGateway\TableGateway we need the data in array not object
         $data = array(
@@ -71,13 +55,22 @@ class UsersTable
             'usr_registration_token'=> $user->usr_registration_token,
 			'usr_email_confirmed'	=> $user->usr_email_confirmed,
         );
-	
-		return $data;
+
+        $usr_id = (int)$user->usr_id;
+        if ($usr_id == 0) {
+            $this->tableGateway->insert($data);
+        } else {
+            if ($this->getUser($usr_id)) {
+                $this->tableGateway->update($data, array('usr_id' => $usr_id));
+            } else {
+                throw new \Exception('Form id does not exist');
+            }
+        }
     }
 
-    public function delete(User $user)
+    public function deleteUser($id)
     {
-        $this->tableGateway->delete(array('usr_id' => $user->usr_id));
+        $this->tableGateway->delete(array('usr_id' => $usr_id));
     }
 
 	// Add more functions here when you need them This is table data gateway

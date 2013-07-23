@@ -91,6 +91,7 @@ class UserRowGatewayFeatureBindController extends AbstractActionController
 			));			
 		}
 		else {
+			// ToDo find why the form doesn't get populated from the object directly and remove this line 
 			$form->setData($this->getUsersTable()->select(array('usr_id' => $id))->current()->toArray());			
 		}
 

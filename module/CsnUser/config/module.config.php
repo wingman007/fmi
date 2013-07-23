@@ -11,7 +11,10 @@ return array(
             'CsnUser\Controller\UserResultSetBind' => 'CsnUser\Controller\UserResultSetBindController',		
 			
             'CsnUser\Controller\UserHydratingResultSet' => 'CsnUser\Controller\UserHydratingResultSetController',	
-            'CsnUser\Controller\UserHydratingResultSetBind' => 'CsnUser\Controller\UserHydratingResultSetBindController',	
+            'CsnUser\Controller\UserHydratingResultSetBind' => 'CsnUser\Controller\UserHydratingResultSetBindController',
+
+			'CsnUser\Controller\UserDoctrineDbal' => 'CsnUser\Controller\UserDoctrineDbalController',	
+            'CsnUser\Controller\UserDoctrine' => 'CsnUser\Controller\UserDoctrineController',			
 		),
 	),
     'router' => array(

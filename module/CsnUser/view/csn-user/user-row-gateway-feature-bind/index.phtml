@@ -8,9 +8,10 @@
 </tr>
 <?php
 	foreach ($rowset as $row) {
+	// row is a Zend\Db\RowGateway\RowGateway Object, but it still allows me to treat it a s array
 ?>
 		<tr>
-			<td><?php  echo $row['usr_id']; ?></td>
+			<td><?php  echo $row['usr_id']; // Wuth Row Data Gateway I still can use array interface ?></td>
 			<td><?php  echo $row['usr_name']; ?></td>
 			<td><?php  echo $row['usr_email']; ?></td>
 			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-row-gateway-feature-bind', 'action' => 'update', 'id' => $row['usr_id'])); ?>">Edit</a></td>
