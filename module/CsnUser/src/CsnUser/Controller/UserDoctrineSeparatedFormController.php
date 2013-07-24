@@ -14,11 +14,16 @@ use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Stdlib\Hydrator\Reflection as ReflectionHydrator;
 use CsnUser\Entity\UserEntity;
+use CsnUser\Entity\User;
+
+// Doctrine Entity manager
+use Doctrine\ORM\Tools\Setup;
+use Doctrine\ORM\EntityManager;
 
 // We may prepare the Doctrine Class Loader if we didn't have Composer Autoloader and Zend Standard Autoloader
 use Doctrine\Common\ClassLoader;
 
-class UserDoctrineDbalController extends AbstractActionController
+class UserDoctrineSeparatedFormController extends AbstractActionController
 {
 	private $usersTable;
 	// for Doctrine
@@ -28,44 +33,48 @@ class UserDoctrineDbalController extends AbstractActionController
  	public function __construct()
 	{
 		// self::__construct();
-		$this->registerDocrineClassLoader();		
+//-		$this->registerDocrineClassLoader();		
 	}
 	
 	// R -retrieve 	CRUD
 	public function indexAction()
 	{
-		$conn = $this->getDoctrineConn();
-		$sql = "SELECT * FROM users";
-		$stmt = $conn->query($sql);
-		
-		// We can use with Doctrine driver placeholders
-//-		$sql = "SELECT * FROM users WHERE usr_id = ?";
-//-		$stmt = $conn->prepare($sql);
-//-		$stmt->bindValue(1, 1);
-//-		$stmt->execute();
+		$entityManager = $this->getEntityManager();
+//-		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+//-		$dql = "SELECT u FROM CsnUser\Entity\User u"; // the best form
+//-		$dql = "SELECT u FROM CsnUser\Entity\UserEntity u"; // Class "CsnUser\Entity\UserEntity" is not a valid entity or mapped super class.
+		$dql = "SELECT u FROM CsnUser\Entity\UserDoctrineEntity u"; // Works
+//-		$dql = "SELECT u FROM CsnUser\Entity\UserDoctrineEntityWorking u"; // Works
+//-		$dql = "SELECT u FROM CsnUser\Entity\UserDoctrineEntityMin u"; // If the class is not presented [Semantical Error] line 0, col 14 near 'CsnUser\Entity\UserDoctrineEntityMin': Error: Class 'CsnUser\Entity\UserDoctrineEntityMin' is not defined.
 
-//-		$sql = "SELECT * FROM users WHERE usr_id = ? AND usr_active = ?";
-//-		$stmt = $conn->prepare($sql);
-//-		$stmt->bindValue(1, 1);
-//-		$stmt->bindValue(2, 1);
+//-		Entity Repositories
+//- 	Every Entity uses a default repository by default and offers a bunch of convenience methods that you can use to query for instances of that Entity.
+//-		$users = $entityManager->getRepository('Bug')->getRecentBugs();
+	
+//-		$dql = "SELECT u FROM UserDoctrineEntityMin u";
 		
-//-		$sql = "SELECT * FROM users WHERE usr_id = :usr_id OR usr_active = :usr_active";
-//-		$stmt = $conn->prepare($sql);
-//-		$stmt->bindValue("usr_id", 1);
-//-		$stmt->execute();
+//-		$dql = "SELECT u FROM Fmi\Entity\User u";
+		$query = $entityManager->createQuery($dql);
+		$query->setMaxResults(30);
+		$users = $query->getResult();
 		
-		// using cache	
-//-		$cache = new \Doctrine\Common\Cache\FilesystemCache(realpath(dirname(__FILE__).'/../../../../../data/cache'));
-//-		$cacheProfile = new QueryCacheProfile(0, "user_doctrine_dbal", $cache);
-//-		$stmt = $conn->executeCachedQuery('SELECT* FROM users', array(), $types, $cacheProfile);
-
-		return new ViewModel(array('rowset' => $stmt));
+		// The last step
+//-		$users = $entityManager->getRepository('CsnUser\Entity\User')->findBy(array());
+//-		$users = $entityManager->getRepository('CsnUser\Entity\User')->findAll();
+//-		$users = $entityManager->find('CsnUser\Entity\User', 2);
+		
+		return new ViewModel(array('rowset' => $users));
 	}
 	
 	// C -Create
 	public function createAction()
 	{
 		$form = new UserForm();
+		$form->setHydrator(new ReflectionHydrator());
+		
+		$user = new UserEntity();
+		
+		$form->bind($user);
 		
 		$request = $this->getRequest();
         if ($request->isPost()) {
@@ -73,12 +82,16 @@ class UserDoctrineDbalController extends AbstractActionController
 			$form->setData($request->getPost());
 			 if ($form->isValid()) {
 			 
+				// ToDo replace this code with code that uses the $user object. The user has to save himself or use datamapper 
 				$data = $form->getData();
+				$hydrator = new ReflectionHydrator();
+				$data  = $hydrator->extract($data); // turn the object to array
 				unset($data['submit']); // Cannot use object of type CsnUser\Entity\UserEntity as array
 				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';				
-				$this->getDoctrineConn()->insert('users',$data);
-
-				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-dbal', 'action' => 'index'));										
+				$this->getUsersTable()->insert($data);
+				
+				
+				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-separated-form', 'action' => 'index'));										
 			}
 		}		
 		
@@ -89,9 +102,14 @@ class UserDoctrineDbalController extends AbstractActionController
 	public function updateAction()
 	{
 		$id = $this->params()->fromRoute('id');
-		if (!$id) return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-dbal', 'action' => 'index'));	
+		if (!$id) return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-separated-form', 'action' => 'index'));
 		
 		$form = new UserForm();
+		$form->setHydrator(new ReflectionHydrator());
+		
+		$user = $this->getUsersTable()->select(array('usr_id' => $id))->current();
+		
+		$form->bind($user);
 		
 		$request = $this->getRequest();
         if ($request->isPost()) {
@@ -99,20 +117,16 @@ class UserDoctrineDbalController extends AbstractActionController
 			$form->setData($request->getPost());
 			 if ($form->isValid()) {
 				
+				// ToDo raplace the code with something that uses user object
 				$data = $form->getData();
+				$hydrator = new ReflectionHydrator();
+				$data  = $hydrator->extract($data); // turn the object to array
 				unset($data['submit']);
 				if (empty($data['usr_registration_date'])) $data['usr_registration_date'] = '2013-07-19 12:00:00';
-				$this->getDoctrineConn()->update('users', $data, array('usr_id' => $id));
+				$this->getUsersTable()->update($data, array('usr_id' => $id));
 				
-				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-dbal', 'action' => 'index'));
+				return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-separated-form', 'action' => 'index'));
 			}			 
-		}
-		else{
-// 			$sql = "SELECT * FROM users WHERE usr_id = ?";
-//			$stmt = $this->getDoctrineConn()->prepare($sql);
-//			$stmt->bindValue(1, 1);
-//			$stmt->execute();
-			$form->setData($this->getDoctrineConn()-> fetchAssoc('SELECT * FROM users WHERE usr_id = ?', array($id)));
 		}
 
 		return new ViewModel(array('form' => $form, 'id' => $id));		
@@ -123,10 +137,13 @@ class UserDoctrineDbalController extends AbstractActionController
 	{
 		$id = $this->params()->fromRoute('id');
 		if ($id) {
-			$this->getDoctrineConn()->delete('users', array('usr_id' => $id));
+			$user = $this->getUsersTable()->select(array('usr_id' => $id))->current();
+		
+			// ToDo Replace with something that uses the object
+			$this->getUsersTable()->delete(array('usr_id' => $id));
 		}
 		
-		return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-dbal', 'action' => 'index'));										
+		return $this->redirect()->toRoute('csn_user/default', array('controller' => 'user-doctrine-separated-form', 'action' => 'index'));										
 	}
 	
 	public function getUsersTable()
@@ -146,7 +163,7 @@ class UserDoctrineDbalController extends AbstractActionController
 		return $this->usersTable;
 	}
 	
-	public function getDoctrineConn() // Dbal
+	public function getDoctrineConn()
 	{
 		if (!$this->conn) {
 			$config = new \Doctrine\DBAL\Configuration();
@@ -167,7 +184,46 @@ class UserDoctrineDbalController extends AbstractActionController
 	public function getEntityManager()
 	{
 		if (!$this->entityManager) {
-			$this->dbal;
+
+			// Create a simple "default" Doctrine ORM configuration for Annotations
+			// $paths = array("/path/to/entities-or-mapping-files");
+			$paths = array(realpath(dirname(__FILE__).'/../Entity'));
+			
+			// If $devMode is true always use an ArrayCache (in-memory) and regenerate proxies on every request.
+			// If $devMode is false, check for Caches in the order APC, Xcache, Memcache (127.0.0.1:11211), Redis (127.0.0.1:6379) unless $cache is passed as fourth argument.
+			// If $devMode is false, set then proxy classes have to be explicitly created through the command line.
+			// If third argument $proxyDir is not set, use the systems temporary directory.
+			$isDevMode = true;
+
+			// the connection configuration
+			$dbParams = array(
+				'driver'   => 'pdo_mysql',
+				'user'     => 'root',
+				'password' => 'password',
+				'dbname'   => 'fmi',
+			);
+
+			// http://stackoverflow.com/questions/14851286/how-to-solve-class-xxx-is-not-a-valid-entity-or-mapped-super-class-error
+			// $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode); // this causes Error
+			$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, null, null, false);
+			// or if you prefer yaml or XML
+			//$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
+			//$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
+			
+			// Or if you prefer XML
+			// $config = Setup::createXMLMetadataConfiguration($paths, $isDevMode);
+			// $entityManager = EntityManager::create($dbParams, $config);
+			
+			// Or if you prefer YAML:
+			// $config = Setup::createYAMLMetadataConfiguration($paths, $isDevMode);
+			// $entityManager = EntityManager::create($dbParams, $config);
+			
+			// ToDo add chain 
+			// http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/advanced-configuration.html
+			
+			// obtaining the entity manager from a factory method.
+			$this->entityManager = EntityManager::create($dbParams, $config);
+
 		}
 		return $this->entityManager;
 	}
@@ -218,7 +274,7 @@ class UserDoctrineDbalController extends AbstractActionController
 		
 		// ORM loader
 		$pathToDoctrineOrm = realpath(dirname(__FILE__).'/../../../../../vendor/doctrine/orm/lib/');
-//-		$classLoaderOrm = new ClassLoader('Doctrine\ORM', $pathToDoctrineOrm); 
+//-		$classLoaderOrm = new ClassLoader('Doctrine\ORM', $pathToDoctrineOrm); // it works perfect like this
 		$classLoaderOrm = new ClassLoader('Doctrine', $pathToDoctrineOrm); // it works perfect like this
 		$classLoaderOrm->register(); // spl_autoload_register(array($this, 'loadClass')); gets registered
 //-		echo '$classLoaderOrm->canLoadClass("Doctrine\ORM\EntityManager") = ' . $classLoaderOrm->canLoadClass('Doctrine\ORM\EntityManager') . "<br />\n";	

@@ -84,6 +84,7 @@ return array(
                 'cache' => 'array',
                 'paths' => array(
 					__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity',
+//					'C:\Documents and Settings\user\fmi\module\CsnUser\src\CsnUser\Entity' // this doesn't realy mathers for loading the Entities
                 ),
             ),
 			
@@ -93,6 +94,7 @@ return array(
                 'drivers' => array(
 					// register `my_annotation_driver` for any entity under namespace `My\Namespace`
 					__NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver',
+//					'CsnUser\Entity'	=> __NAMESPACE__ . '_driver', // add another namespace to make it work even from another module
                 )
             )
         )

@@ -13,7 +13,8 @@ return array(
             'CsnUser\Controller\UserHydratingResultSet' => 'CsnUser\Controller\UserHydratingResultSetController',	
             'CsnUser\Controller\UserHydratingResultSetBind' => 'CsnUser\Controller\UserHydratingResultSetBindController',
 
-			'CsnUser\Controller\UserDoctrineDbal' => 'CsnUser\Controller\UserDoctrineDbalController',	
+			'CsnUser\Controller\UserDoctrineDbal' => 'CsnUser\Controller\UserDoctrineDbalController',
+			'CsnUser\Controller\UserDoctrineSeparatedForm' => 'CsnUser\Controller\UserDoctrineSeparatedFormController',		
             'CsnUser\Controller\UserDoctrine' => 'CsnUser\Controller\UserDoctrineController',			
 		),
 	),
