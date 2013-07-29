@@ -15,7 +15,12 @@ return array(
 
 			'CsnUser\Controller\UserDoctrineDbal' => 'CsnUser\Controller\UserDoctrineDbalController',
 			'CsnUser\Controller\UserDoctrineSeparatedForm' => 'CsnUser\Controller\UserDoctrineSeparatedFormController',		
-            'CsnUser\Controller\UserDoctrine' => 'CsnUser\Controller\UserDoctrineController',			
+            'CsnUser\Controller\UserDoctrine' => 'CsnUser\Controller\UserDoctrineController', // the final form	
+
+			// Authorization
+            'CsnUser\Controller\UserDoctrineSimpleAuthorization' => 'CsnUser\Controller\UserDoctrineSimpleAuthorizationController',		
+            'CsnUser\Controller\UserDoctrineSimpleAuthorizationAcl' => 'CsnUser\Controller\UserDoctrineSimpleAuthorizationAclController',
+			'CsnUser\Controller\UserDoctrinePureAcl' => 'CsnUser\Controller\UserDoctrinePureAclController',		
 		),
 	),
     'router' => array(

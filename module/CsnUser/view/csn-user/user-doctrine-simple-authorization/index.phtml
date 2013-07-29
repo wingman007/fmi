@@ -1,0 +1,22 @@
+<h1>Index = Retrieve</h1>
+<a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-doctrine-simple-authorization', 'action' => 'create')); ?>">Create</a>
+<table>
+<tr>
+	<th>usr_id</th>
+	<th>usr_name</th>
+	<th>usr_email</th>
+</tr>
+<?php
+	foreach ($rowset as $row) {
+?>
+		<tr>
+			<td><?php  echo $row->getUsrId(); ?></td>
+			<td><?php  echo $row->getUsrName(); ?></td>
+			<td><?php  echo $row->getUsrEmail(); ?></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-doctrine-simple-authorization', 'action' => 'update', 'id' => $row->getUsrId())); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-doctrine-simple-authorization', 'action' => 'delete', 'id' => $row->getUsrId()));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>

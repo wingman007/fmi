@@ -27,7 +27,7 @@ class IndexController extends AbstractActionController
 		$form = new AuthForm();
 		$form->get('submit')->setValue('Login');
 		$messages = null;
-		
+
 		$request = $this->getRequest();
         if ($request->isPost()) {
 			$authFormFilters = new Auth();
@@ -53,7 +53,9 @@ class IndexController extends AbstractActionController
 				;
 				
 				$auth = new AuthenticationService();
-				
+				// or prepare in the globa.config.php and get it from there
+				// $auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+				// $sm->setService('Zend\Authentication\AuthenticationService', $auth); // You can set the service here but will be loaded only if this action called.
 				$result = $auth->authenticate($authAdapter);				
 				
 				switch ($result->getCode()) {
@@ -88,6 +90,8 @@ class IndexController extends AbstractActionController
 	public function logoutAction()
 	{
 		$auth = new AuthenticationService();
+		// or prepare in the globa.config.php and get it from there
+		// $auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 		
 		if ($auth->hasIdentity()) {
 			$identity = $auth->getIdentity();

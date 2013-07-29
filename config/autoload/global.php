@@ -31,6 +31,13 @@ return array(
             'Zend\Db\Adapter\Adapter'
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
+		// added for Authorization. Without this each time we have to create a new instance.
+        'aliases' => array( // !!! aliases not alias
+            'Zend\Authentication\AuthenticationService' => 'my_auth_service',
+        ),
+        'invokables' => array(
+            'my_auth_service' => 'Zend\Authentication\AuthenticationService',
+        ),
     ),
 );
 
