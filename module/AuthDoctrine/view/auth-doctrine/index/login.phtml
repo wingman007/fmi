@@ -1,0 +1,23 @@
+<!-- h1>I am in AuthDoctrine IndexController login action index.phtml</h1 -->
+<?php echo $this->messages; ?>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('auth-doctrine/default', array('controller' => 'index', 'action' => 'login')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+// echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('username'));
+echo $this->formRow($form->get('password'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+?>
+
+<?php // view helper
+    if ($user = $this->identity()) {
+        echo 'Logged in as ' . $this->escapeHtml($user->getUsername());
+    } else {
+        echo 'Not logged in';
+    }
+?>

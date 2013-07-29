@@ -1,0 +1,30 @@
+<h1>I am in AuthDoctrine IndexController index action index.phtml</h1>
+
+<?php echo $this->message; ?>
+
+<?php var_dump($this->users); ?>
+
+<?php 
+echo '<pre>';
+print_r($this->users); 
+echo '</pre>';
+?>
+<hr />
+<table>
+	<tr>
+		<th>getUsrName</th>
+		<th>getUsrPassword</th>
+		<th>getUsrEmail</th>
+		<th>getUsrlId</th>
+		<th>getLngId</th>
+	</tr>
+<?php foreach ($users as $user) { ?>
+	<tr>
+		<td><?php echo $this->escapeHtml($user->getUsrName());?></td>
+		<td><?php echo $this->escapeHtml($user->getUsrPassword());?></td>
+		<td><?php echo $this->escapeHtml($user->getUsrEmail());?></td>
+		<td><?php echo $this->escapeHtml($user->getUsrlId());?></td>
+		<td><?php echo $this->escapeHtml($user->getLngId());?></td>
+	</tr>
+<?php } ?>
+</table>

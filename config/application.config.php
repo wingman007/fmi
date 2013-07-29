@@ -37,6 +37,8 @@ return array(
 		'Auth',
 		'CsnBase', // This is also a library. Can be used without adding it as a module in composer.json: "autoload": {"psr-0": {"CsnBase\\": "vendor/coolcsn/csn-base/src/"}}
 		'CsnUser',
+		// 'CsnAuthorize' // uncomment if you want to use Authorization
+		'AuthDoctrine',
 	),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

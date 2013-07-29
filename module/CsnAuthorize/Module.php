@@ -1,9 +1,9 @@
 <?php
 
-namespace CsnUser;
+namespace CsnAuthorize;
 
 // for Acl
-use CsnUser\Acl\Acl;
+use CsnAuthorize\Acl\Acl;
 
 class Module
 {
@@ -22,7 +22,7 @@ class Module
             ),
         );
     }
-/*
+
 	// FOR Authorization
 	public function onBootstrap(\Zend\EventManager\EventInterface $e) // use it to attach event listeners
 	{
@@ -77,5 +77,4 @@ class Module
 			exit;
 		}
 	}
-*/
 }
