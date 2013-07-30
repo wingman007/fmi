@@ -19,7 +19,7 @@ class LoginForm extends Form
         ));
 		*/
         $this->add(array(
-            'name' => 'username',
+            'name' => 'username', // 'usr_name',
             'attributes' => array(
                 'type'  => 'text',
             ),
@@ -28,7 +28,7 @@ class LoginForm extends Form
             ),
         ));
         $this->add(array(
-            'name' => 'password',
+            'name' => 'password', // 'usr_password',
             'attributes' => array(
                 'type'  => 'password',
             ),
@@ -36,7 +36,20 @@ class LoginForm extends Form
                 'label' => 'Password',
             ),
         ));
-		
+
+        $this->add(array(
+            'name' => 'rememberme',
+			'type' => 'checkbox', // 'Zend\Form\Element\Checkbox',			
+//            'attributes' => array(
+//                'type'  => '\Zend\Form\Element\Checkbox',
+//            ),
+            'options' => array(
+                'label' => 'Remember Me?',
+//				'checked_value' => 'true', without value here will be 1
+//				'unchecked_value' => 'false', // witll be 1
+            ),
+        ));	
+
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(

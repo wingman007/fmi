@@ -62,7 +62,7 @@ class User
      * @var integer
      *
      * @ORM\Column(name="usrl_id", type="integer", nullable=true)
-	 * @ORM\OneToMany(targetEntity="user_riles")
+	 * @ORM\OneToMany(targetEntity="user_roles")
 	 * @ORM\JoinColumn(name="usrl_id", referencedColumnName="usrl_id")
 	 * @Annotation\Type("Zend\Form\Element\Select")
 	 * @Annotation\Options({
@@ -119,6 +119,33 @@ class User
     private $usrPicture;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_password_salt", type="string", length=100, nullable=true)
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Password Salt:"})
+     */
+    private $usrPasswordSalt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="usr_registration_date", type="datetime", nullable=true)
+     * @Annotation\Attributes({"type":"datetime","min":"2010-01-01T00:00:00Z","max":"2020-01-01T00:00:00Z","step":"1"})
+     * @Annotation\Options({"label":"Registration Date:", "format":"Y-m-d\TH:iP"})
+     */
+    private $usrRegistrationDate; // = '2013-07-30 00:00:00'; // new \DateTime() - coses synatx error
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_registration_token", type="string", length=100, nullable=true)
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Registration Token:"})
+     */
+    private $usrRegistrationToken;
+	
+    /**
      * @var boolean
      *
      * @ORM\Column(name="usr_email_confirmed", type="boolean", nullable=false)
@@ -139,7 +166,11 @@ class User
      */
     private $usrId;
 
-
+	public function __construct()
+	{
+		$this->usrRegistrationDate = new \DateTime();
+	}
+	
     /**
      * Set usrName
      *
@@ -347,6 +378,98 @@ class User
         return $this->usrPicture;
     }
 
+    /**
+     * Set usrPasswordSalt
+     *
+     * @param string $usrPasswordSalt
+     * @return Users
+     */
+    public function setUsrPasswordSalt($usrPasswordSalt)
+    {
+        $this->usrPasswordSalt = $usrPasswordSalt;
+    
+        return $this;
+    }
+
+    /**
+     * Get usrPasswordSalt
+     *
+     * @return string 
+     */
+    public function getUsrPasswordSalt()
+    {
+        return $this->usrPasswordSalt;
+    }
+
+    /**
+     * Set usrRegistrationDate
+     *
+     * @param string $usrRegistrationDate
+     * @return Users
+     */
+    public function setUsrRegistrationDate($usrRegistrationDate)
+    {
+        $this->usrRegistrationDate = $usrRegistrationDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get usrRegistrationDate
+     *
+     * @return string 
+     */
+    public function getUsrRegistrationDate()
+    {
+        return $this->usrRegistrationDate;
+    }
+
+    /**
+     * Set usrRegistrationToken
+     *
+     * @param string $usrRegistrationToken
+     * @return Users
+     */
+    public function setUsrRegistrationToken($usrRegistrationToken)
+    {
+        $this->usrRegistrationToken = $usrRegistrationToken;
+    
+        return $this;
+    }
+
+    /**
+     * Get usrRegistrationToken
+     *
+     * @return string 
+     */
+    public function getUsrRegistrationToken()
+    {
+        return $this->usrRegistrationToken;
+    }
+	
+    /**
+     * Set usrEmailConfirmed
+     *
+     * @param string $usrEmailConfirmed
+     * @return Users
+     */
+    public function setUsrEmailConfirmed($usrEmailConfirmed)
+    {
+        $this->usrEmailConfirmed = $usrEmailConfirmed;
+    
+        return $this;
+    }
+
+    /**
+     * Get usrEmailConfirmed
+     *
+     * @return string 
+     */
+    public function getUsrEmailConfirmed()
+    {
+        return $this->usrEmailConfirmed;
+    }
+	
     /**
      * Get usrId
      *

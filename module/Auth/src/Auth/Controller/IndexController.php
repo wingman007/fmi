@@ -24,6 +24,7 @@ class IndexController extends AbstractActionController
 	
     public function loginAction()
 	{
+		$user = $this->identity();
 		$form = new AuthForm();
 		$form->get('submit')->setValue('Login');
 		$messages = null;
@@ -42,10 +43,10 @@ class IndexController extends AbstractActionController
 				$staticSalt = $config['static_salt'];
 
 				$authAdapter = new AuthAdapter($dbAdapter,
-										   'users',
-										   'usr_name',
-										   'usr_password',
-										   "MD5(CONCAT('$staticSalt', ?, usr_password_salt)) AND usr_active = 1"
+										   'users', // there is a method setTableName to do the same
+										   'usr_name', // there is a method setIdentityColumn to do the same
+										   'usr_password', // there is a method setCredentialColumn to do the same
+										   "MD5(CONCAT('$staticSalt', ?, usr_password_salt)) AND usr_active = 1" // setCredentialTreatment(parametrized string) 'MD5(?)'
 										  );
 				$authAdapter
 					->setIdentity($data['usr_name'])
@@ -53,7 +54,7 @@ class IndexController extends AbstractActionController
 				;
 				
 				$auth = new AuthenticationService();
-				// or prepare in the globa.config.php and get it from there
+				// or prepare in the globa.config.php and get it from there. Better to be in a module, so we can replace in another module.
 				// $auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 				// $sm->setService('Zend\Authentication\AuthenticationService', $auth); // You can set the service here but will be loaded only if this action called.
 				$result = $auth->authenticate($authAdapter);				
@@ -73,6 +74,12 @@ class IndexController extends AbstractActionController
 							null,
 							'usr_password'
 						));
+						$time = 1209600; // 14 days 1209600/3600 = 336 hours => 336/24 = 14 days
+//						if ($data['rememberme']) $storage->getSession()->getManager()->rememberMe($time); // no way to get the session
+						if ($data['rememberme']) {
+							$sessionManager = new \Zend\Session\SessionManager();
+							$sessionManager->rememberMe($time);
+						}
 						break;
 
 					default:
@@ -98,6 +105,10 @@ class IndexController extends AbstractActionController
 		}			
 		
 		$auth->clearIdentity();
+//		$auth->getStorage()->session->getManager()->forgetMe(); // no way to get the sessionmanager from storage
+		$sessionManager = new \Zend\Session\SessionManager();
+		$sessionManager->forgetMe();
+		
 		return $this->redirect()->toRoute('auth/default', array('controller' => 'index', 'action' => 'login'));		
 	}	
 }

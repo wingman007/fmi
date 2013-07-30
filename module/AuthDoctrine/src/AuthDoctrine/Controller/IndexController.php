@@ -10,6 +10,7 @@ use Zend\View\Model\ViewModel;
 // use Auth\Model\Auth;          we don't need the model here we will use Doctrine em 
 use AuthDoctrine\Entity\User; // only for the filters
 use AuthDoctrine\Form\LoginForm;       // <-- Add this import
+use AuthDoctrine\Form\LoginFilter;
 
 class IndexController extends AbstractActionController
 {
@@ -85,9 +86,12 @@ class IndexController extends AbstractActionController
 
 		$request = $this->getRequest();
         if ($request->isPost()) {
-            $authFormFilters = new User(); // we use the Entity for the filters
+            //- $authFormFilters = new User(); // we use the Entity for the filters
 			// TODO fix the filters
             //- $form->setInputFilter($authFormFilters->getInputFilter());
+
+			// Filters have been fixed
+			$form->setInputFilter(new LoginFilter($this->getServiceLocator()));
             $form->setData($request->getPost());
 			// echo "<h1>I am here1</h1>";
             if ($form->isValid()) {
@@ -99,19 +103,24 @@ class IndexController extends AbstractActionController
 				$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');		
 				// Do the same you did for the ordinar Zend AuthService	
 				$adapter = $authService->getAdapter();
-				$adapter->setIdentityValue($data['username']);
-				$adapter->setCredentialValue($data['password']);
+				$adapter->setIdentityValue($data['username']); //$data['usr_name']
+				$adapter->setCredentialValue($data['password']); // $data['usr_password']
 				$authResult = $authService->authenticate();
 				// echo "<h1>I am here</h1>";
 				if ($authResult->isValid()) {
 					$identity = $authResult->getIdentity();
 					$authService->getStorage()->write($identity);
+					$time = 1209600; // 14 days 1209600/3600 = 336 hours => 336/24 = 14 days
+//-					if ($data['rememberme']) $authService->getStorage()->session->getManager()->rememberMe($time); // no way to get the session
+					if ($data['rememberme']) {
+						$sessionManager = new \Zend\Session\SessionManager();
+						$sessionManager->rememberMe($time);
+					}
 					//- return $this->redirect()->toRoute('home');
 				}
 				foreach ($authResult->getMessages() as $message) {
 					$messages .= "$message\n"; 
-				}
-		
+				}	
 
 		/*
 				$identity = $authenticationResult->getIdentity();
@@ -146,6 +155,9 @@ class IndexController extends AbstractActionController
 //-			echo '</pre>';
 		}
 		$auth->clearIdentity();
+//-		$auth->getStorage()->session->getManager()->forgetMe(); // no way to get to the sessionManager from the storage
+		$sessionManager = new \Zend\Session\SessionManager();
+		$sessionManager->forgetMe();
 		
         // $view = new ViewModel(array(
         //    'message' => 'Hello world',
@@ -180,75 +192,4 @@ class IndexController extends AbstractActionController
 		}
 		return $this->em;
 	}
-	
 }
-
-/*
-https://github.com/doctrine/DoctrineModule/blob/master/docs/index.md
-
-View helper and controller helper
-
-You may also need to know if there is an authenticated user within your other controllers or in views. ZF2 provides a controller plugin and a view helper you may use.
-
-Here is how you use it in your controller :
-
-public function testAction()
-{
-    if ($user = $this->identity()) {
-        // someone is logged !
-    } else {
-        // not logged in
-    }
-}
-And in your view :
-
-<?php
-    if ($user = $this->identity()) {
-        echo 'Logged in as ' . $this->escapeHtml($user->getUsername());
-    } else {
-        echo 'Not logged in';
-    }
-?>
-*/
-
-/*
-You can find more details about the features offered by DoctrineModule:
-
-Authentication documentation: this explains how you can use the DoctrineModule authentication adapter and authentication storage adapter to provide a simple way to authenticate users using Doctrine.
-Caching documentation: DoctrineModule provides simple classes to allow easier caching using Doctrine.
-CLI documentation: learn how to use the Doctrine 2 command line tool, and how to add your own command.
-Hydrator documentation: if you are using Zend Framework 2 Forms (and I hope you are !), DoctrineModule hydrator provides a powerful hydrator that allow you to easily deal with OneToOne, OneToMany and ManyToOne relationships when using forms.
-Paginator documentation: discover how to use the DoctrineModule Paginator adapter.
-Validator documentation: this chapter explains how to use ObjectExists and NoObjectExists validator, that allow you to easily validate if a given entity exists or not.
-*/
-
-/*
-http://www.jasongrimes.org/2012/01/using-doctrine-2-in-zend-framework-2/
-http://www.jasongrimes.org/2012/01/using-doctrine-2-in-zend-framework-2/
-http://www.jasongrimes.org/2012/01/using-doctrine-2-in-zend-framework-2/
-https://github.com/iwalz/zf2-doctrine2-getting-started
-
-=========================
-https://github.com/doctrine
-https://github.com/doctrine/DoctrineModule
-https://github.com/doctrine/DoctrineModule/blob/master/docs/index.md
-http://docs.doctrine-project.org/en/latest/tutorials/getting-started.html
-http://framework.zend.com/manual/1.12/en/zend.db.table.html
-https://github.com/doctrine/DoctrineORMModule
-http://framework.zend.com/manual/2.1/en/modules/zend.authentication.adapter.dbtable.html
-http://mind42.com/mindmap/61b9f3eb-0c96-42ce-a119-01f05fe6675f
-http://framework.zend.com/manual/2.1/en/modules/zend.module-manager.intro.html
-http://framework.zend.com/manual/2.1/en/modules/zend.service-manager.quick-start.html#zend-service-manager-quick-start-config
-https://github.com/ZF-Commons/ZfcUserDoctrineORM/tree/master/src/ZfcUserDoctrineORM
-https://github.com/iwalz/zf2-doctrine2-getting-started
-http://www.jasongrimes.org/2012/01/using-doctrine-2-in-zend-framework-2/
-http://wildlyinaccurate.com/useful-doctrine-2-console-commands
-http://stackoverflow.com/questions/14968924/doctrine-2-with-codeigniter-2-no-metadata-classes-to-process
-http://stackoverflow.com/users/347063/ocramius
-https://github.com/wildlyinaccurate/CodeIgniter-2-with-Doctrine-2/blob/master/application/models/Entity/User.php
-
-http://stackoverflow.com/questions/13007477/doctrine-2-and-zf2-integration
-
-http://phphints.wordpress.com/2010/10/28/cli-config-php-for-doctrine-2-command-line-tool/
-http://phphints.wordpress.com/2010/10/28/cli-config-php-for-doctrine-2-command-line-tool/
-*/

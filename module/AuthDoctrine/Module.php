@@ -18,15 +18,20 @@ class Module
             ),
         );
     }
-/*	
+	
     public function getServiceConfig()
     {
         return array(
+//-			'aliases' => array( // !!! aliases not alias
+//-				'Zend\Authentication\AuthenticationService' => 'doctrine_authenticationservice', // aliases can be overwriten
+//-			),
             'factories' => array(
 				// taken from DoctrineModule on GitHub
 				// Please note that Iam using here a Zend\Authentication\AuthenticationService name, but it can be anything else 
 				// However, using the name Zend\Authentication\AuthenticationService will allow it to be recognised by the ZF2 view helper.
-                'Zend\Authentication\AuthenticationService' => function($serviceManager) {
+                // the configuration of doctrine.authenticationservice.orm_default is in module.config.php
+				'Zend\Authentication\AuthenticationService' => function($serviceManager) {
+//-				'doctrine_authenticationservice'  => function($serviceManager) {
                     // If you are using DoctrineORMModule:
                     return $serviceManager->get('doctrine.authenticationservice.orm_default');
 
@@ -36,5 +41,5 @@ class Module
             )
         );
     }
-*/
+
 }
