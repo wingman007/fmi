@@ -1,0 +1,27 @@
+<h1>Index = Retrieve</h1>
+<a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-paginator', 'action' => 'create')); ?>">Create</a>
+<table class="table">
+<tr>
+	<th>usr_id</th>
+	<th>usr_name</th>
+	<th>usr_email</th>
+</tr>
+<?php
+	foreach ($this->paginator as $row) {
+?>
+		<tr>
+			<td><?php  echo $row->usr_id; // The row is an ArrayObject $row->usr_id and $row['usr_id'] with both work?></td>
+			<td><?php  echo $row['usr_name']; ?></td>
+			<td><?php  echo $row['usr_email']; ?></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-paginator', 'action' => 'update', 'id' => $row['usr_id'])); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('csn_user/default', array('controller' => 'user-paginator', 'action' => 'delete', 'id' => $row['usr_id']));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>
+
+<?php echo $this->paginationControl($this->paginator,
+                                    'Sliding', // All, Elastic, Jumping, Sliding
+                                    'search_pagination.phtml', array('route' => 'csn_user/paginator')); ?>
+<!-- 'search_pagination.phtml' 'item_pagination.phtml' dropdown_pagination.phtml -->

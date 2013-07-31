@@ -39,6 +39,7 @@ return array(
 		'CsnUser',
 		// 'CsnAuthorize' // uncomment if you want to use Authorization
 		'AuthDoctrine', // if you want to enable AuthDoctrine disable the module Auth. They register the same services
+		'CsnNavigation',
 	),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

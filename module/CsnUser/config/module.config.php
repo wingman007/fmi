@@ -3,6 +3,7 @@ return array(
 	'controllers' => array(
         'invokables' => array(
             'CsnUser\Controller\User' => 'CsnUser\Controller\UserController',
+            'CsnUser\Controller\UserPaginator' => 'CsnUser\Controller\UserPaginatorController',
 			
             'CsnUser\Controller\UserRowGatewayFeature' => 'CsnUser\Controller\UserRowGatewayFeatureController',	
             'CsnUser\Controller\UserRowGatewayFeatureBind' => 'CsnUser\Controller\UserRowGatewayFeatureBindController',	
@@ -47,6 +48,20 @@ return array(
 								'id'     	 => '[0-9]*',
 							),
 							'defaults' => array(
+							),
+						),
+					),
+					'paginator' => array(
+						'type'    => 'Segment',
+						'options' => array(
+							'route'    => '/[page/:page]',
+							'constraints' => array(
+								'page' => '[0-9]*',
+							),
+							'defaults' => array(
+								'__NAMESPACE__' => 'CsnUser\Controller',
+								'controller'    => 'UserPaginator',
+								'action'        => 'index',
 							),
 						),
 					),

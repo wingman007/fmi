@@ -5,7 +5,8 @@ return array(
     'acl' => array(
         'roles' => array(
             'guest'   => null,
-            'member'  => 'guest'
+            'member'  => 'guest',
+            'admin'  => 'member',
         ),
         'resources' => array(
             'allow' => array(
@@ -13,6 +14,16 @@ return array(
 //-                    'login' => 'guest',
 //-                    'all'   => 'member'
 //-                )
+				'Album\Controller\Album' => array(
+					'index'	=> 'guest',
+					'add'	=> 'member',
+				),
+				'Fmi\Controller\Index' => array(
+					'index'	=> 'member'
+				),
+				'CsnUser\Controller\UserDoctrine' => array(
+					'all'	=> 'guest'
+				),
 				'CsnUser\Controller\UserDoctrineSimpleAuthorizationAcl' => array(
 //					'all'   => 'guest',
 					'index'	=> 'guest',
