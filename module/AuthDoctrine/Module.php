@@ -1,6 +1,11 @@
 <?php
 namespace AuthDoctrine;
 
+// Add this for SMTP transport
+use Zend\ServiceManager\ServiceManager;
+use Zend\Mail\Transport\Smtp;
+use Zend\Mail\Transport\SmtpOptions;
+
 class Module
 {
     public function getConfig()
@@ -37,9 +42,16 @@ class Module
 
                     // If you are using DoctrineODMModule:
                     //- return $serviceManager->get('doctrine.authenticationservice.odm_default');
-                }
+                },
+				// Add this for SMTP transport
+				// ToDo move it ot a separate module CsnMail
+				'mail.transport' => function (ServiceManager $serviceManager) {
+					$config = $serviceManager->get('Config'); 
+					$transport = new Smtp();                
+					$transport->setOptions(new SmtpOptions($config['mail']['transport']['options']));
+					return $transport;
+				},
             )
         );
     }
-
-}
+}	

@@ -70,6 +70,7 @@ class UserDoctrineController extends AbstractActionController
 		
 		// The last step
 //-		$users = $entityManager->getRepository('CsnUser\Entity\User')->findBy(array());
+//-		$user = $entityManager->getRepository('CsnUser\Entity\User')->findOneBy(array('usrConfirmationToken' => $token));
 		$users = $entityManager->getRepository('CsnUser\Entity\User')->findAll();
 //-		$users = $entityManager->find('CsnUser\Entity\User', 2);
 		

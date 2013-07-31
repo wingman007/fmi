@@ -1,65 +1,58 @@
 <?php
-namespace Auth\Controller;
+namespace AuthDoctrine\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-use Auth\Model\Auth;
-use Auth\Form\RegistrationForm;
-use Auth\Form\RegistrationFilter;
+use AuthDoctrine\Entity\User;
 
-use Auth\Form\ForgottenPasswordForm;
-use Auth\Form\ForgottenPasswordFilter;
 // a test class in a coolcsn namespace for installer. You can remove the next line
 use CsnBase\Zend\Validator\ConfirmPassword;
+
+// Doctrine Annotations
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
+use DoctrineORMModule\Stdlib\Hydrator\DoctrineEntity;
+use DoctrineORMModule\Form\Annotation\AnnotationBuilder as DoctrineAnnotationBuilder;
+
+// Zend Annotation 
+use Zend\Form\Annotation\AnnotationBuilder;
+// for the form
+use Zend\Form\Element;
+
+use AuthDoctrine\Form\RegistrationForm;
+use AuthDoctrine\Form\RegistrationFilter;
+use AuthDoctrine\Form\ForgottenPasswordForm;
+use AuthDoctrine\Form\ForgottenPasswordFilter;
 
 use Zend\Mail\Message;
 
 class RegistrationController extends AbstractActionController
 {
-	protected $usersTable;	
-	
+
 	public function indexAction()
 	{
-		// A test instantiation to make sure it works. Not used in the application. You can remove the next line
-		$myValidator = new ConfirmPassword();
+		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+		$user = new User;
+		//1)  A lot of work to manualy change the form add fields etc. Better use a form class
+//-		$form = $this->getRegistrationForm($entityManager, $user);
+
+		// 2) Better use a form class
 		$form = new RegistrationForm();
 		$form->get('submit')->setValue('Register');
-		
+		$form->setHydrator(new DoctrineHydrator($entityManager,'AuthDoctrine\Entity\User'));		
+
+		$form->bind($user);		
 		$request = $this->getRequest();
         if ($request->isPost()) {
 			$form->setInputFilter(new RegistrationFilter($this->getServiceLocator()));
 			$form->setData($request->getPost());
 			 if ($form->isValid()) {
-				$data = $form->getData();
-				$data = $this->prepareData($data);
-				$auth = new Auth();
-				$auth->exchangeArray($data);
-/*				
-				// this is replaced by 
-				// 1) Manualy composing (wiring) the objects
-				$dbAdapter = $this->getServiceLocator()->get('Zend\Db\Adapter\Adapter');
-				$resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
-				$resultSetPrototype->setArrayObjectPrototype(new \Auth\Model\Auth());
-				$tableGateway = new \Zend\Db\TableGateway\TableGateway('users', $dbAdapter, null, $resultSetPrototype);
-				$usersTable = new \Auth\Model\UsersTable($tableGateway);
-				// $usersTable->saveUser($auth);
-				// $user7 = $usersTable->getUser(7);
-				
-				$rowset = $tableGateway->select(array('usr_id' => 7));
-				$user7 = $rowset->current();
-				
-				echo '<pre>';
-				var_dump($user7);
-				echo '</pre>';
-*/				
-				// OR
-				// 2) Using the service Locator
-				$this->getUsersTable()->saveUser($auth);
-				
-				$this->sendConfirmationEmail($auth);
-				$this->flashMessenger()->addMessage($auth->usr_email);
-				return $this->redirect()->toRoute('auth/default', array('controller'=>'registration', 'action'=>'registration-success'));					
+				$this->prepareData($user);
+				$this->sendConfirmationEmail($user);
+				$this->flashMessenger()->addMessage($user->getUsrEmail());
+				$entityManager->persist($user);
+				$entityManager->flush();				
+				return $this->redirect()->toRoute('auth-doctrine/default', array('controller'=>'registration', 'action'=>'registration-success'));					
 			}			 
 		}
 		return new ViewModel(array('form' => $form));
@@ -82,12 +75,15 @@ class RegistrationController extends AbstractActionController
 		$token = $this->params()->fromRoute('id');
 		$viewModel = new ViewModel(array('token' => $token));
 		try {
-			$user = $this->getUsersTable()->getUserByToken($token);
-			$usr_id = $user->usr_id;
-			$this->getUsersTable()->activateUser($usr_id);
+			$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+			$user = $entityManager->getRepository('AuthDoctrine\Entity\User')->findOneBy(array('usrRegistrationToken' => $token)); // 
+			$user->setUsrActive(1);
+			$user->setUsrEmailConfirmed(1);
+			$entityManager->persist($user);
+			$entityManager->flush();
 		}
 		catch(\Exception $e) {
-			$viewModel->setTemplate('auth/registration/confirm-email-error.phtml');
+			$viewModel->setTemplate('auth-doctrine/registration/confirm-email-error.phtml');
 		}
 		return $viewModel;
 	}
@@ -102,17 +98,17 @@ class RegistrationController extends AbstractActionController
 			$form->setData($request->getPost());
 			 if ($form->isValid()) {
 				$data = $form->getData();
-				$usr_email = $data['usr_email'];
-				$usersTable = $this->getUsersTable();
-				$auth = $usersTable->getUserByEmail($usr_email);
+				$usrEmail = $data['usrEmail'];
+				$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+				$user = $entityManager->getRepository('AuthDoctrine\Entity\User')->findOneBy(array('usrEmail' => $usrEmail)); // 
 				$password = $this->generatePassword();
-				$auth->usr_password = $this->encriptPassword($this->getStaticSalt(), $password, $auth->usr_password_salt);
-//				$usersTable->changePassword($auth->usr_id, $password);
-// 				or
-				$usersTable->saveUser($auth);
-				$this->sendPasswordByEmail($usr_email, $password);
-				$this->flashMessenger()->addMessage($usr_email);
-                return $this->redirect()->toRoute('auth/default', array('controller'=>'registration', 'action'=>'password-change-success'));
+				$passwordHash = $this->encriptPassword($this->getStaticSalt(), $password, $user->getUsrPasswordSalt());
+				$this->sendPasswordByEmail($usrEmail, $password);
+				$this->flashMessenger()->addMessage($usrEmail);
+				$user->setUsrPassword($passwordHash);
+				$entityManager->persist($user);
+				$entityManager->flush();				
+                return $this->redirect()->toRoute('auth-doctrine/default', array('controller'=>'registration', 'action'=>'password-change-success'));
 			}					
 		}		
 		return new ViewModel(array('form' => $form));			
@@ -130,24 +126,22 @@ class RegistrationController extends AbstractActionController
 		return new ViewModel(array('usr_email' => $usr_email));
 	}	
 	
-	public function prepareData($data)
+	public function prepareData($user)
 	{
-		$data['usr_active'] = 0;
-		$data['usr_password_salt'] = $this->generateDynamicSalt();				
-		$data['usr_password'] = $this->encriptPassword(
-			$this->getStaticSalt(), 
-			$data['usr_password'], 
-			$data['usr_password_salt']
-		);
-		$data['usrl_id'] = 2;
-		$data['lng_id'] = 1;
-//		$data['usr_registration_date'] = date('Y-m-d H:i:s');
-		$date = new \DateTime();
-		$data['usr_registration_date'] = $date->format('Y-m-d H:i:s');
-		$data['usr_registration_token'] = md5(uniqid(mt_rand(), true)); // $this->generateDynamicSalt();
-//		$data['usr_registration_token'] = uniqid(php_uname('n'), true);	
-		$data['usr_email_confirmed'] = 0;
-		return $data;
+		$user->setUsrActive(0);
+		$user->setUsrPasswordSalt($this->generateDynamicSalt());				
+		$user->setUsrPassword($this->encriptPassword(
+								$this->getStaticSalt(), 
+								$user->getUsrPassword(), 
+								$user->getUsrPasswordSalt()
+		));
+		$user->setUsrlId(2);
+		$user->setLngId(1);
+		$user->setUsrRegistrationDate(new \DateTime());
+		$user->setUsrRegistrationToken(md5(uniqid(mt_rand(), true))); // $this->generateDynamicSalt();
+//		$user->setUsrRegistrationToken(uniqid(php_uname('n'), true));	
+		$user->setUsrEmailConfirmed(0);
+		return $user;
 	}
 
     public function generateDynamicSalt()
@@ -254,21 +248,21 @@ class RegistrationController extends AbstractActionController
         return $this->usersTable;
     }
 
-	public function sendConfirmationEmail($auth)
+	public function sendConfirmationEmail($user)
 	{
 		// $view = $this->getServiceLocator()->get('View');
 		$transport = $this->getServiceLocator()->get('mail.transport');
 		$message = new Message();
 		$this->getRequest()->getServer();  //Server vars
-		$message->addTo($auth->usr_email)
+		$message->addTo($user->getUsrEmail())
 				->addFrom('praktiki@coolcsn.com')
 				->setSubject('Please, confirm your registration!')
 				->setBody("Please, click the link to confirm your registration => " . 
 					$this->getRequest()->getServer('HTTP_ORIGIN') .
-					$this->url()->fromRoute('auth/default', array(
+					$this->url()->fromRoute('auth-doctrine/default', array(
 						'controller' => 'registration', 
 						'action' => 'confirm-email', 
-						'id' => $auth->usr_registration_token)));
+						'id' => $user->getUsrRegistrationToken())));
 		$transport->send($message);
 	}
 
@@ -286,5 +280,58 @@ class RegistrationController extends AbstractActionController
 					$password
 				);
 		$transport->send($message);		
-	}	
+	}
+	
+	// ToDo Ask yourself 
+	// 1) do we need a separate Entity Registration to handle registration
+	// 2) do we have to use form
+	// 3) do we have to use User Entity and do what we are doing here. Manually adding removing elements 
+	// Is not completed
+	public function getRegistrationForm($entityManager, $user)
+	{
+		$builder = new DoctrineAnnotationBuilder($entityManager);
+		$form = $builder->createForm( $user );
+		$form->setHydrator(new DoctrineHydrator($entityManager,'AuthDoctrine\Entity\User'));
+		$filter = $form->getInputFilter();
+		$form->remove('usrlId');
+		$form->remove('lngId');
+		$form->remove('usrActive');
+		$form->remove('usrQuestion');
+		$form->remove('usrAnswer');
+		$form->remove('usrPicture');
+		$form->remove('usrPasswordSalt');
+		$form->remove('usrRegistrationDate');
+		$form->remove('usrRegistrationToken');
+		$form->remove('usrEmailConfirmed');
+		
+		// ... A lot of work of manually building the form
+		
+        $form->add(array(
+            'name' => 'usrPasswordConfirm',
+            'attributes' => array(
+                'type'  => 'password',
+            ),
+            'options' => array(
+                'label' => 'Confirm Password',
+            ),
+        ));	
+
+		$form->add(array(
+			'type' => 'Zend\Form\Element\Captcha',
+			'name' => 'captcha',
+			'options' => array(
+				'label' => 'Please verify you are human',
+				'captcha' => new \Zend\Captcha\Figlet(),
+			),
+		));
+		
+		$send = new Element('submit');
+		$send->setValue('Register'); // submit
+		$send->setAttributes(array(
+			'type'  => 'submit'
+		));
+		$form->add($send);	
+		// ... 
+		return $form;		
+	}
 }

@@ -26,14 +26,14 @@ class LoginFilter extends InputFilter
 					),
 				),
 				array(
-					'name'		=> 'Zend\Validator\Db\RecordExists',
+					'name'		=> 'DoctrineModule\Validator\ObjectExists',
 					'options' => array(
-						'table'   => 'users',
-						'field'   => 'usr_name',
-						'adapter' => $sm->get('Zend\Db\Adapter\Adapter'),
+						'object_repository' => $sm->get('doctrine.entitymanager.orm_default')->getRepository('AuthDoctrine\Entity\User'),
+						'fields'            => 'usrName'
 					),
+					
 				),
-			),
+			), 
 		));
 		
 		$this->add(array(

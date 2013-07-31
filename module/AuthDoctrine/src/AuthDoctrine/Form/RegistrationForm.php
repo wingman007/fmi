@@ -3,23 +3,15 @@ namespace AuthDoctrine\Form;
 
 use Zend\Form\Form;
 
-class LoginForm extends Form
+class RegistrationForm extends Form
 {
     public function __construct($name = null)
     {
-        // we want to ignore the name passed
-        parent::__construct('login');
+        parent::__construct('registration');
         $this->setAttribute('method', 'post');
-        /*
-		$this->add(array(
-            'name' => 'usr_id',
-            'attributes' => array(
-                'type'  => 'hidden',
-            ),
-        ));
-		*/
+
         $this->add(array(
-            'name' => 'username', // 'usr_name',
+            'name' => 'usrName',
             'attributes' => array(
                 'type'  => 'text',
             ),
@@ -27,8 +19,19 @@ class LoginForm extends Form
                 'label' => 'Username',
             ),
         ));
+		
         $this->add(array(
-            'name' => 'password', // 'usr_password',
+            'name' => 'usrEmail',
+            'attributes' => array(
+                'type'  => 'email',
+            ),
+            'options' => array(
+                'label' => 'E-mail',
+            ),
+        ));	
+		
+        $this->add(array(
+            'name' => 'usrPassword',
             'attributes' => array(
                 'type'  => 'password',
             ),
@@ -36,25 +39,31 @@ class LoginForm extends Form
                 'label' => 'Password',
             ),
         ));
-
+		
         $this->add(array(
-            'name' => 'rememberme',
-			'type' => 'checkbox', // 'Zend\Form\Element\Checkbox',			
-//            'attributes' => array(
-//                'type'  => '\Zend\Form\Element\Checkbox',
-//            ),
+            'name' => 'usrPasswordConfirm',
+            'attributes' => array(
+                'type'  => 'password',
+            ),
             'options' => array(
-                'label' => 'Remember Me?',
-//				'checked_value' => 'true', without value here will be 1
-//				'unchecked_value' => 'false', // witll be 1
+                'label' => 'Confirm Password',
             ),
         ));	
 
+		$this->add(array(
+			'type' => 'Zend\Form\Element\Captcha',
+			'name' => 'captcha',
+			'options' => array(
+				'label' => 'Please verify you are human',
+				'captcha' => new \Zend\Captcha\Figlet(),
+			),
+		));
+		
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(
                 'type'  => 'submit',
-                'value' => 'Login',
+                'value' => 'Go',
                 'id' => 'submitbutton',
             ),
         )); 

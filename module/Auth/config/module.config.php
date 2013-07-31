@@ -1,6 +1,6 @@
 <?php
 return array(
-	'static_salt' => 'aFGQ475SDsdfsaf2342',
+//	'static_salt' => 'aFGQ475SDsdfsaf2342', // I am going to move it to global.php. It should be accessable everywhere
 	'controllers' => array(
         'invokables' => array(
             'Auth\Controller\Index' => 'Auth\Controller\IndexController',	

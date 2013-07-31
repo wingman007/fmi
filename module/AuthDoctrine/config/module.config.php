@@ -5,7 +5,9 @@ namespace AuthDoctrine; // SUPER important for Doctrine othervise can not find t
 return array(
 	'controllers' => array(
         'invokables' => array(
-            'AuthDoctrine\Controller\Index' => 'AuthDoctrine\Controller\IndexController',			
+            'AuthDoctrine\Controller\Index' => 'AuthDoctrine\Controller\IndexController',
+            'AuthDoctrine\Controller\Registration' => 'AuthDoctrine\Controller\RegistrationController',
+            'AuthDoctrine\Controller\Admin' => 'AuthDoctrine\Controller\AdminController',			
         ),
     ),	
     'router' => array(
@@ -25,7 +27,7 @@ return array(
 					'default' => array(
 						'type'    => 'Segment',
 						'options' => array(
-							'route'    => '/[:controller[/:action]]',
+							'route'    => '/[:controller[/:action[/:id]]]',
 							'constraints' => array(
 								'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
 								'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',

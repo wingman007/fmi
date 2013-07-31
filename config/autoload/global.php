@@ -30,7 +30,7 @@ return array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter'
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
-        ),
+        ),	
 		/* Moved to Auth module to allow to be replaced by Doctrine or other.
 		// added for Authentication and Authorization. Without this each time we have to create a new instance.
 		// This code should be moved to a module to allow Doctrine to overwrite it
@@ -42,5 +42,7 @@ return array(
         ),
 		*/
     ),
+	
+	'static_salt' => 'aFGQ475SDsdfsaf2342', // was moved from module.config.php here to allow all modules to use it
 );
 
