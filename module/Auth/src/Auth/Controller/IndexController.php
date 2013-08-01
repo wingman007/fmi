@@ -57,7 +57,7 @@ class IndexController extends AbstractActionController
 				// or prepare in the globa.config.php and get it from there. Better to be in a module, so we can replace in another module.
 				// $auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 				// $sm->setService('Zend\Authentication\AuthenticationService', $auth); // You can set the service here but will be loaded only if this action called.
-				$result = $auth->authenticate($authAdapter);				
+				$result = $auth->authenticate($authAdapter);			
 				
 				switch ($result->getCode()) {
 					case Result::FAILURE_IDENTITY_NOT_FOUND:

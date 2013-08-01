@@ -1,0 +1,12 @@
+<h1>Update</h1>
+<?php
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('csn_user/default', array('controller' => 'user-doctrine-paginator', 'action' => 'update', 'id' => $id))); //'contact/process'));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();

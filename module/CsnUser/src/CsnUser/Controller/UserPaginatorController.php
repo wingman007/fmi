@@ -17,17 +17,22 @@ class UserPaginatorController extends AbstractActionController
 	// R -retrieve 	CRUD
 	public function indexAction()
 	{
+		// I) Without pagination
+//		return new ViewModel(array('rowset' => $this->getUsersTable()->select()));
+		
+		// II) Pagination
+		// 1) ArrayAdapter. You first retireve all result turn them to array and after paginate. Not a very good solution.
 //		$resulySet = $this->getUsersTable()->select();
 //		$paginator = new \Zend\Paginator\Paginator(new \Zend\Paginator\Adapter\ArrayAdapter($resulySet->toArray()));
 
+		// 2) Zend\Paginator\Adapter\DbTableGateway. The best.
 		$paginator = new \Zend\Paginator\Paginator(new \Zend\Paginator\Adapter\DbTableGateway($this->getUsersTable()));
 
 		$page = 1;
 		if ($this->params()->fromRoute('page')) $page = $this->params()->fromRoute('page');
 		$paginator->setCurrentPageNumber((int)$page);
-		$paginator->setItemCountPerPage(5); // 5
+		$paginator->setItemCountPerPage(5);
 		return new ViewModel(array('paginator' => $paginator));
-//		return new ViewModel(array('rowset' => $this->getUsersTable()->select()));
 	}
 	
 	// C -Create

@@ -17,6 +17,7 @@ return array(
 			'CsnUser\Controller\UserDoctrineDbal' => 'CsnUser\Controller\UserDoctrineDbalController',
 			'CsnUser\Controller\UserDoctrineSeparatedForm' => 'CsnUser\Controller\UserDoctrineSeparatedFormController',		
             'CsnUser\Controller\UserDoctrine' => 'CsnUser\Controller\UserDoctrineController', // the final form	
+            'CsnUser\Controller\UserDoctrinePaginator' => 'CsnUser\Controller\UserDoctrinePaginatorController', // the final form	
 
 			// Authorization
             'CsnUser\Controller\UserDoctrineSimpleAuthorization' => 'CsnUser\Controller\UserDoctrineSimpleAuthorizationController',		
@@ -54,13 +55,27 @@ return array(
 					'paginator' => array(
 						'type'    => 'Segment',
 						'options' => array(
-							'route'    => '/[page/:page]',
+							'route'    => '/:controller/[page/:page]',
 							'constraints' => array(
 								'page' => '[0-9]*',
 							),
 							'defaults' => array(
 								'__NAMESPACE__' => 'CsnUser\Controller',
 								'controller'    => 'UserPaginator',
+								'action'        => 'index',
+							),
+						),
+					),
+					'paginator-doctrine' => array(
+						'type'    => 'Segment',
+						'options' => array(
+							'route'    => '/[page/:page]',
+							'constraints' => array(
+								'page' => '[0-9]*',
+							),
+							'defaults' => array(
+								'__NAMESPACE__' => 'CsnUser\Controller',
+								'controller'    => 'UserDoctrinePaginator',
 								'action'        => 'index',
 							),
 						),
