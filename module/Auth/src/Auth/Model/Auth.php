@@ -23,6 +23,7 @@ class Auth implements InputFilterAwareInterface
     public $usr_registration_token;	
     public $usr_email_confirmed;	
 
+	// Hydration
 	// ArrayObject, or at least implement exchangeArray. For Zend\Db\ResultSet\ResultSet to work
     public function exchangeArray($data) 
     {
@@ -41,6 +42,14 @@ class Auth implements InputFilterAwareInterface
         $this->usr_registration_token = (!empty($data['usr_registration_token'])) ? $data['usr_registration_token'] : null;
         $this->usr_email_confirmed = (isset($data['usr_email_confirmed'])) ? $data['usr_email_confirmed'] : null;
     }	
+
+	// Extraction. The Registration from the tutorial works even without it.
+	// The standard Hydrator of the Form expects getArrayCopy to be able to bind
+    public function getArrayCopy()
+    {
+        return get_object_vars($this);
+    }
+	
 	
 	protected $inputFilter;
 

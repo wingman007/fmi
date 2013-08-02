@@ -22,7 +22,7 @@ class RegistrationController extends AbstractActionController
 	public function indexAction()
 	{
 		// A test instantiation to make sure it works. Not used in the application. You can remove the next line
-		$myValidator = new ConfirmPassword();
+		// $myValidator = new ConfirmPassword();
 		$form = new RegistrationForm();
 		$form->get('submit')->setValue('Register');
 		
@@ -30,11 +30,12 @@ class RegistrationController extends AbstractActionController
         if ($request->isPost()) {
 			$form->setInputFilter(new RegistrationFilter($this->getServiceLocator()));
 			$form->setData($request->getPost());
-			 if ($form->isValid()) {
+			 if ($form->isValid()) {			 
 				$data = $form->getData();
 				$data = $this->prepareData($data);
 				$auth = new Auth();
 				$auth->exchangeArray($data);
+
 /*				
 				// this is replaced by 
 				// 1) Manualy composing (wiring) the objects
@@ -52,7 +53,8 @@ class RegistrationController extends AbstractActionController
 				echo '<pre>';
 				var_dump($user7);
 				echo '</pre>';
-*/				
+*/
+				
 				// OR
 				// 2) Using the service Locator
 				$this->getUsersTable()->saveUser($auth);

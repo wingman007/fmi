@@ -80,6 +80,8 @@ class UsersTable
             'usr_registration_token'=> $auth->usr_registration_token,
 			'usr_email_confirmed'	=> $auth->usr_email_confirmed,
         );
+		// If there is a method getArrayCopy() defined in Auth you can simply call it.
+		// $data = $auth->getArrayCopy();
 
         $usr_id = (int)$auth->usr_id;
         if ($usr_id == 0) {
