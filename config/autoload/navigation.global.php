@@ -36,14 +36,14 @@ return array( // ToDO make it dynamic - comes from the DB
                      ),
                  ),
              ),
-             /* array(
+             array(
                  'label' => 'Login', // 'Page #2',
                  'route' => 'auth-doctrine/default', // 'page-2',
 				 'controller' => 'index',
 				 'action'	=> 'login',
 				 'resource'   => 'AuthDoctrine\Controller\Index', // 'mvc:admin',
 				 'privilege'	=> 'login'
-             ), */
+             ),
 			array(
 				'label' => 'My URI page',
 				'uri'   => 'http://www.example.com/',
