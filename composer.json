@@ -20,5 +20,8 @@
         "zendframework/zendservice-recaptcha": "2.*",
         "doctrine/common": ">=2.1",
         "doctrine/doctrine-orm-module": "0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     }
 }
