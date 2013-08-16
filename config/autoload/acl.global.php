@@ -55,6 +55,14 @@ return array(
 					'all'   => 'guest'
 					// 'all'   => 'member',					
 				),
+				'CsnCms\Controller\Index' => array(
+					// 'all'   => 'guest'
+					'view'	=> 'guest',
+					'index' => 'admin',
+					'add'	=> 'admin',
+					'edit'  => 'admin',	
+					'delete'=> 'admin',						
+				),
             )
         )
     )

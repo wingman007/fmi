@@ -88,6 +88,45 @@ return array( // ToDO make it dynamic - comes from the DB
 //				 'resource'   => 'CsnUser\Controller\UserPaginator', // No resources always will be shown
 //				 'privilege'	=> 'index'
              ),
+             array(
+                 'label' => 'Cms View Article',
+                 'route' => 'csn-cms/default',
+				 'action'     => 'view',
+				 'controller' => 'Index',
+				 'params' => array('controller' => 'index', 'action' => 'view', 'id' => 1),
+				 'resource'	=> 'CsnCms\Controller\Index',
+				 'privilege'	=> 'view',
+                 'pages' => array(
+                     array(
+                         'label' => 'Index',
+                         'route' => 'csn-cms/default',
+						 'params' => array('controller' => 'index', 'action' => 'index'),
+						 'resource'	=> 'CsnCms\Controller\Index',
+						 'privilege'	=> 'index',
+                     ),
+                     array(
+                         'label' => 'Add',
+                         'route' => 'csn-cms/default',
+						 'params' => array('controller' => 'index', 'action' => 'add'),
+						 'resource'	=> 'CsnCms\Controller\Index',
+						 'privilege'	=> 'add',
+                     ),
+                     array(
+                         'label' => 'Edit',
+                         'route' => 'csn-cms/default',
+						 'params' => array('controller' => 'index', 'action' => 'edit'),
+						 'resource'	=> 'CsnCms\Controller\Index',
+						 'privilege'	=> 'edit',
+                     ),
+                     array(
+                         'label' => 'Delete', 
+                         'route' => 'csn-cms/default',
+						 'params' => array('controller' => 'index', 'action' => 'delete'),
+						 'resource'	=> 'CsnCms\Controller\Index',
+						 'privilege'	=> 'delete',
+                     ),
+                 ),
+             ),
          ),
      ),
      'service_manager' => array(
