@@ -1,12 +1,27 @@
 <?php
 
-namespace CsnCms\Entity;
-
+namespace CsnCms\Entity; // added by Stoyan
+// If somethign doesn't work after git merge copy the Articles from the key drive or another working copy of the file
 use Doctrine\ORM\Mapping as ORM;
+// added by Stoyan
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
-use Zend\Form\Annotation;
+use Zend\Form\Annotation; // !!!! Absolutely neccessary
+
+// SUPER important is to remove      @ORM\Column(name="rl_id", type="integer", nullable=true) from the role in order to make it work
+// http://stackoverflow.com/questions/6899335/doctrine-class-has-no-association-named
+// setters and getters - Zend\Stdlib\Hydrator\ClassMethods, for public properties - Zend\Stdlib\Hydrator\ObjectProperty, array 
+// Zend\Stdlib\Hydrator\ArraySerializable
+// Follows the definition of ArrayObject. 
+// Objects must implement either the exchangeArray() or populate() methods to support hydration, 
+// and the getArrayCopy() method to support extraction.
+// https://bitbucket.org/todor_velichkov/homeworkuniversity/src/935b37b87e3f211a72ee571142571089dffbf82d/module/University/src/University/Form/StudentForm.php?at=master
+
+// read here http://framework.zend.com/manual/2.1/en/modules/zend.form.quick-start.html
+
+// children - are the transaltions
+// parent - is the original article
 
 /**
  * Article
@@ -127,7 +142,7 @@ class Article
      * @ORM\Column(name="artc_created", type="datetime", nullable=true)
      * @Annotation\Attributes({"type":"Zend\Form\Element\DateTime", "id": "artcCreated", "min":"2010-01-01T00:00:00Z", "max":"2020-01-01T00:00:00Z", "step":"1"})
      * @Annotation\Options({"label":"Date\Time:", "format":"Y-m-d\TH:iP"})	 
-     */
+     */ 
     private $artcCreated;
 
     /**
@@ -170,6 +185,7 @@ class Article
         $this->children = new ArrayCollection; // \Doctrine\Common\Collections\ArrayCollection();
 		$this->categories = new ArrayCollection;
 		$this->comments = new ArrayCollection;
+		$this->artcCreated = new \DateTime();
     }
 	
     /**

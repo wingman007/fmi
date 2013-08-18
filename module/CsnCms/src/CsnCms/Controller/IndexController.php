@@ -40,6 +40,45 @@ class IndexController extends AbstractActionController
 	{
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		$article = new Article;
+		$form = $this->getForm($article, $entityManager);
+		
+		$form->bind($article);
+		
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+			$post = $request->getPost();
+			// uncooment and fix if you want to control the date and time
+//			$post->artcCreated = $post->artcCreatedDate . ' ' . $post->artcCreatedTime;
+			$form->setData($post);
+			 if ($form->isValid()) {
+				$this->prepareData($article);
+				$entityManager->persist($article);
+				$entityManager->flush();
+                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));				
+			 }
+		}
+		return new ViewModel(array('form' => $form));
+	}
+
+	// U - update
+    public function editAction()
+	{
+		return new ViewModel();
+	}		
+	
+	// D - delete
+    public function deleteAction()
+	{
+		return new ViewModel();
+	}	
+	
+    public function viewAction()
+	{
+		return new ViewModel();
+	}
+	
+	public function getForm($article, $entityManager)
+	{
 		$builder = new DoctrineAnnotationBuilder($entityManager);
 		$form = $builder->createForm( $article );
 		
@@ -52,7 +91,7 @@ class IndexController extends AbstractActionController
 				}
 			}           
 		}
-		
+/*  uncomment if you need to control the data and time		
 		 $form->add(array(
 			 'type' => 'Zend\Form\Element\Date',
 			 'name' => 'artcCreatedDate',
@@ -78,45 +117,28 @@ class IndexController extends AbstractActionController
 					 'step' => '60', // seconds; default step interval is 60 seconds
 			 )
 		 ));
-
+*/
+		$form->remove('artcCreated');
+		$form->remove('parent');
+		$form->remove('author');
 		$form->setHydrator(new DoctrineHydrator($entityManager,'CsnCms\Entity\Article'));
 		$send = new Element('send');
 		$send->setValue('Add'); // submit
 		$send->setAttributes(array(
 			'type'  => 'submit'
 		));
-		$form->add($send);		
-		
-		$form->bind($article);
-		
-        $request = $this->getRequest();
-        if ($request->isPost()) {
-			$post = $request->getPost();
-			$post->artcCreated = $post->artcCreatedDate . ' ' . $post->artcCreatedTime;
-			$form->setData($post);
-			 if ($form->isValid()) {
-				$entityManager->persist($article);
-				$entityManager->flush();
-                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));				
-			 }
-		}
-		return new ViewModel(array('form' => $form));
-	}
+		$form->add($send);
 
-	// U - update
-    public function editAction()
-	{
-		return new ViewModel();
-	}		
+		return $form;		
+	}
 	
-	// D - delete
-    public function deleteAction()
+	public function prepareData($artcile)
 	{
-		return new ViewModel();
-	}	
-	
-    public function viewAction()
-	{
-		return new ViewModel();
-	}	
+		$artcile->setArtcCreated(new \DateTime());
+		$auth = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+		if ($auth->hasIdentity()) {
+			$user = $auth->getIdentity();
+		}
+		$artcile->setAuthor($user);
+	}
 }
