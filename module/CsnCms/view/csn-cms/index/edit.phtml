@@ -1,4 +1,30 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h1>Edit</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<?php
+echo '<h1>I am in edit.phtml CsnCms IndexController</h1>';
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('csn-cms/default', array('controller' => 'index', 'action' => 'edit', 'id' => $this->id)));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+
+// Take care of the JS
+$this->headLink()->appendStylesheet($this->basePath('css/jquery.datetimeentry.css'));
+$this->headScript()->prependFile('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js');
+$this->headScript()->appendFile($this->basePath('js/jquery.datetimeentry.min.js'));
+
+$script = '$(function(e){$("#artcCreated").datetimeEntry();})';
+$this->headScript()->appendScript($script); 
+
+$this->headScript()->appendFile('//tinymce.cachefly.net/4.0/tinymce.min.js');
+$this->headScript()->appendScript("tinymce.init({selector:'textarea'});"); 

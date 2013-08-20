@@ -1,0 +1,54 @@
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<?php
+echo '<h1>I am in index.phtml CsnCms Comment Controller</h1>';
+/*
+foreach($articles AS $article) {
+    echo $user->getDescription()." - ".$user->getCreated()->format('d.m.Y')."\n";
+    echo "    Reported by: ".$user->getReporter()->name."\n";
+    echo "    Assigned to: ".$user->getEngineer()->name."\n";
+    foreach($user->getProducts() AS $product) {
+        echo "    Platform: ".$product->name."\n";
+    }
+    echo "\n";
+}
+*/
+$title = 'My comments';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+<!-- <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'comment', 'action'=>'add')); /*NOtice without true no param is send*/?>">Add new translation</a> -->
+    <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'index', 'action'=>'index'), false);?>">&lt; Back to the articles | </a>
+    <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'comment', 'action'=>'add'), true);?>">Add New Comment</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Author</th>
+    <th>Language</th>
+	<th>Created</th>
+    <th>&nbsp;</th>
+</tr>
+
+<?php foreach ($comments as $comment) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($comment->getComTitle());?></td>
+    <td><?php echo $this->escapeHtml($comment->getComText());?></td>
+    <td><?php if (is_object($comment->getAuthor())) echo $this->escapeHtml($comment->getAuthor()->getUsrName());?></td>
+    <td><?php if (is_object($comment->getLanguage())) echo $this->escapeHtml($comment->getLanguage()->getLngName());?></td>
+    <td><?php if (is_object($comment->getComCreated())) echo $this->escapeHtml($comment->getComCreated()->format('Y-m-d H:i:s'));?></td><!-- Notice: getArtcCreated() returns an object convert to string -->
+    <td>
+        <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'comment', 'action'=>'edit', 'id2' => $comment->getComId()), true);?>">Edit</a>
+        <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment>
+            array('controller' => 'comment', 'action'=>'delete', 'id2' => $comment->getComId()), true);?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

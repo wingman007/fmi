@@ -14,6 +14,22 @@ class ArticleRepository extends EntityRepository
 //        return $query->getArrayResult();
 		return array();
     }
+	
+    public function getArticleForEdit($artcId)
+    {
+//        $dql = "SELECT b, e, r FROM \Application\Entity\Bug b JOIN b.engineer e JOIN b.reporter r ".
+//               "WHERE b.status = 'OPEN' AND e.id = ?1 OR r.id = ?1 ORDER BY b.created DESC";
+		$dql = "SELECT a, u, l, c, p, r FROM CsnCms\Entity\Article a LEFT JOIN a.author u LEFT JOIN a.language l LEFT JOIN a.categories c LEFT JOIN a.parent p LEFT JOIN a.resource r WHERE a.artcId = ?1"; 
+		
+        $articles = $this->getEntityManager()->createQuery($dql)
+                             ->setParameter(1, $artcId)
+//                             ->setMaxResults($number)
+                             ->getResult();
+							 // ->getScalarResult();
+							 // ->getArrayResult();
+		return $articles[0];
+    }
+
 /*	
     public function getArticleForEdit($artcId)
     {

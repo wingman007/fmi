@@ -1,0 +1,28 @@
+<?php
+echo '<h1>I am in delete.phtml GraceDrops Controller</h1>';
+
+// module/Album/view/album/album/delete.phtml:
+
+$title = 'Delete article';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Are you sure that you want to delete
+    '<?php echo $this->escapeHtml($article->getArtcTitle()); ?>' by
+    '<?php // echo $this->escapeHtml($article->getAuthor()); ?>'?
+</p>
+<?php
+$url = $this->url('scn-cms/default', array(
+	'controller' => 'translation',
+    'action' => 'delete',
+    'id2'     => $this->id,
+), true);
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $article->getArtcId(); ?>" />
+    <input type="submit" name="del" value="Yes" />
+    <input type="submit" name="del" value="No" />
+</div>
+</form>

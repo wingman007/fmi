@@ -116,7 +116,7 @@ class Comment
     private $comId;
 
     public function __construct() {
-
+		$this->comCreated = new \DateTime();
     }
 	
     /**

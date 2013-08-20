@@ -63,6 +63,32 @@ return array(
 					'edit'  => 'admin',	
 					'delete'=> 'admin',						
 				),
+				'CsnCms\Controller\Translation' => array(
+					// 'all'   => 'guest'
+					'view'	=> 'guest',
+					'index' => 'admin',
+					'add'	=> 'admin',
+					'edit'  => 'admin',	
+					'delete'=> 'admin',						
+				),
+				'CsnCms\Controller\Comment' => array(
+					// 'all'   => 'guest'
+					'view'	=> 'guest',
+					'index' => 'admin',
+					'add'	=> 'admin',
+					'edit'  => 'admin',	
+					'delete'=> 'admin',						
+				),					
+				// for CMS articles
+				'Public Resource' => array(
+					'view'	=> 'guest',					
+				),
+				'Private Resource' => array(
+					'view'	=> 'member',					
+				),
+				'Admin Resource' => array(
+					'view'	=> 'admin',					
+				),
             )
         )
     )

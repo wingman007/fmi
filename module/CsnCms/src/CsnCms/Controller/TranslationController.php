@@ -21,25 +21,42 @@ use DoctrineORMModule\Form\Annotation\AnnotationBuilder as DoctrineAnnotationBui
 
 use CsnCms\Entity\Article;
 
-class IndexController extends AbstractActionController
+class TranslationController extends AbstractActionController
 {
 	// R - retriev
     public function indexAction()
 	{
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));		
+		
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
-		$dql = "SELECT a, u, l, c FROM CsnCms\Entity\Article a LEFT JOIN a.author u LEFT JOIN a.language l LEFT JOIN a.categories c WHERE a.parent IS NULL"; 
+		$dql = "SELECT a, u, l, c, h  FROM CsnCms\Entity\Article a LEFT JOIN a.author u LEFT JOIN a.language l LEFT JOIN a.categories c LEFT JOIN a.children h WHERE a.artcId = ?1";
 		$query = $entityManager->createQuery($dql);
 		$query->setMaxResults(30);
+		$query->setParameter(1, $id);
 		$articles = $query->getResult();
 		
-		return new ViewModel(array('articles' => $articles));
+		return new ViewModel(array('articles' => $articles, 'id' => $id));
 	}
 
 	// C - create
     public function addAction()
 	{
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));		
+
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		$article = new Article;
+		
+		try {
+			$repository = $entityManager->getRepository('CsnCms\Entity\Article');
+			$parent = $repository->findOneBy(array('artcId' => $id));		
+			$article->setParent($parent);
+        }
+        catch (\Exception $ex) {
+			return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));		
+        }
+		
 		$form = $this->getForm($article, $entityManager, 'Add');
 		
 		$form->bind($article);
@@ -54,7 +71,7 @@ class IndexController extends AbstractActionController
 				$this->prepareData($article);
 				$entityManager->persist($article);
 				$entityManager->flush();
-                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));				
+                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'index', 'id' => $id), true);				
 			 }
 		}
 		return new ViewModel(array('form' => $form));
@@ -66,11 +83,14 @@ class IndexController extends AbstractActionController
 		$id = $this->params()->fromRoute('id');
 		if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));
 
+        $id = (int) $this->params()->fromRoute('id2', 0);
+        if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'add'), true);
+		
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		
         try {
 			$repository = $entityManager->getRepository('CsnCms\Entity\Article');
-			$article = $repository->find($id);
+			$article = $repository->getArticleForEdit($id);
         }
         catch (\Exception $ex) {
 			echo $ex->getMessage(); // this never will be seen fi you don't comment the redirect
@@ -91,7 +111,7 @@ class IndexController extends AbstractActionController
 //				$this->prepareData($article);
 				$entityManager->persist($article);
 				$entityManager->flush();
-                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));				
+                return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'index'), true);				
 			 }
 		}
 		return new ViewModel(array('form' => $form, 'id' => $id));
@@ -103,6 +123,9 @@ class IndexController extends AbstractActionController
 		$id = $this->params()->fromRoute('id');
 		if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));
 
+        $id = (int) $this->params()->fromRoute('id2', 0);
+        if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'index'), true);		
+		
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		
         try {
@@ -114,8 +137,8 @@ class IndexController extends AbstractActionController
         catch (\Exception $ex) {
 			echo $ex->getMessage(); // this never will be seen fi you don't comment the redirect
 			return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));
-        }		
-		return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));
+        }	
+		return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'index'), true);
 	}	
 	
     public function viewAction()
@@ -123,6 +146,9 @@ class IndexController extends AbstractActionController
 		$id = $this->params()->fromRoute('id');
 		if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'index', 'action' => 'index'));
 
+        $id = (int) $this->params()->fromRoute('id2', 0);
+        if (!$id) return $this->redirect()->toRoute('csn-cms/default', array('controller' => 'translation', 'action' => 'index'), true);		
+		
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 		
         try {

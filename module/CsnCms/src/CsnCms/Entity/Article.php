@@ -67,15 +67,15 @@ class Article
     private $language;
 
     /**
-     * @var CsnCms\Entity\User
+     * @var AuthDoctrine\Entity\User
      *
-	 * @ORM\ManyToOne(targetEntity="CsnCms\Entity\User")
+	 * @ORM\ManyToOne(targetEntity="AuthDoctrine\Entity\User")
 	 * @ORM\JoinColumn(name="usr_id", referencedColumnName="usr_id")
 	 * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
 	 * @Annotation\Options({
 	 * "label":"Author:",
 	 * "empty_option": "Please, choose the Author",
-	 * "target_class":"CsnCms\Entity\User",
+	 * "target_class":"AuthDoctrine\Entity\User",
 	 * "property": "usrName"})
      */
     private $author;
@@ -100,7 +100,7 @@ class Article
      * @ORM\Column(name="artc_title", type="string", length=100, nullable=false)
 	 * @Annotation\Filter({"name":"StringTrim"})
      * @Annotation\Validator({"name":"StringLength", "options":{"min":1, "max":100}})
-     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
+     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,100}$/"}})
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Title:"})	 
      */
@@ -112,7 +112,7 @@ class Article
      * @ORM\Column(name="artc_slug", type="string", length=100, nullable=false)
 	 * @Annotation\Filter({"name":"StringTrim"})
      * @Annotation\Validator({"name":"StringLength", "options":{"min":1, "max":100}})
-     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,24}$/"}})
+     * @Annotation\Validator({"name":"Regex", "options":{"pattern":"/^[a-zA-Z][a-zA-Z0-9_-]{0,100}$/"}})
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Slug:"})	 
      */
@@ -214,7 +214,7 @@ class Article
     /**
      * Set author
      *
-     * @param CsnCms\Entity\User $author
+     * @param AuthDoctrine\Entity\User $author
      * @return CsnCms\Entity\Article
      */
     public function setAuthor($author)
@@ -227,7 +227,7 @@ class Article
     /**
      * Get author
      *
-     * @return CsnCms\Entity\User 
+     * @return AuthDoctrine\Entity\User 
      */
     public function getAuthor()
     {

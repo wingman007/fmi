@@ -1,0 +1,54 @@
+<?php
+echo '<h1>I am in index.phtml GraceDrops Translation Controller</h1>';
+/*
+foreach($articles AS $article) {
+    echo $user->getDescription()." - ".$user->getCreated()->format('d.m.Y')."\n";
+    echo "    Reported by: ".$user->getReporter()->name."\n";
+    echo "    Assigned to: ".$user->getEngineer()->name."\n";
+    foreach($user->getProducts() AS $product) {
+        echo "    Platform: ".$product->name."\n";
+    }
+    echo "\n";
+}
+*/
+$title = 'My tranlsations';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+<!-- <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'translation', 'action'=>'add')); /*NOtice without true no param is send*/?>">Add new translation</a> -->
+    <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'index', 'action'=>'index'), false);?>">&lt; Back to the articles | </a>
+    <a href="<?php echo $this->url('csn-cms/default', array('controller' => 'translation', 'action'=>'add'), true);?>">Add new translation</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Intro Text</th>
+    <th>Author</th>
+    <th>Language</th>
+	<th>Created</th>
+    <th>&nbsp;</th>
+</tr>
+<?php $article = $articles[0];?>
+<?php $translations = $article->getChildren(); ?>
+<?php foreach ($translations as $article) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($article->getArtcTitle());?></td>
+    <td><?php echo $this->escapeHtml($article->getArtcIntrotext());?></td>
+    <td><?php if (is_object($article->getAuthor())) echo $this->escapeHtml($article->getAuthor()->getUsrName());?></td>
+    <td><?php if (is_object($article->getLanguage())) echo $this->escapeHtml($article->getLanguage()->getLngName());?></td>
+    <td><?php echo $this->escapeHtml($article->getArtcCreated()->format('Y-m-d H:i:s'));?></td><!-- Notice: getArtcCreated() returns an object convert to string -->
+    <td>
+        <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'comment', 'action'=>'index', 'id' => $article->getArtcId()));?>">Comments</a>
+        <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'translation', 'action'=>'view', 'id2' => $article->getArtcId()), true);?>">View</a>
+		<a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment> NOT ONLY grace-drops
+            array('controller' => 'translation', 'action'=>'edit', 'id2' => $article->getArtcId()), true);?>">Edit</a>
+        <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use grace-drops/<segment>
+            array('controller' => 'translation', 'action'=>'delete', 'id2' => $article->getArtcId()), true);?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

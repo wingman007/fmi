@@ -47,7 +47,7 @@ $this->headTitle($title);
 		<a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use csn-cms/<segment> NOT ONLY csn-cms
             array('controller' => 'index', 'action'=>'edit', 'id' => $article->getArtcId()));?>">Edit</a>
         <a href="<?php echo $this->url('csn-cms/default', // SUPER IMPORTANT use csn-cms/<segment>
-            array('controller' => 'index', 'action'=>'delete', 'id' => $article->getArtcId()));?>">Delete</a>
+            array('controller' => 'index', 'action'=>'delete', 'id' => $article->getArtcId()));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a>
     </td>
 </tr>
 <?php endforeach; ?>
