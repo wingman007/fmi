@@ -78,7 +78,10 @@ return array(
 					'add'	=> 'admin',
 					'edit'  => 'admin',	
 					'delete'=> 'admin',						
-				),					
+				),
+				'AuthDoctrine\Controller\Admin' => array(
+					'all'	=> 'admin',
+				),
 				// for CMS articles
 				'Public Resource' => array(
 					'view'	=> 'guest',					
