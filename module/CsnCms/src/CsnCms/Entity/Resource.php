@@ -41,6 +41,10 @@ class Resource
      */
     private $rsId;
 
+    public function __toString()
+	{
+		return $this->rsName;
+	}	
 
     /**
      * Set rsName

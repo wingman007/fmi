@@ -52,7 +52,11 @@ class Language
      */
     private $lngId;
 
-
+    public function __toString()
+	{
+		return $this->lngName;
+	}	
+	
     /**
      * Set lngName
      *
@@ -65,7 +69,7 @@ class Language
     
         return $this;
     }
-
+	
     /**
      * Get lngName
      *

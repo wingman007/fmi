@@ -51,6 +51,11 @@ class Category
     public function __construct() {
         $this->articles = new ArrayCollection();
     }
+
+    public function __toString()
+	{
+		return $this->ctgrName;
+	}	
 	
     /**
      * Set ctgrName
