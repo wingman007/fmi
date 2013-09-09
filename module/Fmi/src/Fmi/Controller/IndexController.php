@@ -1,12 +1,18 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * FMI (https://github.com/wingman007/fmi/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * This is my long <b>description</b>
+ *
+ * @link      https://github.com/wingman007/fmi for the canonical source repository
+ * @copyright Copyright (c) 2005-2013 LightSoft 2005 Ltd. Bulgaria
+ * @license   https://github.com/coolcsn/CsnUser/blob/master/LICENSE BSD(3-Clause)License
+ * @author     Stoyan Cheresharov <stoyan@coolcsn.com>
  */
 
+/**
+ * This is our custom namespace for FMI project
+ */
 namespace Fmi\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
@@ -26,8 +32,27 @@ use DoctrineORMModule\Form\Annotation\AnnotationBuilder as DoctrineAnnotationBui
 
 use Fmi\Entity\User;
 
+/**
+ * FMI controller
+ *
+ * This controller has been build with <b>educational</b> purposes
+ */
 class IndexController extends AbstractActionController
 {
+    /**
+     * Property to hold Doctrine Entity Manager
+     *
+     * @var object
+     */
+    protected $_em = null;
+	
+    /**
+     * Retrieve action from CRUD
+     *
+     * The method uses Doctrine Entity Manager to retrieve the Entities from the virtual database
+     *
+     * @return Zend\View\Model\ViewModel|array colection of objects
+     */
     public function indexAction()
     {
 		$entityManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');		
