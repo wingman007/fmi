@@ -1,0 +1,32 @@
+<br /><br /><br /><br /><br /><br />
+<?php
+$title = 'My files';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('csn-file-manager/default', array('controller' => 'index', 'action'=>'upload'));?>">Upload</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($files as $file) : ?>
+<tr>
+    <td><?php echo $file;?></td>
+    <td>
+        <a href="<?php echo $this->url('csn-file-manager/default', // SUPER IMPORTANT use csn-file-manager/<segment> NOT ONLY grace-drops
+            array('controller' => 'index', 'action'=>'get-image', 'id' => urlencode($file)));?>">Get</a>
+        <a href="<?php echo $this->url('csn-file-manager/default', // SUPER IMPORTANT use csn-file-manager/<segment> NOT ONLY grace-drops
+            array('controller' => 'index', 'action'=>'view', 'id' => urlencode($file)));?>">View</a>
+        <a href="<?php echo $this->url('csn-file-manager/default', // SUPER IMPORTANT use csn-file-manager/<segment> NOT ONLY grace-drops
+            array('controller' => 'index', 'action'=>'download', 'id' => urlencode($file)));?>">Download</a>
+        <a href="<?php echo $this->url('csn-file-manager/default', // SUPER IMPORTANT use csn-file-manager/<segment>
+            array('controller' => 'index', 'action'=>'delete', 'id' => urlencode($file)));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

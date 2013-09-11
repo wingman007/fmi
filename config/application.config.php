@@ -41,6 +41,7 @@ return array(
 		'AuthDoctrine', // if you want to enable AuthDoctrine disable the module Auth. They register the same services
 		'CsnNavigation', // this module simply adds ACL to navigation
 		'CsnCms',
+		'CsnFileManager',
 	),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

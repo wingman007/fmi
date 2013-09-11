@@ -82,6 +82,9 @@ return array(
 				'AuthDoctrine\Controller\Admin' => array(
 					'all'	=> 'admin',
 				),
+				'CsnFileManager\Controller\Index' => array(
+					'all'	=> 'member',
+				),				
 				// for CMS articles
 				'Public Resource' => array(
 					'view'	=> 'guest',					

@@ -1,0 +1,17 @@
+<br /><br /><br /><br /><br /><br />
+<?php
+$title = 'File Upload';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<h1><?php echo $this->tempFile; ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('csn-file-manager/default', array('controller' => 'index', 'action' => 'upload')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('image-file'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+?>
