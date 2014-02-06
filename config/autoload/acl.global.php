@@ -55,6 +55,9 @@ return array(
 					'all'   => 'guest'
 					// 'all'   => 'member',					
 				),
+				'AuthDoctrine\Controller\Registration' => array(
+					'all' => 'guest'
+				),
 				'CsnCms\Controller\Index' => array(
 					// 'all'   => 'guest'
 					'view'	=> 'guest',

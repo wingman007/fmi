@@ -33,10 +33,10 @@ return array(
 		'MihailKopuscu',
 		'RallNic',
 		'KrasimirTsvetanov',
-		'Fmi',
+		'Fmi',  // We have the Entity User. Doctrine tool shows a conflict with other user Entities inother modules
 //		'Auth', // if you want to enable AuthDoctrine disable the module Auth. They register the same services
 		'CsnBase', // This is also a library. Can be used without adding it as a module in composer.json: "autoload": {"psr-0": {"CsnBase\\": "vendor/coolcsn/csn-base/src/"}}
-		'CsnUser',
+		'CsnUser', // We have the Entity User. Doctrine tool shows a conflict with other user Entities inother modules
 		'CsnAuthorize', // uncomment if you want to use Authorization
 		'AuthDoctrine', // if you want to enable AuthDoctrine disable the module Auth. They register the same services
 		'CsnNavigation', // this module simply adds ACL to navigation

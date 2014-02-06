@@ -45,6 +45,7 @@ return array(
 		
 		'display_exceptions' => true,
     ),
+	/* uncoment when you have the Entity folder created in the module structure
     'doctrine' => array(
         'driver' => array(
 			__NAMESPACE__ . '_driver' => array(
@@ -61,4 +62,5 @@ return array(
             )
         )
     ),
+	*/
 );

@@ -31,3 +31,31 @@ Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
 project and you should be ready to go!
+
+Installing Fmi
+--------------
+Please, use the fmi.sql to import the database. Don't use the Doctrine tool to 
+build the DB from the Entities. 
+
+    source <path/to/my/project>/fmi.sql
+
+If you still want to use the Doctrine tool keep in mind:
+There are User Entities in 3 modules AuthDoctrine, CsnUser, Fmi.
+You have to comment in application.conf.php CsnUser, Fmi modules in order Doctrine tool to work.
+Create the DB schema fmi (or wgatever you want) 
+and run the tool 
+
+    <path to my project>vendor\bin\doctrine-module.bat orm:schema-tool:create. 
+
+You still have to populate the tables manuly
+
+To Login
+-------- 
+Use one of the preset accounts:
+
+    username: stoyan
+
+    password: password
+
+Or use the registration to register a new account. Click on ``Login`` from the top menu. 
+E-mail confirmation is required.
