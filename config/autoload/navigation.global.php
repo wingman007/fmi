@@ -128,10 +128,24 @@ return array( // ToDO make it dynamic - comes from the DB
                  ),
              ),
          ),
+		'secondary' => array( 
+			'page-1' => array( // without the key 'page-1' also will work
+				'label' => 'First page',
+				'route' => 'home'
+			),
+			'page-2' => array(
+				'label' => 'Second page',
+				'route' => 'home',
+				// we will add a resource here. If I am not lgged in I should not see it
+				'resource'	=> 'CsnCms\Controller\Index',
+				'privilege'	=> 'edit',
+			),
+		),		  
      ),
      'service_manager' => array(
          'factories' => array(
              'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+			 'secondary_navigation' => 'CsnNavigation\Navigation\Service\SecondaryNavigationFactory',
          ),
      ),
 );

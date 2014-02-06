@@ -59,3 +59,8 @@ Use one of the preset accounts:
 
 Or use the registration to register a new account. Click on ``Login`` from the top menu. 
 E-mail confirmation is required.
+
+To Config
+---------
+Please, add the resources you want to access to the /config/autoload/acl.global.php. 
+The resources should be in format ``CsnUser\Controller\UserDoctrinePaginator``. use the file ``acl.global.php`` as a referance.
