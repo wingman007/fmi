@@ -36,9 +36,12 @@
 			<br />
 			<?php echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(true); ?>
 			
-			<?php echo $this->navigation('secondary_navigation')->menu()->setPartial('csn-navigation/partials/menu'); ?>
-			
-			<?php
+			<?php 
+
+					// EXAMPLE of using partials
+//-					echo $this->navigation('secondary_navigation')->menu()->setPartial('csn-navigation/partials/menu'); 
+
+					// USING a CUSTOM view helper
 					// lets get the navigation proxy helper
 					$naviagtionViewHelper = $this->navigation(); // this works but notice the () __invoke 
 					$pm = $naviagtionViewHelper->getPluginManager();
@@ -48,7 +51,8 @@
 					$pm->injectRenderer($csnMenu);
 
 //					echo $this->navigation('navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(false);
-					echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(false);
+					// EXAMPLE of custom view Helmer rendering custom Navigation
+//-					echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(false);
 					
 			?>
 <!--
