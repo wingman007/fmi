@@ -9,6 +9,7 @@ chdir(dirname(__DIR__));
 
 // Setup autoloading
 include 'init_autoloader.php';
+// include 'init_csn_autoloader.php'; // for Csn library in vendor
 
 // Run the application!
 Zend\Mvc\Application::init(include 'config/application.config.php')->run();

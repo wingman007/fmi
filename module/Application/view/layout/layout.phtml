@@ -32,9 +32,25 @@
           </a>
           <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
           <div class="nav-collapse">
-			<?php echo $this->navigation('navigation')->menu()->setUlClass('nav'); ?>
+			<?php echo $this->navigation('navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(true); ?>
 			<br />
-			<?php echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav'); ?>
+			<?php echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(true); ?>
+			
+			<?php echo $this->navigation('secondary_navigation')->menu()->setPartial('csn-navigation/partials/menu'); ?>
+			
+			<?php
+					// lets get the navigation proxy helper
+					$naviagtionViewHelper = $this->navigation(); // this works but notice the () __invoke 
+					$pm = $naviagtionViewHelper->getPluginManager();
+					$csnMenu = new \Csn\Zend\View\Helper\Navigation\Menu();	
+					// $naviagtionViewHelper->menu()->setPartial('csn-navigation/partials/menu');
+					$pm->setService('menu', $csnMenu); // replace the original Menu View Helper
+					$pm->injectRenderer($csnMenu);
+
+//					echo $this->navigation('navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(false);
+					echo $this->navigation('secondary_navigation')->menu()->setUlClass('nav')->setAddClassToListItem(true)->escapeLabels(false);
+					
+			?>
 <!--
 			<ul class="nav">
               <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>

@@ -42,6 +42,8 @@ return array(
 		'CsnNavigation', // this module simply adds ACL to navigation
 		'CsnCms',
 		'CsnFileManager',
+		'Csn',
+		'Csn\Admin',
 	),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

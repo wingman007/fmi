@@ -18,6 +18,9 @@ return array( // ToDO make it dynamic - comes from the DB
              array(
                  'label' => 'Home',
                  'route' => 'home',
+				 'class' => 'item-1', // with the help of ->setAddClassToListItem(true) the class will be moved to li or a tags
+				 'anchor_class' => "mmhome",
+				 'type' => 'Csn\Zend\Navigation\Page\Mvc',
              ),
              array(
                  'label' => 'Album', // 'Page #1',
@@ -131,7 +134,11 @@ return array( // ToDO make it dynamic - comes from the DB
 		'secondary' => array( 
 			'page-1' => array( // without the key 'page-1' also will work
 				'label' => 'First page',
-				'route' => 'home'
+				'route' => 'home',
+				'class' => 'item-21',
+				'anchor_class' => "mmhome",
+				'type' => 'Csn\Zend\Navigation\Page\Mvc',
+				'custom_property' => 'This is my custom property'
 			),
 			'page-2' => array(
 				'label' => 'Second page',
@@ -139,13 +146,17 @@ return array( // ToDO make it dynamic - comes from the DB
 				// we will add a resource here. If I am not lgged in I should not see it
 				'resource'	=> 'CsnCms\Controller\Index',
 				'privilege'	=> 'edit',
+				'class' => 'item-22',
+				'anchor_class' => "mmhome",
+				'type' => 'Csn\Zend\Navigation\Page\Mvc',
 			),
-		),		  
+		),			  
      ),
      'service_manager' => array(
          'factories' => array(
              'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
-			 'secondary_navigation' => 'CsnNavigation\Navigation\Service\SecondaryNavigationFactory',
+			 // 'secondary_navigation' => 'CsnNavigation\Navigation\Service\SecondaryNavigationFactory',
+			 'secondary_navigation' => 'Csn\Zend\Navigation\Service\SecondaryNavigationFactory',
          ),
      ),
 );

@@ -1,0 +1,31 @@
+{
+    "name":         "coolcsn/csn",
+    "description":  "Common classes for All Csn modules",
+    "type":         "library",
+    "license":      "BSD-3-Clause",
+    "homepage":     "https://github.com/coolcsn/Csn",
+    "keywords": [
+        "zf2",
+        "csn",
+        "doctrine-orm-module",
+        "doctrine"
+    ],
+    "authors": [
+        {
+            "name":      "Stoyan Cheresharov",
+            "email":     "stoyancheresharov@gmail.com",
+            "homepage":  "http://coolcsn.com/",
+            "role":      "Developer"
+        },
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "doctrine/doctrine-orm-module": ">=0.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "Csn\\": "./"
+        }
+    }
+}

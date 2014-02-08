@@ -1,0 +1,19 @@
+<?php
+// my-module/partials/breadcrumbs
+
+// in the layout /view script  use 
+/*
+$this->navigation()->menu()->setPartial('my-module/partials/menu');
+echo $this->navigation()->menu()->render();
+
+... This method will assign the container to the view with the key container.
+
+*/
+
+foreach ($this->container as $page) {
+echo '<h1>';
+// echo $page->__toString();
+echo $page->get('custom_property');
+echo '</h1>';
+    echo $this->navigation()->menu()->htmlify($page) . PHP_EOL;
+}
