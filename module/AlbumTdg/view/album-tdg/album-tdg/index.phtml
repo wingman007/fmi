@@ -1,0 +1,26 @@
+<h1>Index Action</h1>
+
+<h1>Index = Retrieve</h1>
+<?php if ($this->identity()) { ?>
+<a href="<?php echo $this->url('album_tdg/default', array('controller' => 'album-tdg', 'action' => 'create')); ?>">Create</a>
+<?php } ?>
+<table class="table">
+<tr>
+	<th>id</th>
+	<th>Artist</th>
+	<th>Title</th>
+</tr>
+<?php
+	foreach ($rowset as $row) {
+?>
+		<tr>
+			<td><?php  echo $row['id']; // The row is an ArrayObject $row->usr_id and $row['usr_id'] with both work?></td>
+			<td><?php  echo $row['artist']; ?></td>
+			<td><?php  echo $row['title']; ?></td>
+			<td><a href="<?php echo $this->url('album_tdg/default', array('controller' => 'album-tdg', 'action' => 'update', 'id' => $row['id'])); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('album_tdg/default', array('controller' => 'album-tdg', 'action' => 'delete', 'id' => $row['id']));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>

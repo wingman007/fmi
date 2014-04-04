@@ -1,0 +1,61 @@
+<h1>Update Action</h1>
+
+<h1>Update</h1>
+<?php
+$form = $this->form;
+$form->prepare();
+// Assuming the "contact/process" route exists...
+$form->setAttribute('action', $this->url('album_tdg/default', array('controller' => 'album-tdg', 'action' => 'update', 'id' => $id))); //'contact/process'));
+// Set the method attribute for the form
+$form->setAttribute('method', 'post');
+$formLabel = $this->plugin('formLabel');
+
+echo $this->form()->openTag($form);
+
+// 1) approach 
+// echo $this->formCollection($form);
+
+// 2) Only one row
+// $element = $form->get('title');
+// echo $this->formRow($element);
+
+
+// 3) every element
+$element = $form->get('title');
+$element->setAttribute('class', 'form-control margin-bottom-20');
+$element->setLabel('Title');
+$element->removeAttribute('placeholder');
+
+echo $formLabel->openTag();
+echo $element->getLabel(); // $element->getOption('label'); - doesn't work 4 some reason
+echo ' <span class="color-red">*</span>';
+echo $formLabel->closeTag();
+echo $this->formInput($element);
+echo $this->formElementErrors($element);
+// or but I don't have control on the display
+// echo $this->formRow($element);
+
+$element = $form->get('artist');
+$element->setAttribute('class', 'form-control margin-bottom-20');
+$element->setLabel('Artist');
+$element->removeAttribute('placeholder');
+
+echo $formLabel->openTag();
+echo $element->getLabel(); // $element->getOption('label'); - doesn't work 4 some reason
+echo ' <span class="color-red">*</span>';
+echo $formLabel->closeTag();
+echo $this->formInput($element);
+echo $this->formElementErrors($element);
+// or but I don't have control on the display
+// echo $this->formRow($element);
+
+$element = $form->get('submit');
+// $element->setLabel($element->getAttribute('placeholder'));
+$element->setValue('Go');
+$element->removeAttribute('placeholder');
+$element->removeAttribute('style');
+$element->setAttribute('class', 'btn-u');
+
+echo $this->formSubmit($form->get('submit'));
+
+echo $this->form()->closeTag();
