@@ -77,7 +77,7 @@ class AdminController extends AbstractActionController
 	public function getUsersTable()
 	{
 		// I have a Table data Gateway ready to go right out of the box
-		if (!$this->usersTable) {
+		if (!isset($this->usersTable)) {
 			$this->usersTable = new TableGateway(
 				'users', 
 				$this->getServiceLocator()->get('Zend\Db\Adapter\Adapter')
